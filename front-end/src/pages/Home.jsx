@@ -18,9 +18,10 @@ export default function Home() {
   }, [index]);
 
   return (
-    <div className="flex flex-row flex-wrap absolute top-0 h-screen w-full justify-between items-center gap-[13%] px-20">
+    <>
+    <div className="flex lg:flex-row flex-col flex-wrap xl:absolute xl:top-0 xl:h-screen w-full justify-between items-center xl:gap-[13%] gap-5 mt-15 px-20">
       <motion.div 
-        className="text-6xl text-white font-main w-150"
+        className="xl:text-6xl lg:text-5xl sm:text-3xl text-2xl text-white font-main lg:w-180"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -49,5 +50,6 @@ export default function Home() {
         width={300} 
       />
     </div>
+    </>
   );
 }
