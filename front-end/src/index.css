@@ -6,7 +6,7 @@
     --font-secondary: "Roboto", sans-serif;
 
     --color-main: oklch(80.97% 0.1041 299.16);
-
+    --color-second: oklch(60.57% 0.224 285.06);
 }
 
 .stars-container {
@@ -32,5 +32,23 @@
     }
     100% {
         transform: translateY(100%);
+    }
+}
+
+.float{
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(40px);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }

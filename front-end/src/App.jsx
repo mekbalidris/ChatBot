@@ -4,6 +4,7 @@ import Login from './authpages/Login'
 import Register from './authpages/Register'
 import Nav from './components/Nav'
 import Background from './components/Background'
+import Home from './pages/Home'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path='/' element={<Home />} />
       </Routes>
     </>
   )
