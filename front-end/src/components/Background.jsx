@@ -20,7 +20,7 @@ export default function Background() {
             />
           </div>
         </div>
-
+        {/* Second Background */}
         <div className="h-[100vh] bg-linear-to-t from-[#5B209A] to-[#36135A] z-[-1] rotate-180 ">
           <div className="absolute left-0 w-screen h-[60vh] overflow-hidden">
             <img

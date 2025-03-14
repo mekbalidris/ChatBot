@@ -19,9 +19,9 @@ export default function Home() {
 
   return (
     <>
-    <div className="flex lg:flex-row flex-col flex-wrap xl:absolute xl:top-0 xl:h-screen w-full justify-between items-center xl:gap-[13%] gap-5 mt-15 px-20">
+    <div className="flex lg:flex-row flex-col xl:absolute xl:top-0 xl:h-screen w-full justify-between items-center lg:gap-[13%] gap-5 mt-15 px-20">
       <motion.div 
-        className="xl:text-6xl lg:text-5xl sm:text-3xl text-2xl text-white font-main lg:w-180"
+        className="lg:text-5xl sm:text-3xl text-2xl text-white font-main lg:w-180"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -41,7 +41,7 @@ export default function Home() {
       </motion.div>
 
       <motion.img 
-        initial={{ y: 100, opacity: 0 }}
+        initial={{ y: "100%", opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="float"
