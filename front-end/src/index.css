@@ -1,1 +1,36 @@
 @import "tailwindcss";
+
+
+@theme {
+    --font-main: "Zen Dots", cursive;
+    --font-secondary: "Roboto", sans-serif;
+
+    --color-main: oklch(80.97% 0.1041 299.16);
+
+}
+
+.stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    animation: scrollStars 40s linear infinite;
+}
+
+@keyframes scrollStars {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
