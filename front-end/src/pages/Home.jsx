@@ -51,7 +51,7 @@ export default function Home() {
         width={300} 
       />
     </div>
-    <div className="flex flex-col gap-10 mt-40">
+    <div className="flex flex-col gap-10 mt-40 xl:mt-150">
     <div className="flex flex-col justify-center items-center">
     <div className="font-main text-main text-3xl">
           Start Innovating
