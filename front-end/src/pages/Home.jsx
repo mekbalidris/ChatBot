@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import rocket from "../assets/rocket.png";
+import Marquee from "react-fast-marquee";
 
 export default function Home() {
   const text = `one chat away from building a dream! ...`;
@@ -49,6 +50,76 @@ export default function Home() {
         alt="rocket" 
         width={300} 
       />
+    </div>
+    <div className="flex flex-col gap-10 mt-40">
+    <div className="flex flex-col justify-center items-center">
+    <div className="font-main text-main text-3xl">
+          Start Innovating
+    </div>
+    <div className="font-secondary font-bold text-3xl text-white mt-4">
+        Now !!
+    </div>
+    
+    <button className="bg-purplefonce px-5 py-3 text-xl mt-10 rounded-4xl text-white font-bold hover:cursor-pointer hover:bg-purplefoncehover transition-all duration-500">Click To Chat</button>
+    </div>
+    <div className="mt-5">
+        <Marquee pauseOnHover={true} speed={40}>
+          {/* Tweet Block 1 */}
+          <div className="mx-4 w-64 sm:w-80 md:w-96 rotate-2 hover:rotate-0 transition-all duration-500">
+            <blockquote className="twitter-tweet">
+              <p lang="en" dir="ltr">i liked how this AI helps you build your startup <a href="https://twitter.com/startupgenie25?ref_src=twsrc%5Etfw">@startupgenie25</a></p>
+              &mdash; idrismekbal (@idrismekbal) <a href="https://twitter.com/idrismekbal/status/1900956305143071049?ref_src=twsrc%5Etfw">March 15, 2025</a>
+            </blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          {/* Tweet Block 2 */}
+          <div className="mx-4 w-64 sm:w-80 md:w-96 rotate-[-2deg] hover:rotate-0 transition-all duration-500">
+            <blockquote className="twitter-tweet">
+              <p lang="en" dir="ltr">i liked how this AI helps you build your startup <a href="https://twitter.com/startupgenie25?ref_src=twsrc%5Etfw">@startupgenie25</a></p>
+              &mdash; idrismekbal (@idrismekbal) <a href="https://twitter.com/idrismekbal/status/1900956305143071049?ref_src=twsrc%5Etfw">March 15, 2025</a>
+            </blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          {/* Tweet Block 3 */}
+          <div className="mx-4 w-64 sm:w-80 md:w-96 rotate-2 hover:rotate-0 transition-all duration-500">
+            <blockquote className="twitter-tweet">
+              <p lang="en" dir="ltr">i liked how this AI helps you build your startup <a href="https://twitter.com/startupgenie25?ref_src=twsrc%5Etfw">@startupgenie25</a></p>
+              &mdash; idrismekbal (@idrismekbal) <a href="https://twitter.com/idrismekbal/status/1900956305143071049?ref_src=twsrc%5Etfw">March 15, 2025</a>
+            </blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          {/* Tweet Block 4 */}
+          <div className="mx-4 w-64 sm:w-80 md:w-96 rotate-[-2deg] hover:rotate-0 transition-all duration-500">
+            <blockquote className="twitter-tweet">
+              <p lang="en" dir="ltr">i liked how this AI helps you build your startup <a href="https://twitter.com/startupgenie25?ref_src=twsrc%5Etfw">@startupgenie25</a></p>
+              &mdash; idrismekbal (@idrismekbal) <a href="https://twitter.com/idrismekbal/status/1900956305143071049?ref_src=twsrc%5Etfw">March 15, 2025</a>
+            </blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          {/* Tweet Block 5 */}
+          <div className="mx-4 w-64 sm:w-80 md:w-96 rotate-2 hover:rotate-0 transition-all duration-500">
+            <blockquote className="twitter-tweet">
+              <p lang="en" dir="ltr">i liked how this AI helps you build your startup <a href="https://twitter.com/startupgenie25?ref_src=twsrc%5Etfw">@startupgenie25</a></p>
+              &mdash; idrismekbal (@idrismekbal) <a href="https://twitter.com/idrismekbal/status/1900956305143071049?ref_src=twsrc%5Etfw">March 15, 2025</a>
+            </blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          {/* Tweet Block 6 */}
+          <div className="mx-4 w-64 sm:w-80 md:w-96 rotate-[-2deg] hover:rotate-0 transition-all duration-500">
+            <blockquote className="twitter-tweet">
+              <p lang="en" dir="ltr">i liked how this AI helps you build your startup <a href="https://twitter.com/startupgenie25?ref_src=twsrc%5Etfw">@startupgenie25</a></p>
+              &mdash; idrismekbal (@idrismekbal) <a href="https://twitter.com/idrismekbal/status/1900956305143071049?ref_src=twsrc%5Etfw">March 15, 2025</a>
+            </blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+        </Marquee>
+      </div>
     </div>
     </>
   );

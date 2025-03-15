@@ -7,6 +7,8 @@
 
     --color-main: oklch(80.97% 0.1041 299.16);
     --color-second: oklch(60.57% 0.224 285.06);
+    --color-purplefonce: oklch(28.54% 0.1194 301.6);
+    --color-purplefoncehover: oklch(55.31% 0.1153 300.77);
 }
 
 .stars-container {
