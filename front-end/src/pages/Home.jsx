@@ -75,11 +75,8 @@ export default function Home() {
 
           {/* Tweet Block 2 */}
           <div className="mx-4 w-64 sm:w-80 md:w-96 rotate-[-2deg] hover:rotate-0 transition-all duration-500">
-            <blockquote className="twitter-tweet">
-              <p lang="en" dir="ltr">i liked how this AI helps you build your startup <a href="https://twitter.com/startupgenie25?ref_src=twsrc%5Etfw">@startupgenie25</a></p>
-              &mdash; idrismekbal (@idrismekbal) <a href="https://twitter.com/idrismekbal/status/1900956305143071049?ref_src=twsrc%5Etfw">March 15, 2025</a>
-            </blockquote>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <blockquote class="twitter-tweet"><p lang="en" dir="ltr">if you&#39;re looking to innovate your startup i suggest you use this amazing AI <a href="https://twitter.com/startupgenie25?ref_src=twsrc%5Etfw">@startupgenie25</a></p>&mdash; hmd😎 (@Da_ahmed_) <a href="https://twitter.com/Da_ahmed_/status/1901012147930312792?ref_src=twsrc%5Etfw">March 15, 2025</a></blockquote> 
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
 
           {/* Tweet Block 3 */}
