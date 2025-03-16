@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import rocket from "../assets/rocket.png";
 import Marquee from "react-fast-marquee";
+import HomeBackground from "../components/HomeBackground"
 
 export default function Home() {
   const text = `one chat away from building a dream! ...`;
@@ -20,6 +21,7 @@ export default function Home() {
 
   return (
     <>
+    <HomeBackground />
     <div className="flex lg:flex-row flex-col xl:absolute xl:top-0 xl:h-screen w-full justify-between items-center lg:gap-[13%] gap-5 mt-15 px-20">
       <motion.div 
         className="lg:text-5xl sm:text-3xl text-2xl text-white font-main lg:w-180"

@@ -3,20 +3,20 @@ import './App.css'
 import Login from './authpages/Login'
 import Register from './authpages/Register'
 import Nav from './components/Nav'
-import Background from './components/Background'
+import HomeBackground from './components/HomeBackground'
 import Home from './pages/Home'
 import ChatPage from './pages/Chat'
-import ChatBaground from './components/chatBaground'
+import Background from './components/Baground'
 
 function App() {
 
   const location = useLocation();
-  const isChat = location.pathname != '/'
+  const isHome = location.pathname == '/'
 
   return (
     <>
       <Nav />
-      {isChat ? <ChatBaground /> : <Background />}
+      {isHome ? <HomeBackground /> : <Background />}
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
