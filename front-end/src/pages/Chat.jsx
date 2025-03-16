@@ -9,20 +9,24 @@ const ChatPage = () => {
     const messagesEndRef = useRef(null);
 
     useEffect(() => {
-        messagesEndRef.current?.scrollIntoView({behavior : "smooth"});
-    },[messages]);
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [messages]);
 
     const sendMessage = () => {
-        if(!input.trim()) return;
-        
-        const newMessage = [...messages, {text : input, sender : "user"}];
+        if (!input.trim()) return;
+
+        const newMessage = [...messages, { text: input, sender: "user" }];
         setMessages(newMessage);
         setInput("");
+        if (textareaRef.current) {
+            textareaRef.current.value = "";
+            textareaRef.current.style.height = "auto";
+        }
 
         setTimeout(() => {
             setMessages((prev) => [
                 ...prev,
-                {text:"Default message", sender : "Bot"},
+                { text: "Default message", sender: "Bot" },
             ]);
         }, 1000);
     };
@@ -35,21 +39,22 @@ const ChatPage = () => {
     };
     return (
         <section className="relative w-full flex flex-col ">
-            <div className="flex-1 overflow-y-scroll flex flex-col p-5">
-                {
-                    messages.map((msg, index) => (
-                        <div
-                            key={index}
-                            className={`p-3 my-2 max-w-xs rounded-b-lg shadow-md ${
-                                msg.sender === "user" ? "bg-[#cab2fb] text-white font-bold self-end ml-auto" :
-                                "bg-gray-400 text-white font-extrabold self-start"
-                            }`}
+            <div className="h-[80vh] overflow-y-scroll p-5 custom-scrollbar">
+                <div className="flex flex-col p-5">
+                    {
+                        messages.map((msg, index) => (
+                            <div
+                                key={index}
+                                className={`p-3 max-w-3xl my-2 rounded-b-lg shadow-md ${msg.sender === "user" ? "bg-[#cab2fb] text-[#36135a] font-bold self-end ml-auto" :
+                                    "bg-gray-400 text-white font-extrabold self-start"
+                                    }`}
                             >
                                 {msg.text}
-                        </div>
-                    ))
-                }
-                <div ref={messagesEndRef} />
+                            </div>
+                        ))
+                    }
+                    <div ref={messagesEndRef} />
+                </div>
             </div>
 
             <div className="fixed bottom-4 flex flex-row items-center px-4 w-full">
@@ -72,7 +77,7 @@ const ChatPage = () => {
 
                 </div>
                 <button className="text-2xl border border-[#36135a] bg-[#cab2fb] font-extrabold text-[#36135a] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 "
-                        onClick={sendMessage}>
+                    onClick={sendMessage}>
                     <i class='bx bx-up-arrow-alt'></i>
                 </button>
             </div>
