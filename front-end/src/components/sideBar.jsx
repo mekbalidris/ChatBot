@@ -6,6 +6,7 @@ const SideBar = ({ displaySideBar, setDisplaySideBar }) => {
 
   return (
     <>
+    
       {displaySideBar && (
         <motion.div 
         initial={{ x: "-100%", opacity:0 }}
