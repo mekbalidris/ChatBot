@@ -1,11 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 
 const ProfileBar = ({ displayProfileList, setDisplayProfileList }) => {
   const location = useLocation();
 
   return (
     <>
+    <AnimatePresence>
       {displayProfileList && (
         <motion.div
         initial={{ x: "100%", opacity: 0}}
@@ -34,6 +35,7 @@ const ProfileBar = ({ displayProfileList, setDisplayProfileList }) => {
           </ul>
         </motion.div >
       )}
+    </AnimatePresence>
     </>
   );
 };

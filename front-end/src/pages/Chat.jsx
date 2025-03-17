@@ -40,7 +40,7 @@ const ChatPage = () => {
             setMessages((prev) => [
                 ...prev,
                 {
-                    text: "Our Model doest not have this featcher yet .",
+                    text: "Our Model doest not have this feature yet .",
                     sender: "Bot"
                 },
             ]);
@@ -84,8 +84,8 @@ const ChatPage = () => {
                 </div>
             </div>
 
-            <div className="fixed bottom-4 flex flex-row items-center px-4 w-full">
-                <div className="flex items-center w-full  bg-main rounded-full p-2 mr-5">
+            <div className="fixed backdrop-blur-md bottom-4 flex flex-row items-center px-4 w-full">
+                <div className="flex items-center w-full bg-main rounded-full p-2 mr-5">
                     {!chatToolsDisplay ? (
                         <button className="cursor-pointer  bg-[#36135a] text-2xl font-bold text-white w-12 h-12 rounded-full flex items-center text-center justify-center flex-shrink-0"
                             onClick={() => { setChatToolsDisplay(!chatToolsDisplay) }}>
@@ -111,13 +111,13 @@ const ChatPage = () => {
 
                     <textarea placeholder="Poser une question ..."
                         ref={textareaRef}
-                        className="w-full border-none px-4 py-2 flex-grow resize-none outline-none bg-transparent h-auto min-h-[40px] custom-scrollbar mr-1"
+                        className="w-full font-secondary border-none px-4 py-2 flex-grow resize-none outline-none bg-transparent h-auto min-h-[40px] custom-scrollbar mr-1"
                         rows="1"
                         onChange={handleInput}>
 
                     </textarea>
 
-                    <button className="cursor-pointer text-2xl border border-[#36135a] font-extrabold text-[#36135a] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                    <button className="cursor-pointer text-2xl border border-[#36135a] font-bold text-[#36135a] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
                         onClick={defaultMessageFile}>
                         <i className='bx bx-camera'></i>
                     </button>
