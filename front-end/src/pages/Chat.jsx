@@ -117,7 +117,8 @@ const ChatPage = () => {
 
                     </textarea>
 
-                    <button className="text-2xl border border-[#36135a] font-extrabold text-[#36135a] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                    <button className="text-2xl border border-[#36135a] font-extrabold text-[#36135a] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                        onClick={defaultMessageFile}>
                         <i className='bx bx-camera'></i>
                     </button>
 
