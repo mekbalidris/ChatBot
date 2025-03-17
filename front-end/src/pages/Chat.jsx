@@ -123,11 +123,11 @@ const ChatPage = () => {
                                 chatToolsDisplay && (
                                     <>
                                         <button className="mr-3 font-bold border border-[#36135a] bg-main text-[#36135a] w-12 md:w-30 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                                            onClick={defaultMessageFile}>
+                                        onClick={defaultMessageFile}>
                                             <i class='bx bx-globe'></i> <span className="hidden md:flex">Search</span>
                                         </button>
                                         <button className="mr-3 font-bold border border-[#36135a] bg-main text-[#36135a] w-12 md:w-30 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                                            onClick={defaultMessageFile}>
+                                        onClick={defaultMessageFile}>
                                             <i class='bx bx-sun'></i> <span className="hidden md:flex">Think</span>
                                         </button>
                                     </>

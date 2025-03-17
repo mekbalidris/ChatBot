@@ -1,6 +1,5 @@
-
-export default function Login() {
+export default function Log_in() {
   return (
-    <div>Login</div>
+    <div>Log_in</div>
   )
 }
