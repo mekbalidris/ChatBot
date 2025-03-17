@@ -6,7 +6,7 @@ import Nav from './components/Nav'
 import HomeBackground from './components/HomeBackground'
 import Home from './pages/Home'
 import ChatPage from './pages/Chat'
-import Background from './components/Baground'
+import Background from './components/Background'
 
 function App() {
 

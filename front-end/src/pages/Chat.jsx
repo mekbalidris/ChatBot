@@ -26,7 +26,8 @@ const ChatPage = () => {
         setTimeout(() => {
             setMessages((prev) => [
                 ...prev,
-                { text: "Default message", sender: "Bot" },
+                { text: "Default messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault message",
+                     sender: "Bot" },
             ]);
         }, 1000);
     };
@@ -45,8 +46,8 @@ const ChatPage = () => {
                         messages.map((msg, index) => (
                             <div
                                 key={index}
-                                className={`p-3 max-w-3xl my-2 rounded-b-lg shadow-md ${msg.sender === "user" ? "bg-[#cab2fb] text-[#36135a] font-bold self-end ml-auto" :
-                                    "bg-gray-400 text-white font-extrabold self-start"
+                                className={`p-3 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md ${msg.sender === "user" ? "bg-[#cab2fb] text-[#36135a] font-bold self-end ml-auto" :
+                                    "bg-transparent  text-white font-secondary font-bold self-start"
                                     }`}
                             >
                                 {msg.text}
@@ -78,7 +79,7 @@ const ChatPage = () => {
                 </div>
                 <button className="text-2xl border border-[#36135a] bg-[#cab2fb] font-extrabold text-[#36135a] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 "
                     onClick={sendMessage}>
-                    <i class='bx bx-up-arrow-alt'></i>
+                    <i className='bx bx-up-arrow-alt'></i>
                 </button>
             </div>
         </section>

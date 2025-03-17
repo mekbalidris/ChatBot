@@ -12,9 +12,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   const goTochatpage = () => {
-    console.log("ffff");
-    
-    navigate("chatPage")
+    navigate("chatpage")
   }
 
   useEffect(() => {
@@ -71,9 +69,10 @@ export default function Home() {
           </div>
 
           <button className="bg-purplefonce px-5 py-3 text-xl mt-10 rounded-4xl text-white font-bold hover:cursor-pointer hover:bg-purplefoncehover transition-all duration-500"
-                  onClick={() => {console.log("youcef")}}>
+                  onClick={goTochatpage}>
             Click To Chat
           </button>
+          
         </div>
         <div className="mt-5">
           <Marquee pauseOnHover={true} speed={40}>
@@ -83,19 +82,19 @@ export default function Home() {
                 <p lang="en" dir="ltr">i liked how this AI helps you build your startup <a href="https://twitter.com/startupgenie25?ref_src=twsrc%5Etfw">@startupgenie25</a></p>
                 &mdash; idrismekbal (@idrismekbal) <a href="https://twitter.com/idrismekbal/status/1900956305143071049?ref_src=twsrc%5Etfw">March 15, 2025</a>
               </blockquote>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
             </div>
 
             {/* Tweet Block 2 */}
             <div className="mx-4 w-64 sm:w-80 md:w-96 rotate-[-2deg] hover:rotate-0 transition-all duration-500">
               <blockquote class="twitter-tweet"><p lang="en" dir="ltr">if you&#39;re looking to innovate your startup i suggest you use this amazing AI <a href="https://twitter.com/startupgenie25?ref_src=twsrc%5Etfw">@startupgenie25</a></p>&mdash; hmd😎 (@Da_ahmed_) <a href="https://twitter.com/Da_ahmed_/status/1901012147930312792?ref_src=twsrc%5Etfw">March 15, 2025</a></blockquote>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
             </div>
 
             {/* Tweet Block 3 */}
             <div className="mx-4 w-64 sm:w-80 md:w-96 rotate-2 hover:rotate-0 transition-all duration-500">
               <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Another super AI tool to improve your startup <a href="https://twitter.com/startupgenie25?ref_src=twsrc%5Etfw">@startupgenie25</a></p>&mdash; Imad Naitmihoub (@naitmihoub) <a href="https://twitter.com/naitmihoub/status/1901029306513715679?ref_src=twsrc%5Etfw">March 15, 2025</a></blockquote>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
             </div>
 
             {/* Tweet Block 4 */}
@@ -104,7 +103,7 @@ export default function Home() {
                 <p lang="en" dir="ltr">i liked how this AI helps you build your startup <a href="https://twitter.com/startupgenie25?ref_src=twsrc%5Etfw">@startupgenie25</a></p>
                 &mdash; idrismekbal (@idrismekbal) <a href="https://twitter.com/idrismekbal/status/1900956305143071049?ref_src=twsrc%5Etfw">March 15, 2025</a>
               </blockquote>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
             </div>
 
             {/* Tweet Block 5 */}
@@ -113,7 +112,7 @@ export default function Home() {
                 <p lang="en" dir="ltr">i liked how this AI helps you build your startup <a href="https://twitter.com/startupgenie25?ref_src=twsrc%5Etfw">@startupgenie25</a></p>
                 &mdash; idrismekbal (@idrismekbal) <a href="https://twitter.com/idrismekbal/status/1900956305143071049?ref_src=twsrc%5Etfw">March 15, 2025</a>
               </blockquote>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
             </div>
 
             {/* Tweet Block 6 */}
@@ -122,7 +121,7 @@ export default function Home() {
                 <p lang="en" dir="ltr">i liked how this AI helps you build your startup <a href="https://twitter.com/startupgenie25?ref_src=twsrc%5Etfw">@startupgenie25</a></p>
                 &mdash; idrismekbal (@idrismekbal) <a href="https://twitter.com/idrismekbal/status/1900956305143071049?ref_src=twsrc%5Etfw">March 15, 2025</a>
               </blockquote>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
             </div>
 
           </Marquee>
