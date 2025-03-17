@@ -7,6 +7,7 @@ const ChatPage = () => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState("");
     const messagesEndRef = useRef(null);
+    const [chatToolsDisplay, setChatToolsDisplay] = useState("true");
 
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -34,6 +35,18 @@ const ChatPage = () => {
         }, 1000);
     };
 
+    const defaultMessageFile = () => {
+        setTimeout(() => {
+            setMessages((prev) => [
+                ...prev,
+                {
+                    text: "Our Model doest not have this featcher yet .",
+                    sender: "Bot"
+                },
+            ]);
+        }, 400);
+    }
+
     const handleInput = (e) => {
         setInput(e.target.value);
         const textarea = textareaRef.current;
@@ -59,7 +72,7 @@ const ChatPage = () => {
 
                                     </div>
                                 }
-                                <div className={`p-2 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md  ${msg.sender === "user" ? "bg-[#cab2fb] text-[#36135a] font-bold self-end ml-auto" :
+                                <div className={`p-2 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md  ${msg.sender === "user" ? "bg-main text-[#36135a] font-bold self-end ml-auto" :
                                     "bg-transparent backdrop-blur-lg text-white font-secondary font-bold self-start"
                                     }`}>
                                     {msg.text}
@@ -72,10 +85,29 @@ const ChatPage = () => {
             </div>
 
             <div className="fixed bottom-4 flex flex-row items-center px-4 w-full">
-                <div className="flex items-center w-full  bg-[#cab2fb] rounded-full p-2 mr-5">
-                    <button className="bg-[#36135a] text-2xl font-bold text-white w-12 h-12 rounded-full flex items-center text-center justify-center flex-shrink-0">
-                        <i className='bx bx-plus'></i>
-                    </button>
+                <div className="flex items-center w-full  bg-main rounded-full p-2 mr-5">
+                    {!chatToolsDisplay ? (
+                        <button className="bg-[#36135a] text-2xl font-bold text-white w-12 h-12 rounded-full flex items-center text-center justify-center flex-shrink-0"
+                            onClick={() => { setChatToolsDisplay(!chatToolsDisplay) }}>
+                            <i className='bx bx-plus'></i>
+                        </button>
+                    ) : (
+                        <div className="w-auto p-2 rounded-full bg-[#36135a] h-12 flex flex-row items-center gap-2">
+                            <button className="w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[#CAB3E8]"
+                                onClick={() => { setChatToolsDisplay(!chatToolsDisplay) }}>
+                                <i className='bx bx-x text-[#36135a] text-xl'></i>
+                            </button>
+                            <button className="w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[#CAB3E8]"
+                                onClick={defaultMessageFile}>
+                                <i className='bx bxs-file-blank text-[#36135a] text-xl'></i>
+                            </button>
+                            <button className="w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[#CAB3E8]"
+                                onClick={defaultMessageFile}>
+                                <i className='bx bx-microphone text-[#36135a] text-xl'></i>
+                            </button>
+                        </div>
+
+                    )}
 
                     <textarea placeholder="Poser une question ..."
                         ref={textareaRef}
@@ -90,7 +122,7 @@ const ChatPage = () => {
                     </button>
 
                 </div>
-                <button className="text-2xl border border-[#36135a] bg-[#cab2fb] font-extrabold text-[#36135a] w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 "
+                <button className="text-2xl border border-[#36135a] bg-main font-extrabold text-[#36135a] w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 "
                     onClick={sendMessage}>
                     <i className='bx bx-up-arrow-alt'></i>
                 </button>
