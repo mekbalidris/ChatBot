@@ -26,8 +26,10 @@ const ChatPage = () => {
         setTimeout(() => {
             setMessages((prev) => [
                 ...prev,
-                { text: "Default messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault message",
-                     sender: "Bot" },
+                {
+                    text: "Default messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault messageDefault message",
+                    sender: "Bot"
+                },
             ]);
         }, 1000);
     };
@@ -36,7 +38,7 @@ const ChatPage = () => {
         setInput(e.target.value);
         const textarea = textareaRef.current;
         textarea.style.height = "auto";
-        textarea.style.height = Math.min(textarea.scrollHeight, 150) + "px";
+        textarea.style.height = Math.min(textarea.scrollHeight, 170) + "px";
     };
     return (
         <section className="relative w-full flex flex-col ">
@@ -46,11 +48,22 @@ const ChatPage = () => {
                         messages.map((msg, index) => (
                             <div
                                 key={index}
-                                className={`p-2 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md ${msg.sender === "user" ? "bg-[#cab2fb] text-[#36135a] font-bold self-end ml-auto" :
-                                    "bg-transparent backdrop-blur-lg text-white font-secondary font-bold self-start"
-                                    }`}
+                                className="flex flex-row mb-7"
                             >
-                                {msg.text}
+                                {msg.sender === "Bot" &&
+                                    <div className="h-[60px] w-[60px] mr-3 p-1.5 rounded-full">
+
+                                        <img src="/startupgenie-01.png"
+                                            alt="Image non disponible"
+                                            className="h-auto w-auto rounded-full" />
+
+                                    </div>
+                                }
+                                <div className={`p-2 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md  ${msg.sender === "user" ? "bg-[#cab2fb] text-[#36135a] font-bold self-end ml-auto" :
+                                    "bg-transparent backdrop-blur-lg text-white font-secondary font-bold self-start"
+                                    }`}>
+                                    {msg.text}
+                                </div>
                             </div>
                         ))
                     }
@@ -61,23 +74,23 @@ const ChatPage = () => {
             <div className="fixed bottom-4 flex flex-row items-center px-4 w-full">
                 <div className="flex items-center w-full  bg-[#cab2fb] rounded-full p-2 mr-5">
                     <button className="bg-[#36135a] text-2xl font-bold text-white w-12 h-12 rounded-full flex items-center text-center justify-center flex-shrink-0">
-                        +
+                        <i className='bx bx-plus'></i>
                     </button>
 
                     <textarea placeholder="Poser une question ..."
                         ref={textareaRef}
-                        className="w-full border-none rounded-full px-4 py-2 flex-grow resize-none outline-none bg-transparent h-auto min-h-[40px] custom-scrollbar mr-1"
+                        className="w-full border-none px-4 py-2 flex-grow resize-none outline-none bg-transparent h-auto min-h-[40px] custom-scrollbar mr-1"
                         rows="1"
                         onChange={handleInput}>
 
                     </textarea>
 
                     <button className="text-2xl border border-[#36135a] font-extrabold text-[#36135a] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                        <i class='bx bx-camera'></i>
+                        <i className='bx bx-camera'></i>
                     </button>
 
                 </div>
-                <button className="text-2xl border border-[#36135a] bg-[#cab2fb] font-extrabold text-[#36135a] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 "
+                <button className="text-2xl border border-[#36135a] bg-[#cab2fb] font-extrabold text-[#36135a] w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 "
                     onClick={sendMessage}>
                     <i className='bx bx-up-arrow-alt'></i>
                 </button>
