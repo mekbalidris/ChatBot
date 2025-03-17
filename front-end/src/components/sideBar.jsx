@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const SideBar = ({ displaySideBar, setDisplaySideBar }) => {
   const location = useLocation();
@@ -29,7 +29,7 @@ const SideBar = ({ displaySideBar, setDisplaySideBar }) => {
           </ul>
         </motion.div>
       )}
-      </AnimatePresence>
+    </AnimatePresence>
     </>
   );
 };
