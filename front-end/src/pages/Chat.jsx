@@ -66,7 +66,7 @@ const ChatPage = () => {
                                 {msg.sender === "Bot" &&
                                     <div className="h-[60px] w-[60px] mr-3 p-1.5 rounded-full">
 
-                                        <img src="/startupgenie-01.png"
+                                        <img src="/startupgenie.png"
                                             alt="Image non disponible"
                                             className="h-auto w-auto rounded-full" />
 
@@ -87,21 +87,21 @@ const ChatPage = () => {
             <div className="fixed bottom-4 flex flex-row items-center px-4 w-full">
                 <div className="flex items-center w-full  bg-main rounded-full p-2 mr-5">
                     {!chatToolsDisplay ? (
-                        <button className="bg-[#36135a] text-2xl font-bold text-white w-12 h-12 rounded-full flex items-center text-center justify-center flex-shrink-0"
+                        <button className="cursor-pointer  bg-[#36135a] text-2xl font-bold text-white w-12 h-12 rounded-full flex items-center text-center justify-center flex-shrink-0"
                             onClick={() => { setChatToolsDisplay(!chatToolsDisplay) }}>
                             <i className='bx bx-plus'></i>
                         </button>
                     ) : (
                         <div className="w-auto p-2 rounded-full bg-[#36135a] h-12 flex flex-row items-center gap-2">
-                            <button className="w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[#CAB3E8]"
+                            <button className="cursor-pointer w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[#CAB3E8]"
                                 onClick={() => { setChatToolsDisplay(!chatToolsDisplay) }}>
                                 <i className='bx bx-x text-[#36135a] text-xl'></i>
                             </button>
-                            <button className="w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[#CAB3E8]"
+                            <button className="cursor-pointer w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[#CAB3E8]"
                                 onClick={defaultMessageFile}>
                                 <i className='bx bxs-file-blank text-[#36135a] text-xl'></i>
                             </button>
-                            <button className="w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[#CAB3E8]"
+                            <button className="cursor-pointer w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[#CAB3E8]"
                                 onClick={defaultMessageFile}>
                                 <i className='bx bx-microphone text-[#36135a] text-xl'></i>
                             </button>
@@ -117,13 +117,13 @@ const ChatPage = () => {
 
                     </textarea>
 
-                    <button className="text-2xl border border-[#36135a] font-extrabold text-[#36135a] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                    <button className="cursor-pointer text-2xl border border-[#36135a] font-extrabold text-[#36135a] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
                         onClick={defaultMessageFile}>
                         <i className='bx bx-camera'></i>
                     </button>
 
                 </div>
-                <button className="text-2xl border border-[#36135a] bg-main font-extrabold text-[#36135a] w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 "
+                <button className="text-2xl cursor-pointer border border-[#36135a] bg-main font-extrabold text-[#36135a] w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 "
                     onClick={sendMessage}>
                     <i className='bx bx-up-arrow-alt'></i>
                 </button>
