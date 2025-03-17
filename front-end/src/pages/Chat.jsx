@@ -46,8 +46,8 @@ const ChatPage = () => {
                         messages.map((msg, index) => (
                             <div
                                 key={index}
-                                className={`p-3 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md ${msg.sender === "user" ? "bg-[#cab2fb] text-[#36135a] font-bold self-end ml-auto" :
-                                    "bg-transparent  text-white font-secondary font-bold self-start"
+                                className={`p-2 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md ${msg.sender === "user" ? "bg-[#cab2fb] text-[#36135a] font-bold self-end ml-auto" :
+                                    "bg-transparent backdrop-blur-lg text-white font-secondary font-bold self-start"
                                     }`}
                             >
                                 {msg.text}
