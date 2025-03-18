@@ -23,6 +23,7 @@ const ChatPage = () => {
             textareaRef.current.value = "";
             textareaRef.current.style.height = "auto";
         }
+        
 
         setTimeout(() => {
             setMessages((prev) => [
