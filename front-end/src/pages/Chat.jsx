@@ -44,7 +44,7 @@ const ChatPage = () => {
                     sender: "Bot"
                 },
             ]);
-        }, 400);
+        }, 600);
     }
 
     const handleInput = (e) => {
@@ -63,17 +63,17 @@ const ChatPage = () => {
                                 key={index}
                                 className="flex flex-row mb-7"
                             >
-                                {msg.sender === "Bot" &&
+                                {msg.sender === "Bot" ?(
                                     <div className="mr-3 p-1.5 rounded-full">
 
                                         <img src="/startupgenie.png"
                                             alt="Image non disponible"
-                                            className="sm:w-15 rounded-full" />
+                                            className="w-10 h-10 rounded-full flex-1" />
 
-                                    </div>
+                                    </div> ) : ""
                                 }
-                                <div className={`p-2 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md  ${msg.sender === "user" ? "bg-main text-[#36135a] font-bold self-end ml-auto" :
-                                    "bg-transparent backdrop-blur-lg text-white font-secondary font-bold self-start"
+                                <div className={`p-2 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md ${msg.sender === "user" ? "bg-main text-[#36135a] font-bold self-end ml-auto" :
+                                    "bg-transparent backdrop-blur-lg text-white font-secondary font-bold self-start flex-[2]"
                                     }`}>
                                     {msg.text}
                                 </div>
@@ -85,7 +85,7 @@ const ChatPage = () => {
             </div>
 
             <div className="fixed bottom-2 flex flex-row items-center justify-center  w-full md:px-0">
-                <div className="w-full flex flex-col md:w-[60%] bg-main rounded-4xl p-2 mr-5 ">
+                <div className="w-[95%] flex flex-col md:w-[60%] bg-main rounded-4xl p-2">
 
                     <textarea placeholder="Poser une question ..."
                         ref={textareaRef}
