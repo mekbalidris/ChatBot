@@ -12,7 +12,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   const goToChatPage = () => {
-    navigate("/chatpage"); // Added leading slash for consistent routing
+    navigate("/chatpage");
   };
 
   useEffect(() => {
