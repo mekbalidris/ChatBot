@@ -8,10 +8,12 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - chkoun-chikour
 
 responses:
   utter_greet:
   - text: "Hey! How are you?"
+  - text: "wa alaykom assalam"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -28,6 +30,9 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_slimani:
+  - text: "slimani houwa chikour!"
 
 session_config:
   session_expiration_time: 60

@@ -11,3 +11,8 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Say 'slimani' anytime the user says chikour
+  steps:
+  - intent: chkoun-chikour
+  - action: utter_slimani
