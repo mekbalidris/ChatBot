@@ -16,6 +16,11 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - Bonjour
+    - Salut
+    - Bonsoir
+    - Coucou
+    - Hello
 
 - intent: goodbye
   examples: |
@@ -29,6 +34,51 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - Au revoir
+    - À plus
+    - À bientôt
+    - Je m'en vais
+    - Ciao
+
+- intent: ask_pfe_startup
+  examples: |
+    - Comment faire un PFE startup?
+    - Qu'est-ce qu'un PFE startup?
+    - Comment s'inscrire pour un PFE startup?
+    - Combien de membres pour un PFE startup?
+    - Quels sont les incubateurs disponibles?
+    - Comment se passe la soutenance d'un PFE startup?
+
+- intent: ask_arretes
+  examples: |
+    - Quel est le contenu de l'arrêté 1275?
+    - Quels sont les modifications de l'arrêté 008?
+    - Quelles sont les nouvelles dispositions pour les mémoires de fin d'études?
+    - Comment obtenir le double diplôme?
+    - Qu'est-ce que le mécanisme "un diplôme, une startup"?
+
+- intent: ask_incubateurs
+  examples: |
+    - Quels sont les incubateurs disponibles?
+    - Comment s'inscrire à un incubateur?
+    - Quelles sont les missions des incubateurs?
+    - Comment ICOSNET peut m'aider?
+    - Quels sont les avantages des incubateurs?
+
+- intent: ask_double_diplome
+  examples: |
+    - Comment obtenir le double diplôme?
+    - Qu'est-ce que le diplôme startup?
+    - Quelle est la valeur du diplôme startup?
+    - Comment avoir le label "Laïl"?
+
+- intent: out_of_scope
+  examples: |
+    - Quelle heure est-il?
+    - Parle-moi de politique
+    - Quel est ton film préféré?
+    - Raconte-moi une blague
+    - Comment vas-tu?
 
 - intent: affirm
   examples: |
