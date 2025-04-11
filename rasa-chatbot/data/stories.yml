@@ -1,6 +1,25 @@
 version: "3.1"
 
 stories:
+- story: Demande info PFE Startup
+  steps:
+  - intent: ask_pfe_startup
+  - action: utter_pfe_startup_info
+
+- story: Demande info arrêtés
+  steps:
+  - intent: ask_arretes
+  - action: utter_arrete_1275_info
+
+- story: Demande info incubateurs
+  steps:
+  - intent: ask_incubateurs
+  - action: utter_incubateurs_info
+
+- story: Demande double diplôme
+  steps:
+  - intent: ask_double_diplome
+  - action: utter_double_diplome_info
 
 - story: happy path
   steps:

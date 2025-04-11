@@ -1,13 +1,17 @@
 version: "3.1"
 
 rules:
+- rule: Réponse aux salutations
+  steps:
+  - intent: greet
+  - action: utter_greet
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Réponse aux au revoir
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Réponse hors sujet
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: out_of_scope
+  - action: utter_out_of_scope

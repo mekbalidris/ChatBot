@@ -6,50 +6,81 @@ const Chat = () => {
     const [input, setInput] = useState("");
     const messagesEndRef = useRef(null);
     const [chatToolsDisplay, setChatToolsDisplay] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
 
     const sendMessage = async () => {
-        if (!input.trim()) return;
-
+        if (!input.trim() || isLoading) return;
+    
         // Add user's message to the chat
         const newMessage = [...messages, { text: input, sender: "user" }];
         setMessages(newMessage);
         setInput("");
+        
         if (textareaRef.current) {
             textareaRef.current.value = "";
             textareaRef.current.style.height = "auto";
         }
-
-        // Send message to Rasa and get response
+    
+        setIsLoading(true);
+    
         try {
             const response = await fetch("http://localhost:5005/webhooks/rest/webhook", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    "Accept": "application/json",
                 },
                 body: JSON.stringify({
-                    sender: "user", // Unique sender ID (could be dynamic)
+                    sender: "user_" + Date.now(),
                     message: input,
                 }),
+                credentials: 'include' // Important for CORS with credentials
             });
-
+    
+            console.log("Response status:", response.status); // Debug log
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+    
+            const contentType = response.headers.get("content-type");
+            if (!contentType || !contentType.includes("application/json")) {
+                const text = await response.text();
+                throw new Error(`Invalid content type. Received: ${contentType}, Body: ${text}`);
+            }
+    
             const data = await response.json();
-            // Rasa returns an array of responses; map them to your messages
+            console.log("Full Rasa response:", data); // Debug log
+    
+            if (!Array.isArray(data)) {
+                throw new Error(`Invalid response format. Expected array, got: ${typeof data}`);
+            }
+    
             const botMessages = data.map((item) => ({
-                text: item.text,
+                text: item.text || "Je n'ai pas compris. Pouvez-vous reformuler?",
                 sender: "Bot",
             }));
-
+    
             setMessages((prev) => [...prev, ...botMessages]);
         } catch (error) {
-            console.error("Error communicating with Rasa:", error);
+            console.error("Full error details:", {
+                message: error.message,
+                stack: error.stack,
+                name: error.name
+            });
             setMessages((prev) => [
                 ...prev,
-                { text: "Sorry, something went wrong.", sender: "Bot" },
+                { 
+                    text: "Désolé, une erreur de communication avec le serveur s'est produite.", 
+                    sender: "Bot" 
+                },
             ]);
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -88,13 +119,13 @@ const Chat = () => {
                                 </div>
                             ) : ""}
                             <div
-                                className={`p-2 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md ${
-                                    msg.sender === "user"
-                                        ? "bg-main text-[#36135a] font-bold self-end ml-auto"
-                                        : "bg-transparent backdrop-blur-lg text-white font-secondary font-bold self-start flex-[2]"
-                                }`}
+                            className={`p-2 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md ${
+                                msg.sender === "user"
+                                ? "bg-main text-[#36135a] font-bold self-end ml-auto"
+                                : "bg-transparent backdrop-blur-lg text-white font-secondary font-bold self-start flex-[2]"
+                            }`}
                             >
-                                {msg.text}
+                            {msg.text}
                             </div>
                         </div>
                     ))}
