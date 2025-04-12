@@ -3,89 +3,169 @@ version: "3.1"
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - Bonjour
+    - Salut
+    - Coucou
+    - Bonsoir
+    - Hé
+    - Yo
+    - Allô
+    - Bonne matinée
+    - Bonne après-midi
+    - Comment vas-tu?
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - Au revoir
+    - À plus
+    - À bientôt
+    - Ciao
+    - Bye
+    - Bonne journée
+    - Bonne soirée
+    - Je m’en vais
+    - À la prochaine
+    - Salut, à plus tard
+
+- intent: ask_pfe_startup
+  examples: |
+    - Qu’est-ce qu’un PFE Start-Up ?
+    - Comment faire un PFE Start-Up ?
+    - Comment s’inscrire à un PFE Start-Up ?
+    - Combien de membres faut-il pour un PFE Start-Up ?
+    - Quels sont les incubateurs pour un PFE Start-Up ?
+    - Comment se passe la soutenance d’un PFE Start-Up ?
+    - Quelles sont les étapes pour un PFE Start-Up ?
+    - Qui peut participer à un PFE Start-Up ?
+    - Quels sont les avantages d’un PFE Start-Up ?
+    - Que faut-il pour réussir un PFE Start-Up ?
+    - Quels sont les critères pour un PFE Start-Up ?
+    - Comment valider mon idée de PFE Start-Up ?
+    - Quels sont les délais pour un PFE Start-Up ?
+    - Quels documents faut-il pour un PFE Start-Up ?
+    - Comment trouver des coéquipiers pour un PFE Start-Up ?
+
+- intent: ask_incubateurs
+  examples: |
+    - Quels incubateurs existent pour les start-ups universitaires ?
+    - Comment s’inscrire à un incubateur ?
+    - Quelles sont les missions des incubateurs ?
+    - Comment ICOSNET aide-t-il les étudiants ?
+    - Quels avantages offrent les incubateurs ?
+    - Où trouver un incubateur pour mon projet ?
+    - Que font TECHINNOV et GTA ?
+    - Comment choisir un incubateur ?
+    - Quels incubateurs pour les non-étudiants ?
+
+- intent: ask_double_diplome
+  examples: |
+    - Comment obtenir un double diplôme avec une start-up ?
+    - Qu’est-ce que le diplôme Start-Up ?
+    - Quelle est la valeur du double diplôme ?
+    - Quels sont les critères pour le double diplôme ?
+    - Que se passe-t-il après la soutenance pour le diplôme ?
+    - Le double diplôme est-il reconnu ?
+    - Comment ça marche pour le double diplôme ?
+
+- intent: ask_mecanisme_diplome_startup
+  examples: |
+    - Qu’est-ce que le mécanisme "un diplôme, une Start-Up" ?
+    - Comment fonctionne "un diplôme, un brevet" ?
+    - Quels sont les avantages du mécanisme "un diplôme, une Start-Up" ?
+    - Qui peut bénéficier de ce mécanisme ?
+    - Comment accéder aux services des incubateurs via IBTIKAR ?
+    - Que propose la plateforme IBTIKAR ?
+    - Comment obtenir un label pour mon projet innovant ?
+
+- intent: ask_formation_bmc
+  examples: |
+    - Qu’est-ce que la formation au BMC ?
+    - En quoi consiste le Business Model Canvas ?
+    - Quand a lieu la formation au BMC ?
+    - Qui dispense la formation au BMC ?
+    - Comment le BMC aide-t-il une start-up ?
+    - Où suivre une formation BMC ?
+
+- intent: ask_startup_funding
+  examples: |
+    - Combien d’argent faut-il pour lancer une startup ?
+    - Quel est le budget nécessaire pour démarrer une startup ?
+    - De combien ai-je besoin pour créer ma startup ?
+    - Quel est le coût pour lancer une startup ?
+    - Combien ça coûte de démarrer une startup ?
+    - Quel budget prévoir pour une startup ?
+    - Comment financer une startup ?
+    - Où trouver de l’argent pour une startup ?
+
+- intent: ask_startup_steps
+  examples: |
+    - Par où commencer pour lancer une startup ?
+    - Quelles sont les étapes pour créer une startup ?
+    - Comment démarrer une startup ?
+    - Quels sont les premiers pas pour une startup ?
+    - Comment lancer ma propre startup ?
+    - Que faire pour créer une startup réussie ?
+    - Où commencer une startup ?
+    - Comment organiser le lancement d’une startup ?
+
+- intent: ask_non_pfe_startup
+  examples: |
+    - Que faire si ma startup n’est pas un PFE startup ?
+    - Comment lancer une startup hors du cadre PFE ?
+    - Quelles sont les options pour les startups non PFE ?
+    - Comment créer une startup sans être étudiant ?
+    - Quels programmes pour les startups hors université ?
+    - Comment obtenir du soutien pour une startup non PFE ?
+    - Où trouver de l’aide pour une startup non PFE ?
+    - Combien coûte une startup hors PFE ?
+
+- intent: ask_startup_team
+  examples: |
+    - Comment former une équipe pour une startup ?
+    - Combien de personnes faut-il dans une startup ?
+    - Où trouver des co-fondateurs pour ma startup ?
+    - Quels rôles sont nécessaires dans une startup ?
+    - Comment gérer une équipe de startup ?
+
+- intent: ask_startup_legal
+  examples: |
+    - Quelles démarches légales pour une startup ?
+    - Comment enregistrer une startup ?
+    - Quels documents juridiques pour une startup ?
+    - Combien coûtent les frais juridiques d’une startup ?
+    - Ai-je besoin d’un avocat pour ma startup ?
+
+- intent: out_of_scope
+  examples: |
+    - Quelle heure est-il ?
+    - Parle-moi de politique
+    - Quel est ton film préféré ?
+    - Raconte-moi une blague
+    - Quel temps fait-il ?
+    - Comment faire du pain ?
 
 - intent: affirm
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - Oui
+    - Bien sûr
+    - Exactement
+    - Tout à fait
+    - Ça me va
+    - D’accord
 
 - intent: deny
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - Non
+    - Pas du tout
+    - Jamais
+    - Je ne pense pas
+    - Pas vraiment
+    - Absolument pas
 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - Es-tu un robot ?
+    - Es-tu humain ?
+    - Suis-je en train de parler à un bot ?
+    - Qui es-tu ?
+    - Qu’es-tu ?
