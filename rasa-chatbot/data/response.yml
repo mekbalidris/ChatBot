@@ -2,47 +2,171 @@ version: "3.1"
 
 responses:
   utter_greet:
-  - text: "Bonjour! Je suis un assistant spécialisé dans les startups universitaires. Comment puis-je vous aider aujourd'hui?"
+  - text: |
+      **Bonjour !** 👋 Je suis votre assistant ultime pour **tout savoir sur les start-ups** (PFE ou non) !  
+      • Prêt à répondre à vos questions avec style et précision.  
+      • Que ce soit sur le financement, les étapes ou les équipes, je suis là !  
+      **Comment puis-je vous aider aujourd’hui ?**
 
   utter_goodbye:
-  - text: "Au revoir! N'hésitez pas à revenir si vous avez des questions sur les startups universitaires."
-  
+  - text: |
+      **Au revoir !** 🚀  
+      • Revenez quand vous voulez pour plus de conseils sur les start-ups.  
+      • **Bonne chance** dans votre aventure entrepreneuriale !
+
   utter_pfe_startup_info:
   - text: |
-      Un PFE Startup est un projet de fin d'études sous forme de startup. Voici les informations clés:
-      - Composition: 2 à 6 membres (même spécialité ou différentes)
-      - Inscription: Formulaire en début d'année pour les M2
-      - Incubateurs disponibles: ICOSNET, TECHINNOV, GTA
-      - Aspect Business: Formation au BMC (Business Model Canvas)
-      - Soutenance: Jury mixte (académiques et professionnels)
-      - Diplôme: Double diplôme (Licence/Master + Startup)
-
-  utter_arrete_1275_info:
-  - text: |
-      L'arrêté 1275 du 27/09/2022 établit le cadre des PFE Startup:
-      - Objectif: Créer des startups universitaires innovantes
-      - Public: Étudiants en Licence, Master, Doctorat, Ingénieurs
-      - Accompagnement: Par les incubateurs universitaires
-      - Double diplôme: Diplôme académique + Diplôme Startup
-      - Label "Laïl" pour les projets innovants
-      Modifié par l'arrêté 008 du 23/02/2025 pour élargir aux projets économiques.
+      Un **PFE Start-Up** est un projet de fin d’études transformé en start-up. Voici tout ce qu’il faut savoir :  
+      • **Composition** : Équipe de 2 à 6 membres (même spécialité ou mixte).  
+      • **Inscription** :  
+        1. Remplir un formulaire en début d’année (M2).  
+        2. S’inscrire à un incubateur (ex. ICOSNET, TECHINNOV, GTA).  
+      • **Formation** : Business Model Canvas (BMC) au S2 pour l’aspect business.  
+      • **Soutenance** : Jury mixte (académique + pro) :  
+        ✓ Note académique pour le relevé.  
+        ✓ Note globale pour le classement.  
+      • **Après** : Double diplôme (Master + Start-Up), suivi incubateur, et prix sponsors.  
+      • **Critères clés** : Idée innovante, équipe solide, validation marché.  
+      **Envie d’en savoir plus ?** Posez-moi une question spécifique !
 
   utter_incubateurs_info:
   - text: |
-      Les incubateurs universitaires accompagnent les startups étudiantes:
-      - ICOSNET, TECHINNOV, GTA (situés au Start-Up Hall)
-      - Missions: Aide au BMC, formations business, accompagnement technique
-      - Accès via la plateforme IBTIKAR: http://bitikar.dgrsdt.dz
-      - Période d'inscription: Début d'année universitaire
+      Les **incubateurs** boostent les start-ups universitaires. Tout ce que vous devez savoir :  
+      • **Options** :  
+        ✓ ICOSNET : Soutien tech et réseau.  
+        ✓ TECHINNOV : Focus innovation technologique.  
+        ✓ GTA (Start-Up Hall) : Accompagnement global.  
+      • **Missions** :  
+        ✓ Formation au BMC.  
+        ✓ Support technique et business.  
+        ✓ Mise en relation avec des mentors.  
+      • **Inscription** : Dès le début d’année, via votre faculté ou [IBTIKAR](http://ibtikar.dgrsdt.dz).  
+      • **Astuce** : Choisissez selon votre domaine (ex. tech → TECHINNOV).  
+      **Questions ?** Je suis là pour préciser !
 
   utter_double_diplome_info:
   - text: |
-      Le double diplôme comprend:
-      1. Votre diplôme académique traditionnel
-      2. Un diplôme "Startup" certifiant votre projet entrepreneurial
-      - Obtenu après soutenance devant jury mixte
-      - Projets exceptionnels peuvent obtenir le label "Laïl"
-      - Permet un accès privilégié aux financements et concours nationaux
+      Le **double diplôme** combine études et entrepreneuriat :  
+      • **Contenu** :  
+        1. Diplôme académique (Licence/Master).  
+        2. Diplôme "Start-Up" pour votre projet.  
+      • **Obtention** : Soutenance validée par un jury mixte.  
+      • **Valeur** :  
+        ✓ Reconnu par les entreprises.  
+        ✓ Accès à des financements et concours.  
+      • **Post-soutenance** : Suivi par un incubateur pour lancer votre start-up.  
+      **Bonus** : Ça impressionne les recruteurs et investisseurs !
+
+  utter_mecanisme_diplome_startup:
+  - text: |
+      Le mécanisme **"un diplôme, une Start-Up"** (Arrêté n°1275, 27/09/2022) transforme vos projets en réalité :  
+      • **Cibles** : Étudiants en Master, Ingéniorat, Doctorat.  
+      • **Options** :  
+        ✓ Start-Up : Créez une entreprise.  
+        ✓ Brevet : Protégez une invention.  
+      • **Avantages** :  
+        ✓ Accès à [IBTIKAR](http://ibtikar.dgrsdt.dz) pour incubateurs et prototypage.  
+        ✓ Label pour projets innovants.  
+      • **Démarche** : Soumettez votre idée via la plateforme IBTIKAR.  
+      **Impact** : Votre diplôme devient une porte vers l’entrepreneuriat !
+
+  utter_formation_bmc:
+  - text: |
+      La formation **Business Model Canvas (BMC)** est essentielle :  
+      • **Quoi ?** : Modèle pour structurer votre idée (clients, revenus, coûts).  
+      • **Contenu** : Rapport de 2 pages (marché + marketing).  
+      • **Quand ?** : Second semestre (S2).  
+      • **Par qui ?** : Votre incubateur (ex. ICOSNET).  
+      • **Pourquoi ?** :  
+        ✓ Clarifie votre stratégie.  
+        ✓ Attire les investisseurs.  
+      **Conseil** : Pratiquez le BMC tôt pour tester votre idée !
+
+  utter_startup_funding:
+  - text: |
+      **Combien d’argent pour une start-up ?** Ça dépend, mais voici un guide :  
+      • **Étapes et coûts** :  
+        1. **Idée/Validation** : ~0-500 € (temps + petites enquêtes).  
+        2. **Prototype** : 500-10 000 € (selon complexité).  
+        3. **Lancement** : 5 000-50 000 € (juridique, marketing, produit).  
+      • **Sources de financement** :  
+        ✓ Subventions publiques (ex. aides locales).  
+        ✓ Prêts bancaires ou micro-crédits.  
+        ✓ Investisseurs (anges, VC).  
+        ✓ Crowdfunding (ex. Kickstarter).  
+      • **Astuce** : Faites un budget précis avec un expert.  
+      **Chaque projet est unique** – demandez-moi des détails selon votre cas !
+
+  utter_startup_steps:
+  - text: |
+      **Où commencer une start-up ?** Suivez ces étapes clés :  
+      1. **Idée** : Trouvez une solution à un problème réel.  
+      2. **Validation** : Testez avec des clients potentiels (enquêtes, interviews).  
+      3. **Plan** : Rédigez un business plan (objectifs, budget).  
+      4. **Équipe** : Recrutez des talents complémentaires.  
+      5. **Financement** : Cherchez fonds (subventions, investisseurs).  
+      6. **Prototype** : Créez une version minimale (MVP).  
+      7. **Lancement** : Vendez et ajustez selon les retours.  
+      • **Bonus** :  
+        ✓ Entourez-vous de mentors.  
+        ✓ Soyez patient et flexible.  
+      **Prêt ?** Je peux détailler chaque étape !
+
+  utter_non_pfe_startup:
+  - text: |
+      **Pas un PFE Start-Up ?** Pas de souci, voici vos options :  
+      • **Où chercher de l’aide ?**  
+        ✓ **Incubateurs privés** : Recherchez dans votre région (ex. Startup Weekend).  
+        ✓ **Programmes publics** : Aides aux entrepreneurs non étudiants.  
+        ✓ **Réseaux** : Événements de networking (meetups, salons).  
+      • **Financement** :  
+        1. Subventions locales ou nationales.  
+        2. Investisseurs privés (business angels).  
+        3. Prêts ou crowdfunding.  
+      • **Coût** : Similaire aux startups classiques (5 000-50 000 € pour lancer).  
+      • **Conseil** :  
+        ✓ Validez votre idée avant tout.  
+        ✓ Formez-vous (ex. cours en ligne).  
+      **Motivation** : Hors PFE, c’est plus libre mais exige plus d’initiative !
+
+  utter_startup_team:
+  - text: |
+      **Construire une équipe de start-up** : Voici comment faire :  
+      • **Taille** : 2-5 personnes idéalement (selon projet).  
+      • **Rôles clés** :  
+        ✓ Visionnaire (CEO) : Définit la direction.  
+        ✓ Technique (CTO) : Développe le produit.  
+        ✓ Marketing/Ventes : Attire les clients.  
+      • **Où trouver ?** :  
+        1. Réseaux perso (amis, collègues).  
+        2. Événements startup (hackathons).  
+        3. Plateformes (LinkedIn, AngelList).  
+      • **Astuce** : Cherchez des profils complémentaires et motivés.  
+      **Harmonie** : Une bonne équipe = 50 % du succès !
+
+  utter_startup_legal:
+  - text: |
+      **Démarches légales pour une start-up** : Tout ce qu’il faut :  
+      • **Étapes** :  
+        1. **Statut** : Choisissez (SARL, SAS, etc.).  
+        2. **Enregistrement** : Au registre du commerce (local).  
+        3. **Documents** : Statuts, Kbis, compte bancaire pro.  
+      • **Coût** : 200-1 000 € (frais + notaire si besoin).  
+      • **Avocat ?** : Utile mais pas obligatoire (conseillé pour contrats).  
+      • **Bonus** : Vérifiez les aides fiscales pour startups !  
+      **Simplifiez** : Utilisez des services en ligne (ex. LegalStart).
 
   utter_out_of_scope:
-  - text: "Désolé, je suis spécialisé dans les startups universitaires et ne peux répondre qu'à des questions sur ce sujet. Avez-vous une question sur les PFE Startup ou les incubateurs?"
+  - text: |
+      **Oups !** Je suis dédié aux **start-ups** (PFE ou autres).  
+      • Pas de réponse sur ça, mais posez-moi une question sur :  
+        ✓ Financement  
+        ✓ Étapes  
+        ✓ Équipes  
+      **Allez, essayez !**
+
+  utter_bot_challenge:
+  - text: |
+      **Qui suis-je ?** Un assistant virtuel stylé pour les start-ups !  
+      • Ici pour vous guider avec des réponses claires et belles.  
+      • **Demandez-moi n’importe quoi** sur les start-ups !
