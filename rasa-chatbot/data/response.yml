@@ -82,6 +82,18 @@ responses:
         ✓ Attire les investisseurs.  
       **Conseil** : Pratiquez le BMC tôt pour tester votre idée !
 
+  utter_MVP_deff:
+  - text: |
+      Définition de MVP (Minimum Viable Product):
+      Un MVP (Minimum Viable Product) est la version la plus simple et fonctionnelle d’un produit, qui permet de tester une idée rapidement avec de vrais utilisateurs, en utilisant le minimum de temps, d’effort et de budget.
+      Objectif du MVP:
+      • Valider que ton idée intéresse vraiment des gens
+      • Obtenir des retours utilisateurs concrets
+      • Éviter de perdre du temps à construire un produit inutile
+      • Itérer rapidement en fonction des retours
+      Exemple:
+      Au lieu de créer une application complète de livraison de repas, tu peux commencer avec un simple groupe WhatsApp + un Google Form pour prendre les commandes et voir si les gens sont intéressés.
+
   utter_startup_funding:
   - text: |
       **Combien d’argent pour une start-up ?** Ça dépend, mais voici un guide :  
@@ -155,6 +167,12 @@ responses:
       • **Avocat ?** : Utile mais pas obligatoire (conseillé pour contrats).  
       • **Bonus** : Vérifiez les aides fiscales pour startups !  
       **Simplifiez** : Utilisez des services en ligne (ex. LegalStart).
+
+  utter_c_quoi_une_startup:
+  - text: |
+      Une startup, c’est une jeune entreprise innovante qui cherche à résoudre un problème d’une nouvelle manière.
+      Elle fonctionne souvent avec peu de moyens au début, mais avec une grande ambition de croissance rapide.
+      Contrairement à une entreprise classique, une startup teste beaucoup, s’adapte vite, et cherche souvent à innover avec la technologie.
 
   utter_out_of_scope:
   - text: |

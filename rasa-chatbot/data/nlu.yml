@@ -27,6 +27,23 @@ nlu:
     - À la prochaine
     - Salut, à plus tard
 
+- intent: c_quoi_une_startup
+  examples: |
+    - C’est quoi une startup ?
+    - Tu peux m’expliquer ce qu’est une startup ?
+    - Qu’est-ce qu’on appelle une startup ?
+    - Ça veut dire quoi "startup" ?
+    - Startup, ça signifie quoi exactement ?
+    - J’ai entendu parler de startup, mais je comprends pas trop, tu peux m’expliquer ?
+    - Quelle est la définition d’une startup ?
+    - Une startup, c’est comme une entreprise normale ?
+    - C’est quoi la différence entre une entreprise et une startup ?
+    - Qu’est-ce qu’une startup exactement ?
+    - Une startup, ça sert à quoi ?
+    - Comment tu définirais une startup ?
+    - Est-ce qu’une startup, c’est juste une petite entreprise ?
+    - Tu peux me dire ce que c’est une startup ?
+
 - intent: ask_pfe_startup
   examples: |
     - Qu’est-ce qu’un PFE Start-Up ?
@@ -134,6 +151,17 @@ nlu:
     - Quels documents juridiques pour une startup ?
     - Combien coûtent les frais juridiques d’une startup ?
     - Ai-je besoin d’un avocat pour ma startup ?
+
+- intent: ask_MVP
+  examples: |
+    - C’est quoi un MVP ?
+    - Comment créer un prototype ?
+    - Est-ce que je dois faire une app dès le début ?
+    - Comment tester mon idée avant de la lancer ?
+    - Comment savoir si mon idée de startup est bonne ?
+    - C’est quoi le product-market fit ?
+    - Quels outils utiliser pour créer un MVP ?
+    - Est-ce que le no-code suffit pour lancer un projet ?
 
 - intent: out_of_scope
   examples: |

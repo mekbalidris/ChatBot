@@ -11,6 +11,8 @@ intents:
   - ask_incubateurs
   - ask_double_diplome
   - out_of_scope
+  - c_quoi_une_startup
+  - ask_MVP
 
 
 responses:

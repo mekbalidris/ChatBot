@@ -70,3 +70,13 @@ rules:
   steps:
   - intent: ask_startup_legal
   - action: utter_startup_legal
+
+- rule: Reponse a c_quoi_une_startup
+  steps:
+  - intent: c_quoi_une_startup
+  - action: utter_c_quoi_une_startup
+
+- rule: Réponse à ask_MVP
+  steps:
+  - intent: ask_MVP
+  - action: utter_MVP_deff
