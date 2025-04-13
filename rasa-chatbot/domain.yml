@@ -76,6 +76,7 @@ responses:
   utter_out_of_scope:
   - text: "Désolé, je suis spécialisé dans les startups universitaires et ne peux répondre qu'à des questions sur ce sujet. Avez-vous une question sur les PFE Startup ou les incubateurs?"
 
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
