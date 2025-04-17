@@ -110,3 +110,48 @@ rules:
   steps:
   - intent: ask_Références_légales
   - action: utter_Références_légales
+  
+- rule: Réponse à la question sur la décision 008
+  steps:
+    - intent: objet_decision_008
+    - action: utter_objet_decision_008
+
+- rule: Réponse à la question sur l'objectif du mémoire
+  steps:
+    - intent: objectif_memoire
+    - action: utter_objectif_memoire
+
+- rule: Réponse à la question sur les formats du mémoire
+  steps:
+    - intent: formats_memoire
+    - action: utter_formats_memoire
+
+- rule: Réponse à la question sur les formations
+  steps:
+    - intent: formations_etudiant
+    - action: utter_formations_etudiant
+
+- rule: Réponse à la question sur les bénéficiaires de l'accompagnement
+  steps:
+    - intent: beneficiaires_accompagnement
+    - action: utter_beneficiaires_accompagnement
+
+- rule: Réponse à la question sur la Cellule d'Orientation
+  steps:
+    - intent: missions_cellule_orientation
+    - action: utter_missions_cellule_orientation
+
+- rule: Réponse à la question sur les diplômes obtenus
+  steps:
+    - intent: diplomes_obtenus
+    - action: utter_diplomes_obtenus
+
+- rule: Réponse à la question sur le remplacement du terme start-up
+  steps:
+    - intent: terme_startup
+    - action: utter_terme_startup
+
+- rule: Réponse à la question sur la publication de la décision
+  steps:
+    - intent: publication_decision
+    - action: utter_publication_decision

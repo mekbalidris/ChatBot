@@ -151,6 +151,77 @@ nlu:
     - Quels documents juridiques pour une startup ?
     - Combien coûtent les frais juridiques d’une startup ?
     - Ai-je besoin d’un avocat pour ma startup ?
+- intent: ask_objet_decision_008
+  examples: |
+    - Quel est l'objet de la décision 008 ?
+    - Quelle est la décision du 23 février 2025 ?
+    - De quoi parle la décision numéro 008 ?
+    - Quelle est la portée de la décision 008 ?
+    - À quoi sert la décision du 23 février 2025 ?
+
+- intent: ask_objectif_memoire
+  examples: |
+    - Quel est l'objectif du mémoire de fin d'études ?
+    - Pourquoi faire un mémoire de fin d'études ?
+    - Quel est le but du mémoire ?
+    - Quel est l'objectif de l'article 2 ?
+    - Que dit l'article 2 modifié ?
+
+- intent: ask_formats_memoire
+  examples: |
+    - Quels sont les formats du mémoire ?
+    - Quels sont les deux formats possibles pour le mémoire ?
+    - Format mémoire de fin d'études ?
+    - Quels sont les types de mémoire possibles ?
+    - Que propose l'article 3 modifié ?
+
+- intent: ask_formations_etudiant
+  examples: |
+    - Quelles formations doit suivre l'étudiant ?
+    - Quelles sont les formations obligatoires pour les étudiants ?
+    - Que doit apprendre l'étudiant ?
+    - Quels sont les ateliers à suivre ?
+    - Que dit l'article 5 modifié ?
+
+- intent: ask_beneficiaires_accompagnement
+  examples: |
+    - Qui peut être accompagné par l'université ?
+    - Qui peut bénéficier des structures d'accompagnement ?
+    - Quels étudiants peuvent être aidés ?
+    - L'accompagnement est-il réservé à certains étudiants ?
+    - Que dit l'article 6 modifié à ce sujet ?
+
+- intent: ask_missions_cellule_orientation
+  examples: |
+    - Quelles sont les missions de la Cellule d'Orientation ?
+    - Que fait la Cellule d'Orientation ?
+    - Rôle de la cellule d’orientation ?
+    - Qui compose la cellule d’orientation ?
+    - Quels sont les objectifs de la cellule d’orientation ?
+
+- intent: ask_diplomes_obtenus
+  examples: |
+    - Quels diplômes obtient l'étudiant ?
+    - Que reçoit l’étudiant après la soutenance ?
+    - Quels certificats sont délivrés ?
+    - Diplôme après mémoire de fin d’études ?
+    - Que dit l’article 7 modifié ?
+
+- intent: ask_terme_startup
+  examples: |
+    - Quel mot remplace "start-up" ?
+    - Quel terme est utilisé à la place de start-up ?
+    - Pourquoi remplacer le mot start-up ?
+    - Quelle est la nouvelle appellation ?
+    - Que dit l'article 8 modifié ?
+
+- intent: ask_publication_decision
+  examples: |
+    - Où est publiée la décision ?
+    - Dans quel document officiel apparaît la décision ?
+    - Publication de la décision 008 ?
+    - Où peut-on consulter la décision ?
+    - Dans quel bulletin est-elle publiée ?
 
 - intent: ask_MVP
   examples: |
