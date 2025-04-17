@@ -163,6 +163,84 @@ nlu:
     - Quels outils utiliser pour créer un MVP ?
     - Est-ce que le no-code suffit pour lancer un projet ?
 
+- intent: ask_cadre_institutionnel
+  examples: |
+    - Quel est le rôle précis du Ministère dans ce mécanisme ?
+    - Quels autres ministères ou organismes publics collaborent à ce programme ?
+    - Comment les universités sont-elles sélectionnées pour participer ?
+    - Existe-t-il un comité de pilotage national pour superviser ce dispositif ?
+    - Quels sont les indicateurs de performance pour évaluer ce programme ?
+    - Comment les centres de recherche sont-ils associés concrètement ?
+    - Y a-t-il des partenariats avec le secteur privé dans ce cadre ?
+    - Comment ce programme s'articule-t-il avec les autres initiatives gouvernementales pour l'innovation ?
+    - Quel est le budget alloué et comment est-il réparti ?
+    - Existe-t-il des rapports d'évaluation annuels sur ce dispositif ?
+
+- intent: ask_Mecanisme_DSB
+  examples: |
+    - Quels types de projets sont prioritaires (tech, social, environnemental...) ?
+    - Les étudiants en licence peuvent-ils postuler exceptionnellement ?
+    - Comment est garantie l'originalité des projets soumis ?
+    - Existe-t-il un quota de projets labellisés par an ?
+    - Les projets en groupe sont-ils acceptés ? Si oui, avec quelle taille maximale ?
+    - Peut-on cumuler ce label avec d'autres aides à l'innovation ?
+    - Y a-t-il des restrictions géographiques (régions prioritaires) ?
+    - Comment sont protégées les idées déposées (propriété intellectuelle) ?
+    - Les projets abandonnés en cours de route sont-ils pénalisés ?
+    - Des mentors externes sont-ils assignés aux projets sélectionnés ?
+
+- intent: ask_Accès_aux_ressources
+  examples: |
+    - La plateforme IBTIKAR propose-t-elle des webinaires de formation ?
+    - Comment sont sélectionnés les incubateurs partenaires ?
+    - Les étudiants ruraux ont-ils un accès équitable aux ressources ?
+    - Peut-on accéder aux plateformes technologiques sans passer par IBTIKAR ?
+    - Existe-t-il un catalogue des équipements disponibles pour le prototypage ?
+    - Des bourses spécifiques couvrent-elles les coûts de prototypage ?
+    - Les alumni peuvent-ils continuer à utiliser ces ressources après obtention du diplôme ?
+    - Y a-t-il un support technique dédié pour l'utilisation des plateformes ?
+    - Des licences logicielles professionnelles sont-elles fournies gratuitement ?
+    - Comment sont gérés les conflits d'accès aux ressources en cas de forte demande ?
+
+- intent: ask_Rôle_des_acteurs
+  examples: |
+    - Les enseignants référents reçoivent-ils une compensation pour l'encadrement ?
+    - Comment sont évaluées les performances des incubateurs dans ce programme ?
+    - Les entreprises locales sont-elles impliquées dans l'évaluation des projets ?
+    - Existe-t-il un réseau national de mentors labellisés ?
+    - Les directeurs d'établissement ont-ils des objectifs chiffrés à atteindre ?
+    - Comment les étudiants sont-ils informés de l'existence de ce dispositif ?
+    - Des ateliers de sensibilisation sont-ils organisés dans les universités ?
+    - Les responsables d'incubateurs suivent-ils une formation spécifique ?
+    - Comment les feedbacks des étudiants sont-ils collectés et pris en compte ?
+    - Y a-t-il des bonnes pratiques partagées entre établissements ?
+
+- intent: ask_Processus_de_labellisation
+  examples: |
+    - Qui compose le jury d'évaluation des projets ?
+    - Combien d'étapes comporte la procédure de labellisation ?
+    - Existe-t-il des critères d'élimination en phase préliminaire ?
+    - Le label est-il attribué définitivement ou nécessite-t-il un renouvellement ?
+    - Quel est le taux de réussite moyen des candidatures ?
+    - Les projets rejetés peuvent-ils être représentés après modifications ?
+    - Y a-t-il une période annuelle fixe pour déposer les candidatures ?
+    - Le label donne-t-il accès à des événements de networking nationaux/internationaux ?
+    - Une cérémonie officielle est-elle organisée pour les lauréats ?
+    - Comment les lauréats sont-ils médiatisés ?
+
+- intent: ask_Références_légales
+  examples: |
+    - L'Arrêté n°1275 est-il disponible en ligne ? Si oui, où ?
+    - Ce mécanisme est-il conforme aux lois sur la propriété intellectuelle algérienne ?
+    - Des amendements à l'Arrêté sont-ils prévus ?
+    - Comment les litiges (ex. : plagiat) sont-ils gérés légalement ?
+    - Ce dispositif s'appuie-t-il sur des conventions internationales ?
+    - Les étudiants étrangers peuvent-ils y participer ?
+    - Quelles sanctions en cas de fausses déclarations dans les dossiers ?
+    - Existe-t-il un recours en cas de rejet injustifié d'un projet ?
+    - La fiscalité des startups labellisées est-elle avantageuse ?
+    - Des modèles de contrats type sont-ils fournis pour la création de startups ?
+
 - intent: out_of_scope
   examples: |
     - Quelle heure est-il ?
