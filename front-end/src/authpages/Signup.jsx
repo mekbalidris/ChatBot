@@ -81,7 +81,7 @@ function Signup() {
     <>
       {/* Formulaire */}
       <div
-        className="mx-auto mt-4 flex flex-col items-center justify-center bg-[rgba(126,97,171,0.5)] backdrop-blur-lg border-4 border-[#cab2fb] rounded-2xl"
+        className="mx-auto mt-7 flex flex-col items-center justify-center bg-[rgba(126,97,171,0.5)] backdrop-blur-lg border-4 border-[#cab2fb] rounded-2xl"
         style={{ height: "70vh", width: "80%", maxWidth: "520px" }}
       >
         {/* Champ Username */}

@@ -37,7 +37,7 @@ function Login() {
       {/* Conteneur principal */}
       <form
         onSubmit={handleLogin}
-        className="box flex flex-col items-center bg-[rgba(126,97,171,0.5)] backdrop-blur-[20px] border-[3px] border-[#cab2fb] rounded-[20px] text-sm z-10 mx-auto mt-4"
+        className="box flex flex-col items-center bg-[rgba(126,97,171,0.5)] backdrop-blur-[20px] border-[3px] border-[#cab2fb] rounded-[20px] text-sm z-10 mx-auto mt-12"
         style={{
           height: "65vh",
           width: "80%",
