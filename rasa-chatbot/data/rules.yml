@@ -80,3 +80,33 @@ rules:
   steps:
   - intent: ask_MVP
   - action: utter_MVP_deff
+
+- rule: Réponse à ask_cadre_institutionnel
+  steps:
+  - intent: ask_cadre_institutionnel
+  - action: utter_Cadre_institutionnel
+
+- rule: Réponse à ask_Mecanisme_DSB
+  steps:
+  - intent: ask_Mecanisme_DSB
+  - action: utter_Mecanisme_DSB
+
+- rule: Réponse à ask_Accès_aux_ressources
+  steps:
+  - intent: ask_Accès_aux_ressources
+  - action: utter_Accès_aux_ressources
+
+- rule: Réponse à ask_Rôle_des_acteurs
+  steps:
+  - intent: ask_Rôle_des_acteurs
+  - action: utter_Rôle_des_acteurs
+
+- rule: Réponse à ask_Processus_de_labellisation
+  steps:
+  - intent: ask_Processus_de_labellisation
+  - action: utter_Processus_de_labellisation
+
+- rule: Réponse à ask_Références_légales
+  steps:
+  - intent: ask_Références_légales
+  - action: utter_Références_légales

@@ -13,6 +13,12 @@ intents:
   - out_of_scope
   - c_quoi_une_startup
   - ask_MVP
+  - ask_cadre_institutionnel
+  - ask_Mecanisme_DSB
+  - ask_Accès_aux_ressources
+  - ask_Rôle_des_acteurs
+  - ask_Processus_de_labellisation
+  - ask_Références_légales
 
 
 responses:
