@@ -151,7 +151,7 @@ nlu:
     - Quels documents juridiques pour une startup ?
     - Combien coûtent les frais juridiques d’une startup ?
     - Ai-je besoin d’un avocat pour ma startup ?
-  - intent: ask_objet_decision_008
+- intent: ask_objet_decision_008
   examples: |
     - Quel est l'objet de la décision 008 ?
     - Quelle est la décision du 23 février 2025 ?
