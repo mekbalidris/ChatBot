@@ -173,6 +173,32 @@ responses:
       Une startup, c’est une jeune entreprise innovante qui cherche à résoudre un problème d’une nouvelle manière.
       Elle fonctionne souvent avec peu de moyens au début, mais avec une grande ambition de croissance rapide.
       Contrairement à une entreprise classique, une startup teste beaucoup, s’adapte vite, et cherche souvent à innover avec la technologie.
+    utter_objet_decision_008:
+    - text: "La décision n° 008 du 23 février 2025 modifie et complète la décision n° 1275 du 27 septembre 2022, qui concerne les modalités de préparation du mémoire de fin d'études pour l'obtention d'un diplôme universitaire - projet d'entreprise économique."
+
+  utter_objectif_memoire:
+    - text: "L'objectif est de former une génération d'étudiants entrepreneurs capables de se lancer dans l'entrepreneuriat en créant des start-ups, des micro-entreprises ou toute autre forme d'entreprise économique."
+
+  utter_formats_memoire:
+    - text: "Deux formats sont possibles :\n1. Un mémoire avec un chapitre théorique et un autre appliqué (modèle commercial ou fiche technique).\n2. Un mémoire totalement appliqué, sous forme de modèle commercial ou de fiche technique et économique."
+
+  utter_formations_etudiant:
+    - text: "L'étudiant doit suivre des formations et ateliers pratiques en conception de modèles d'affaires, marketing, gestion, comptabilité, finance, et d'autres formations spécialisées selon la nature du projet."
+
+  utter_beneficiaires_accompagnement:
+    - text: "Tout étudiant porteur d'une idée d'entreprise économique, y compris les étudiants étrangers en dernière année inscrits dans un établissement algérien, peut être accompagné par les structures universitaires comme les incubateurs et centres de développement."
+
+  utter_missions_cellule_orientation:
+    - text: "La Cellule d'Orientation a pour mission d’orienter et d’accompagner les étudiants porteurs de projets vers la structure appropriée. Elle est composée de membres de l’université, d’incubateurs, de centres de soutien technologique, et de partenaires économiques."
+
+  utter_diplomes_obtenus:
+    - text: "L'étudiant obtient un diplôme de fin d'études universitaires ainsi qu'un certificat de 'projet d'entreprise économique' attestant la nature entrepreneuriale du mémoire."
+
+  utter_terme_startup:
+    - text: "Le terme 'start-up' est remplacé par 'projet d'entreprise économique' dans les articles 4, 10 et 75 de la décision n° 1275 du 27 septembre 2022."
+
+  utter_publication_decision:
+    - text: "La décision est publiée dans le Bulletin officiel de l'enseignement supérieur et de la recherche scientifique."
 
   utter_out_of_scope:
   - text: |
