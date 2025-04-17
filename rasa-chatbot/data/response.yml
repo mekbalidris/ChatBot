@@ -168,11 +168,97 @@ responses:
       • **Bonus** : Vérifiez les aides fiscales pour startups !  
       **Simplifiez** : Utilisez des services en ligne (ex. LegalStart).
 
+  utter_Mecanisme_DSB:
+  - text: |
+      Le programme cible principalement :
+      + Étudiants en fin de cycle (Master 2, écoles d'ingénieurs, doctorants)
+      + Jeunes diplômés (jusqu'à 2 ans après l'obtention du diplôme)
+      Les projets éligibles doivent :
+      + Présenter un caractère innovant
+      + Avoir un potentiel économique ou social
+      + Être réalisable dans un délai de 12 à 18 mois
+      L'évaluation se fait en 3 étapes :
+      + Présélection sur dossier (50% des projets retenus)
+      + Pitch devant un jury pluridisciplinaire (30% retenus)
+      + Phase de prototypage avec suivi (20% labellisés)
+
+  utter_Accès_aux_ressources:
+  - text: |
+      Les ressources disponibles incluent :
+      + Accès aux laboratoires universitaires
+      + Utilisation des FabLabs et ateliers de prototypage
+      + Mentorat par des experts sectoriels
+      La plateforme IBTIKAR propose :
+      + Un espace de dépôt de projets sécurisé
+      + Un annuaire des experts disponibles
+      + Un calendrier des événements de networking
+      L'accès de base est gratuit, mais certains services premium (formations certifiantes, utilisation intensive d'équipements) peuvent faire l'objet de tarifs préférentiels plutôt que d'être totalement gratuits.
+
   utter_c_quoi_une_startup:
   - text: |
       Une startup, c’est une jeune entreprise innovante qui cherche à résoudre un problème d’une nouvelle manière.
       Elle fonctionne souvent avec peu de moyens au début, mais avec une grande ambition de croissance rapide.
       Contrairement à une entreprise classique, une startup teste beaucoup, s’adapte vite, et cherche souvent à innover avec la technologie.
+
+  utter_Rôle_des_acteurs:
+  - text: |
+      Les enseignants ont pour missions :
+      + Identifier les projets prometteurs
+      + Orienter vers les bons interlocuteurs
+      + Valider la faisabilité technique
+      Les incubateurs offrent :
+      + Un espace de travail partagé
+      + Un accès à leur réseau professionnel
+      + Un accompagnement administratif et juridique
+      Les entreprises locales interviennent comme :
+      + Membres des jurys d'évaluation
+      + Sources de cas pratiques
+      + Potentiels premiers clients
+
+  utter_Processus_de_labellisation:
+  - text: |
+      Le label s'obtient après :
+      + Dépôt du dossier complet
+      + Validation par le comité scientifique
+      + Présentation devant un jury final
+      Les avantages incluent :
+      + Visibilité institutionnelle
+      + Accès à des financements dédiés
+      + Possibilité d'intégrer des pépinières d'entreprises
+      La procédure complète dure généralement :
+      + 2 mois pour la présélection
+      + 1 mois pour l'évaluation approfondie
+      + 15 jours pour la décision finale
+
+  utter_Références_légales:
+  - text: |
+      Le programme s'appuie principalement sur :
+      + La loi 18-07 sur les startups
+      + Le décret exécutif 21-247
+      + L'arrêté ministériel 1275
+      La propriété intellectuelle est protégée par :
+      + Des accords de confidentialité
+      + Un dépôt légal des innovations
+      + Un accompagnement par l'INAPI
+      Des conventions existent avec :
+      + L'OMPI pour le volet brevets
+      + La Francophonie pour l'échange d'expertise
+      + Des programmes européens type Horizon
+
+  utter_Cadre_institutionnel:
+  - text: |
+      Le programme est piloté par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique, en coordination avec :
+      + Les directions des universités
+      + Les centres de recherche publics
+      + Le réseau des incubateurs technologiques
+      Les universités sont sélectionnées selon trois critères principaux :
+      + Existence d'un pôle innovation/entrepreneuriat
+      + Disponibilité d'infrastructures techniques adaptées
+      + Expérience préalable en accompagnement de projets étudiants
+      Un budget annuel est effectivement alloué, avec :
+      + 60% dédié aux équipements des incubateurs
+      + 25% pour les bourses d'innovation
+      + 15% pour la formation des encadrants
 
   utter_out_of_scope:
   - text: |
