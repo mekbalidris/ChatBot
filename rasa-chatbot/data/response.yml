@@ -2,32 +2,32 @@ version: "3.1"
 
 responses:
   utter_greet:
-  - text: |
-      **Bonjour !** 👋 Je suis votre assistant ultime pour **tout savoir sur les start-ups** (PFE ou non) !  
-      • Prêt à répondre à vos questions avec style et précision.  
-      • Que ce soit sur le financement, les étapes ou les équipes, je suis là !  
-      **Comment puis-je vous aider aujourd’hui ?**
+    - text: |
+        **Bonjour !** 👋 Je suis votre assistant ultime pour **tout savoir sur les start-ups** (PFE ou non) !  
+        • Prêt à répondre à vos questions avec style et précision.  
+        • Que ce soit sur le financement, les étapes ou les équipes, je suis là !  
+        **Comment puis-je vous aider aujourd'hui ?**
 
   utter_goodbye:
-  - text: |
-      **Au revoir !** 🚀  
-      • Revenez quand vous voulez pour plus de conseils sur les start-ups.  
-      • **Bonne chance** dans votre aventure entrepreneuriale !
+    - text: |
+        **Au revoir !** 🚀  
+        • Revenez quand vous voulez pour plus de conseils sur les start-ups.  
+        • **Bonne chance** dans votre aventure entrepreneuriale !
 
   utter_pfe_startup_info:
-  - text: |
-      Un **PFE Start-Up** est un projet de fin d’études transformé en start-up. Voici tout ce qu’il faut savoir :  
-      • **Composition** : Équipe de 2 à 6 membres (même spécialité ou mixte).  
-      • **Inscription** :  
-        1. Remplir un formulaire en début d’année (M2).  
-        2. S’inscrire à un incubateur (ex. ICOSNET, TECHINNOV, GTA).  
-      • **Formation** : Business Model Canvas (BMC) au S2 pour l’aspect business.  
-      • **Soutenance** : Jury mixte (académique + pro) :  
-        ✓ Note académique pour le relevé.  
-        ✓ Note globale pour le classement.  
-      • **Après** : Double diplôme (Master + Start-Up), suivi incubateur, et prix sponsors.  
-      • **Critères clés** : Idée innovante, équipe solide, validation marché.  
-      **Envie d’en savoir plus ?** Posez-moi une question spécifique !
+    - text: |
+        Un **PFE Start-Up** est un projet de fin d'études transformé en start-up. Voici tout ce qu'il faut savoir :  
+        • **Composition** : Équipe de 2 à 6 membres (même spécialité ou mixte).  
+        • **Inscription** :  
+          1. Remplir un formulaire en début d'année (M2).  
+          2. S'inscrire à un incubateur (ex. ICOSNET, TECHINNOV, GTA).  
+        • **Formation** : Business Model Canvas (BMC) au S2 pour l'aspect business.  
+        • **Soutenance** : Jury mixte (académique + pro) :  
+          ✓ Note académique pour le relevé.  
+          ✓ Note globale pour le classement.  
+        • **Après** : Double diplôme (Master + Start-Up), suivi incubateur, et prix sponsors.  
+        • **Critères clés** : Idée innovante, équipe solide, validation marché.  
+        **Envie d'en savoir plus ?** Posez-moi une question spécifique !
 
   utter_incubateurs_info:
   - text: |
@@ -195,11 +195,12 @@ responses:
       L'accès de base est gratuit, mais certains services premium (formations certifiantes, utilisation intensive d'équipements) peuvent faire l'objet de tarifs préférentiels plutôt que d'être totalement gratuits.
 
   utter_c_quoi_une_startup:
-  - text: |
-      Une startup, c’est une jeune entreprise innovante qui cherche à résoudre un problème d’une nouvelle manière.
-      Elle fonctionne souvent avec peu de moyens au début, mais avec une grande ambition de croissance rapide.
-      Contrairement à une entreprise classique, une startup teste beaucoup, s’adapte vite, et cherche souvent à innover avec la technologie.
-    utter_objet_decision_008:
+    - text: |
+        Une startup, c'est une jeune entreprise innovante qui cherche à résoudre un problème d'une nouvelle manière.
+        Elle fonctionne souvent avec peu de moyens au début, mais avec une grande ambition de croissance rapide.
+        Contrairement à une entreprise classique, une startup teste beaucoup, s'adapte vite, et cherche souvent à innover avec la technologie.
+
+  utter_objet_decision_008:
     - text: "La décision n° 008 du 23 février 2025 modifie et complète la décision n° 1275 du 27 septembre 2022, qui concerne les modalités de préparation du mémoire de fin d'études pour l'obtention d'un diplôme universitaire - projet d'entreprise économique."
 
   utter_objectif_memoire:
@@ -287,16 +288,16 @@ responses:
       + 15% pour la formation des encadrants
 
   utter_out_of_scope:
-  - text: |
-      **Oups !** Je suis dédié aux **start-ups** (PFE ou autres).  
-      • Pas de réponse sur ça, mais posez-moi une question sur :  
-        ✓ Financement  
-        ✓ Étapes  
-        ✓ Équipes  
-      **Allez, essayez !**
+    - text: |
+        **Oups !** Je suis dédié aux **start-ups** (PFE ou autres).  
+        • Pas de réponse sur ça, mais posez-moi une question sur :  
+          ✓ Financement  
+          ✓ Étapes  
+          ✓ Équipes  
+        **Allez, essayez !**
 
   utter_bot_challenge:
-  - text: |
-      **Qui suis-je ?** Un assistant virtuel stylé pour les start-ups !  
-      • Ici pour vous guider avec des réponses claires et belles.  
-      • **Demandez-moi n’importe quoi** sur les start-ups !
+    - text: |
+        **Qui suis-je ?** Un assistant virtuel stylé pour les start-ups !  
+        • Ici pour vous guider avec des réponses claires et belles.  
+        • **Demandez-moi n'importe quoi** sur les start-ups !
