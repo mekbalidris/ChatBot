@@ -3,139 +3,346 @@ version: "3.1"
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
     - Bonjour
     - Salut
-    - Bonsoir
     - Coucou
-    - Hello
+    - Bonsoir
+    - Hé
+    - Yo
+    - Allô
+    - Bonne matinée
+    - Bonne après-midi
+    - Comment vas-tu?
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
     - Au revoir
     - À plus
     - À bientôt
-    - Je m'en vais
     - Ciao
+    - Bye
+    - Bonne journée
+    - Bonne soirée
+    - Je m’en vais
+    - À la prochaine
+    - Salut, à plus tard
+
+- intent: c_quoi_une_startup
+  examples: |
+    - C’est quoi une startup ?
+    - Tu peux m’expliquer ce qu’est une startup ?
+    - Qu’est-ce qu’on appelle une startup ?
+    - Ça veut dire quoi "startup" ?
+    - Startup, ça signifie quoi exactement ?
+    - J’ai entendu parler de startup, mais je comprends pas trop, tu peux m’expliquer ?
+    - Quelle est la définition d’une startup ?
+    - Une startup, c’est comme une entreprise normale ?
+    - C’est quoi la différence entre une entreprise et une startup ?
+    - Qu’est-ce qu’une startup exactement ?
+    - Une startup, ça sert à quoi ?
+    - Comment tu définirais une startup ?
+    - Est-ce qu’une startup, c’est juste une petite entreprise ?
+    - Tu peux me dire ce que c’est une startup ?
 
 - intent: ask_pfe_startup
   examples: |
-    - Comment faire un PFE startup?
-    - Qu'est-ce qu'un PFE startup?
-    - Comment s'inscrire pour un PFE startup?
-    - Combien de membres pour un PFE startup?
-    - Quels sont les incubateurs disponibles?
-    - Comment se passe la soutenance d'un PFE startup?
-
-- intent: ask_arretes
-  examples: |
-    - Quel est le contenu de l'arrêté 1275?
-    - Quels sont les modifications de l'arrêté 008?
-    - Quelles sont les nouvelles dispositions pour les mémoires de fin d'études?
-    - Comment obtenir le double diplôme?
-    - Qu'est-ce que le mécanisme "un diplôme, une startup"?
+    - Qu’est-ce qu’un PFE Start-Up ?
+    - Comment faire un PFE Start-Up ?
+    - Comment s’inscrire à un PFE Start-Up ?
+    - Combien de membres faut-il pour un PFE Start-Up ?
+    - Quels sont les incubateurs pour un PFE Start-Up ?
+    - Comment se passe la soutenance d’un PFE Start-Up ?
+    - Quelles sont les étapes pour un PFE Start-Up ?
+    - Qui peut participer à un PFE Start-Up ?
+    - Quels sont les avantages d’un PFE Start-Up ?
+    - Que faut-il pour réussir un PFE Start-Up ?
+    - Quels sont les critères pour un PFE Start-Up ?
+    - Comment valider mon idée de PFE Start-Up ?
+    - Quels sont les délais pour un PFE Start-Up ?
+    - Quels documents faut-il pour un PFE Start-Up ?
+    - Comment trouver des coéquipiers pour un PFE Start-Up ?
 
 - intent: ask_incubateurs
   examples: |
-    - Quels sont les incubateurs disponibles?
-    - Comment s'inscrire à un incubateur?
-    - Quelles sont les missions des incubateurs?
-    - Comment ICOSNET peut m'aider?
-    - Quels sont les avantages des incubateurs?
+    - Quels incubateurs existent pour les start-ups universitaires ?
+    - Comment s’inscrire à un incubateur ?
+    - Quelles sont les missions des incubateurs ?
+    - Comment ICOSNET aide-t-il les étudiants ?
+    - Quels avantages offrent les incubateurs ?
+    - Où trouver un incubateur pour mon projet ?
+    - Que font TECHINNOV et GTA ?
+    - Comment choisir un incubateur ?
+    - Quels incubateurs pour les non-étudiants ?
 
 - intent: ask_double_diplome
   examples: |
-    - Comment obtenir le double diplôme?
-    - Qu'est-ce que le diplôme startup?
-    - Quelle est la valeur du diplôme startup?
-    - Comment avoir le label "Laïl"?
+    - Comment obtenir un double diplôme avec une start-up ?
+    - Qu’est-ce que le diplôme Start-Up ?
+    - Quelle est la valeur du double diplôme ?
+    - Quels sont les critères pour le double diplôme ?
+    - Que se passe-t-il après la soutenance pour le diplôme ?
+    - Le double diplôme est-il reconnu ?
+    - Comment ça marche pour le double diplôme ?
+
+- intent: ask_mecanisme_diplome_startup
+  examples: |
+    - Qu’est-ce que le mécanisme "un diplôme, une Start-Up" ?
+    - Comment fonctionne "un diplôme, un brevet" ?
+    - Quels sont les avantages du mécanisme "un diplôme, une Start-Up" ?
+    - Qui peut bénéficier de ce mécanisme ?
+    - Comment accéder aux services des incubateurs via IBTIKAR ?
+    - Que propose la plateforme IBTIKAR ?
+    - Comment obtenir un label pour mon projet innovant ?
+
+- intent: ask_formation_bmc
+  examples: |
+    - Qu’est-ce que la formation au BMC ?
+    - En quoi consiste le Business Model Canvas ?
+    - Quand a lieu la formation au BMC ?
+    - Qui dispense la formation au BMC ?
+    - Comment le BMC aide-t-il une start-up ?
+    - Où suivre une formation BMC ?
+
+- intent: ask_startup_funding
+  examples: |
+    - Combien d’argent faut-il pour lancer une startup ?
+    - Quel est le budget nécessaire pour démarrer une startup ?
+    - De combien ai-je besoin pour créer ma startup ?
+    - Quel est le coût pour lancer une startup ?
+    - Combien ça coûte de démarrer une startup ?
+    - Quel budget prévoir pour une startup ?
+    - Comment financer une startup ?
+    - Où trouver de l’argent pour une startup ?
+
+- intent: ask_startup_steps
+  examples: |
+    - Par où commencer pour lancer une startup ?
+    - Quelles sont les étapes pour créer une startup ?
+    - Comment démarrer une startup ?
+    - Quels sont les premiers pas pour une startup ?
+    - Comment lancer ma propre startup ?
+    - Que faire pour créer une startup réussie ?
+    - Où commencer une startup ?
+    - Comment organiser le lancement d’une startup ?
+
+- intent: ask_non_pfe_startup
+  examples: |
+    - Que faire si ma startup n’est pas un PFE startup ?
+    - Comment lancer une startup hors du cadre PFE ?
+    - Quelles sont les options pour les startups non PFE ?
+    - Comment créer une startup sans être étudiant ?
+    - Quels programmes pour les startups hors université ?
+    - Comment obtenir du soutien pour une startup non PFE ?
+    - Où trouver de l’aide pour une startup non PFE ?
+    - Combien coûte une startup hors PFE ?
+
+- intent: ask_startup_team
+  examples: |
+    - Comment former une équipe pour une startup ?
+    - Combien de personnes faut-il dans une startup ?
+    - Où trouver des co-fondateurs pour ma startup ?
+    - Quels rôles sont nécessaires dans une startup ?
+    - Comment gérer une équipe de startup ?
+
+- intent: ask_startup_legal
+  examples: |
+    - Quelles démarches légales pour une startup ?
+    - Comment enregistrer une startup ?
+    - Quels documents juridiques pour une startup ?
+    - Combien coûtent les frais juridiques d’une startup ?
+    - Ai-je besoin d’un avocat pour ma startup ?
+- intent: ask_objet_decision_008
+  examples: |
+    - Quel est l'objet de la décision 008 ?
+    - Quelle est la décision du 23 février 2025 ?
+    - De quoi parle la décision numéro 008 ?
+    - Quelle est la portée de la décision 008 ?
+    - À quoi sert la décision du 23 février 2025 ?
+
+- intent: ask_objectif_memoire
+  examples: |
+    - Quel est l'objectif du mémoire de fin d'études ?
+    - Pourquoi faire un mémoire de fin d'études ?
+    - Quel est le but du mémoire ?
+    - Quel est l'objectif de l'article 2 ?
+    - Que dit l'article 2 modifié ?
+
+- intent: ask_formats_memoire
+  examples: |
+    - Quels sont les formats du mémoire ?
+    - Quels sont les deux formats possibles pour le mémoire ?
+    - Format mémoire de fin d'études ?
+    - Quels sont les types de mémoire possibles ?
+    - Que propose l'article 3 modifié ?
+
+- intent: ask_formations_etudiant
+  examples: |
+    - Quelles formations doit suivre l'étudiant ?
+    - Quelles sont les formations obligatoires pour les étudiants ?
+    - Que doit apprendre l'étudiant ?
+    - Quels sont les ateliers à suivre ?
+    - Que dit l'article 5 modifié ?
+
+- intent: ask_beneficiaires_accompagnement
+  examples: |
+    - Qui peut être accompagné par l'université ?
+    - Qui peut bénéficier des structures d'accompagnement ?
+    - Quels étudiants peuvent être aidés ?
+    - L'accompagnement est-il réservé à certains étudiants ?
+    - Que dit l'article 6 modifié à ce sujet ?
+
+- intent: ask_missions_cellule_orientation
+  examples: |
+    - Quelles sont les missions de la Cellule d'Orientation ?
+    - Que fait la Cellule d'Orientation ?
+    - Rôle de la cellule d’orientation ?
+    - Qui compose la cellule d’orientation ?
+    - Quels sont les objectifs de la cellule d’orientation ?
+
+- intent: ask_diplomes_obtenus
+  examples: |
+    - Quels diplômes obtient l'étudiant ?
+    - Que reçoit l’étudiant après la soutenance ?
+    - Quels certificats sont délivrés ?
+    - Diplôme après mémoire de fin d’études ?
+    - Que dit l’article 7 modifié ?
+
+- intent: ask_terme_startup
+  examples: |
+    - Quel mot remplace "start-up" ?
+    - Quel terme est utilisé à la place de start-up ?
+    - Pourquoi remplacer le mot start-up ?
+    - Quelle est la nouvelle appellation ?
+    - Que dit l'article 8 modifié ?
+
+- intent: ask_publication_decision
+  examples: |
+    - Où est publiée la décision ?
+    - Dans quel document officiel apparaît la décision ?
+    - Publication de la décision 008 ?
+    - Où peut-on consulter la décision ?
+    - Dans quel bulletin est-elle publiée ?
+
+- intent: ask_MVP
+  examples: |
+    - C’est quoi un MVP ?
+    - Comment créer un prototype ?
+    - Est-ce que je dois faire une app dès le début ?
+    - Comment tester mon idée avant de la lancer ?
+    - Comment savoir si mon idée de startup est bonne ?
+    - C’est quoi le product-market fit ?
+    - Quels outils utiliser pour créer un MVP ?
+    - Est-ce que le no-code suffit pour lancer un projet ?
+
+- intent: ask_cadre_institutionnel
+  examples: |
+    - Quel est le rôle précis du Ministère dans ce mécanisme ?
+    - Quels autres ministères ou organismes publics collaborent à ce programme ?
+    - Comment les universités sont-elles sélectionnées pour participer ?
+    - Existe-t-il un comité de pilotage national pour superviser ce dispositif ?
+    - Quels sont les indicateurs de performance pour évaluer ce programme ?
+    - Comment les centres de recherche sont-ils associés concrètement ?
+    - Y a-t-il des partenariats avec le secteur privé dans ce cadre ?
+    - Comment ce programme s'articule-t-il avec les autres initiatives gouvernementales pour l'innovation ?
+    - Quel est le budget alloué et comment est-il réparti ?
+    - Existe-t-il des rapports d'évaluation annuels sur ce dispositif ?
+
+- intent: ask_Mecanisme_DSB
+  examples: |
+    - Quels types de projets sont prioritaires (tech, social, environnemental...) ?
+    - Les étudiants en licence peuvent-ils postuler exceptionnellement ?
+    - Comment est garantie l'originalité des projets soumis ?
+    - Existe-t-il un quota de projets labellisés par an ?
+    - Les projets en groupe sont-ils acceptés ? Si oui, avec quelle taille maximale ?
+    - Peut-on cumuler ce label avec d'autres aides à l'innovation ?
+    - Y a-t-il des restrictions géographiques (régions prioritaires) ?
+    - Comment sont protégées les idées déposées (propriété intellectuelle) ?
+    - Les projets abandonnés en cours de route sont-ils pénalisés ?
+    - Des mentors externes sont-ils assignés aux projets sélectionnés ?
+
+- intent: ask_Accès_aux_ressources
+  examples: |
+    - La plateforme IBTIKAR propose-t-elle des webinaires de formation ?
+    - Comment sont sélectionnés les incubateurs partenaires ?
+    - Les étudiants ruraux ont-ils un accès équitable aux ressources ?
+    - Peut-on accéder aux plateformes technologiques sans passer par IBTIKAR ?
+    - Existe-t-il un catalogue des équipements disponibles pour le prototypage ?
+    - Des bourses spécifiques couvrent-elles les coûts de prototypage ?
+    - Les alumni peuvent-ils continuer à utiliser ces ressources après obtention du diplôme ?
+    - Y a-t-il un support technique dédié pour l'utilisation des plateformes ?
+    - Des licences logicielles professionnelles sont-elles fournies gratuitement ?
+    - Comment sont gérés les conflits d'accès aux ressources en cas de forte demande ?
+
+- intent: ask_Rôle_des_acteurs
+  examples: |
+    - Les enseignants référents reçoivent-ils une compensation pour l'encadrement ?
+    - Comment sont évaluées les performances des incubateurs dans ce programme ?
+    - Les entreprises locales sont-elles impliquées dans l'évaluation des projets ?
+    - Existe-t-il un réseau national de mentors labellisés ?
+    - Les directeurs d'établissement ont-ils des objectifs chiffrés à atteindre ?
+    - Comment les étudiants sont-ils informés de l'existence de ce dispositif ?
+    - Des ateliers de sensibilisation sont-ils organisés dans les universités ?
+    - Les responsables d'incubateurs suivent-ils une formation spécifique ?
+    - Comment les feedbacks des étudiants sont-ils collectés et pris en compte ?
+    - Y a-t-il des bonnes pratiques partagées entre établissements ?
+
+- intent: ask_Processus_de_labellisation
+  examples: |
+    - Qui compose le jury d'évaluation des projets ?
+    - Combien d'étapes comporte la procédure de labellisation ?
+    - Existe-t-il des critères d'élimination en phase préliminaire ?
+    - Le label est-il attribué définitivement ou nécessite-t-il un renouvellement ?
+    - Quel est le taux de réussite moyen des candidatures ?
+    - Les projets rejetés peuvent-ils être représentés après modifications ?
+    - Y a-t-il une période annuelle fixe pour déposer les candidatures ?
+    - Le label donne-t-il accès à des événements de networking nationaux/internationaux ?
+    - Une cérémonie officielle est-elle organisée pour les lauréats ?
+    - Comment les lauréats sont-ils médiatisés ?
+
+- intent: ask_Références_légales
+  examples: |
+    - L'Arrêté n°1275 est-il disponible en ligne ? Si oui, où ?
+    - Ce mécanisme est-il conforme aux lois sur la propriété intellectuelle algérienne ?
+    - Des amendements à l'Arrêté sont-ils prévus ?
+    - Comment les litiges (ex. : plagiat) sont-ils gérés légalement ?
+    - Ce dispositif s'appuie-t-il sur des conventions internationales ?
+    - Les étudiants étrangers peuvent-ils y participer ?
+    - Quelles sanctions en cas de fausses déclarations dans les dossiers ?
+    - Existe-t-il un recours en cas de rejet injustifié d'un projet ?
+    - La fiscalité des startups labellisées est-elle avantageuse ?
+    - Des modèles de contrats type sont-ils fournis pour la création de startups ?
 
 - intent: out_of_scope
   examples: |
-    - Quelle heure est-il?
+    - Quelle heure est-il ?
     - Parle-moi de politique
-    - Quel est ton film préféré?
+    - Quel est ton film préféré ?
     - Raconte-moi une blague
-    - Comment vas-tu?
+    - Quel temps fait-il ?
+    - Comment faire du pain ?
 
 - intent: affirm
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - Oui
+    - Bien sûr
+    - Exactement
+    - Tout à fait
+    - Ça me va
+    - D’accord
 
 - intent: deny
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - Non
+    - Pas du tout
+    - Jamais
+    - Je ne pense pas
+    - Pas vraiment
+    - Absolument pas
 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - Es-tu un robot ?
+    - Es-tu humain ?
+    - Suis-je en train de parler à un bot ?
+    - Qui es-tu ?
+    - Qu’es-tu ?

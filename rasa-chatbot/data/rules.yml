@@ -15,3 +15,143 @@ rules:
   steps:
   - intent: out_of_scope
   - action: utter_out_of_scope
+
+- rule: Réponse à bot_challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge
+
+- rule: Réponse à ask_pfe_startup
+  steps:
+  - intent: ask_pfe_startup
+  - action: utter_pfe_startup_info
+
+- rule: Réponse à ask_incubateurs
+  steps:
+  - intent: ask_incubateurs
+  - action: utter_incubateurs_info
+
+- rule: Réponse à ask_double_diplome
+  steps:
+  - intent: ask_double_diplome
+  - action: utter_double_diplome_info
+
+- rule: Réponse à ask_mecanisme_diplome_startup
+  steps:
+  - intent: ask_mecanisme_diplome_startup
+  - action: utter_mecanisme_diplome_startup
+
+- rule: Réponse à ask_formation_bmc
+  steps:
+  - intent: ask_formation_bmc
+  - action: utter_formation_bmc
+
+- rule: Réponse à ask_startup_funding
+  steps:
+  - intent: ask_startup_funding
+  - action: utter_startup_funding
+
+- rule: Réponse à ask_startup_steps
+  steps:
+  - intent: ask_startup_steps
+  - action: utter_startup_steps
+
+- rule: Réponse à ask_non_pfe_startup
+  steps:
+  - intent: ask_non_pfe_startup
+  - action: utter_non_pfe_startup
+
+- rule: Réponse à ask_startup_team
+  steps:
+  - intent: ask_startup_team
+  - action: utter_startup_team
+
+- rule: Réponse à ask_startup_legal
+  steps:
+  - intent: ask_startup_legal
+  - action: utter_startup_legal
+
+- rule: Reponse a c_quoi_une_startup
+  steps:
+  - intent: c_quoi_une_startup
+  - action: utter_c_quoi_une_startup
+
+- rule: Réponse à ask_MVP
+  steps:
+  - intent: ask_MVP
+  - action: utter_MVP_deff
+
+- rule: Réponse à ask_cadre_institutionnel
+  steps:
+  - intent: ask_cadre_institutionnel
+  - action: utter_Cadre_institutionnel
+
+- rule: Réponse à ask_Mecanisme_DSB
+  steps:
+  - intent: ask_Mecanisme_DSB
+  - action: utter_Mecanisme_DSB
+
+- rule: Réponse à ask_Accès_aux_ressources
+  steps:
+  - intent: ask_Accès_aux_ressources
+  - action: utter_Accès_aux_ressources
+
+- rule: Réponse à ask_Rôle_des_acteurs
+  steps:
+  - intent: ask_Rôle_des_acteurs
+  - action: utter_Rôle_des_acteurs
+
+- rule: Réponse à ask_Processus_de_labellisation
+  steps:
+  - intent: ask_Processus_de_labellisation
+  - action: utter_Processus_de_labellisation
+
+- rule: Réponse à ask_Références_légales
+  steps:
+  - intent: ask_Références_légales
+  - action: utter_Références_légales
+  
+- rule: Réponse à la question sur la décision 008
+  steps:
+    - intent: objet_decision_008
+    - action: utter_objet_decision_008
+
+- rule: Réponse à la question sur l'objectif du mémoire
+  steps:
+    - intent: objectif_memoire
+    - action: utter_objectif_memoire
+
+- rule: Réponse à la question sur les formats du mémoire
+  steps:
+    - intent: formats_memoire
+    - action: utter_formats_memoire
+
+- rule: Réponse à la question sur les formations
+  steps:
+    - intent: formations_etudiant
+    - action: utter_formations_etudiant
+
+- rule: Réponse à la question sur les bénéficiaires de l'accompagnement
+  steps:
+    - intent: beneficiaires_accompagnement
+    - action: utter_beneficiaires_accompagnement
+
+- rule: Réponse à la question sur la Cellule d'Orientation
+  steps:
+    - intent: missions_cellule_orientation
+    - action: utter_missions_cellule_orientation
+
+- rule: Réponse à la question sur les diplômes obtenus
+  steps:
+    - intent: diplomes_obtenus
+    - action: utter_diplomes_obtenus
+
+- rule: Réponse à la question sur le remplacement du terme start-up
+  steps:
+    - intent: terme_startup
+    - action: utter_terme_startup
+
+- rule: Réponse à la question sur la publication de la décision
+  steps:
+    - intent: publication_decision
+    - action: utter_publication_decision
