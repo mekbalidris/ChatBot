@@ -287,6 +287,32 @@ responses:
       + 25% pour les bourses d'innovation
       + 15% pour la formation des encadrants
 
+  # youcef--------------------------------------------------
+   utter_diff_pfe_types:
+  - text: |
+      **🔍 PFE Startup vs PFE Académique - Les Différences Clés**  
+
+      • **PFE Académique (Classique)**  
+      - 📚 Travail théorique ou recherche  
+      - 🎓 Validation purement académique  
+      - 📝 Mémoire de 50+ pages  
+      - ⏱ Durée : 4-6 mois  
+      - 💼 Stage en entreprise possible  
+
+      • **PFE Startup**  
+      - 🚀 Création d'une vraie startup  
+      - 🏆 Jury mixte (pros + universitaires)  
+      - 📊 Pitch + prototype au lieu de mémoire  
+      - ⏱ Durée : 6-12 mois  
+      - 💰 Accès aux financements et incubateurs  
+
+      **💡 Lequel choisir ?**  
+      → Préfères-tu la théorie (académique) ou la pratique entrepreneuriale (startup) ?  
+      → As-tu une idée innovante à développer ?  
+      → Veux-tu un double diplôme ? (Possible avec PFE Startup)  
+
+      📞 Besoin d'aide pour choisir ? Contacte le service orientation : orientation@univ.dz
+    # ------------------------------------------------------------------------------
   utter_out_of_scope:
     - text: |
         **Oups !** Je suis dédié aux **start-ups** (PFE ou autres).  

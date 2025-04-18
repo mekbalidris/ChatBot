@@ -151,6 +151,13 @@ rules:
     - intent: terme_startup
     - action: utter_terme_startup
 
+  # youcef-------------------------------------------------
+  - rule: Respond to PFE types question
+  steps:
+    - intent: ask_diff_pfe_types
+    - action: utter_diff_pfe_types
+  # --------------------------------------------------------
+
 - rule: Réponse à la question sur la publication de la décision
   steps:
     - intent: publication_decision

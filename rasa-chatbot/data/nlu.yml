@@ -311,7 +311,24 @@ nlu:
     - Existe-t-il un recours en cas de rejet injustifié d'un projet ?
     - La fiscalité des startups labellisées est-elle avantageuse ?
     - Des modèles de contrats type sont-ils fournis pour la création de startups ?
-
+# youcef------------------------------------------------
+- intent: ask_diff_pfe_types
+  examples: |
+    - quelle est la différence entre pfe startup et pfe académique ?
+    - c'est quoi la diff entre pfe startup et normal ?
+    - pfe classique vs pfe startup
+    - je sais pas choisir entre pfe startup et académique
+    - lequel est mieux pfe startup ou normal ?
+    - avantages pfe startup vs classique
+    - pfe traditionnel et pfe startup différence
+    - comment choisir entre les deux types de pfe ?
+    - c'est quoi un pfe académique ?
+    - pfe startup c'est différent comment ?
+    - pourquoi faire un pfe startup plutôt qu'un classique ?
+    - qu'est-ce qui change entre les deux pfe ?
+    - lequel est plus dur ?
+    - est-ce que le pfe startup compte double ?
+# -------------------------------------------------------
 - intent: out_of_scope
   examples: |
     - Quelle heure est-il ?
