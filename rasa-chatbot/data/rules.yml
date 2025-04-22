@@ -6,111 +6,221 @@ rules:
   - intent: greet
   - action: utter_greet
 
+- rule: greating response #english
+  steps:
+  - intent: greetE
+  - action: utter_greet_E
+
 - rule: Réponse aux au revoir
   steps:
   - intent: goodbye
   - action: utter_goodbye
+
+- rule: Goodbye response #english
+  steps:
+  - intent: goodbyeE
+  - action: utter_goodbye_E
 
 - rule: Réponse hors sujet
   steps:
   - intent: out_of_scope
   - action: utter_out_of_scope
 
+- rule: Out of scope response #english
+  steps:
+  - intent: out_of_scope_E
+  - action: utter_out_of_scope_E
+
 - rule: Réponse à bot_challenge
   steps:
   - intent: bot_challenge
   - action: utter_bot_challenge
+
+- rule: Bot challenge response #english
+  steps:
+  - intent: bot_challenge_E
+  - action: utter_bot_challenge_E
 
 - rule: Réponse à ask_pfe_startup
   steps:
   - intent: ask_pfe_startup
   - action: utter_pfe_startup_info
 
+- rule: Response to ask_pfe_startup #english
+  steps:
+  - intent: ask_pfe_startup_E
+  - action: utter_pfe_startup_info_E
+
 - rule: Réponse à ask_incubateurs
   steps:
   - intent: ask_incubateurs
   - action: utter_incubateurs_info
+
+- rule: Response to ask_incubateurs #english
+  steps:
+  - intent: ask_incubateurs_E
+  - action: utter_incubateurs_info_E
 
 - rule: Réponse à ask_double_diplome
   steps:
   - intent: ask_double_diplome
   - action: utter_double_diplome_info
 
+- rule: Response to ask_double_diplome #english
+  steps:
+  - intent: ask_double_diplome_E
+  - action: utter_double_diplome_info_E
+
 - rule: Réponse à ask_mecanisme_diplome_startup
   steps:
   - intent: ask_mecanisme_diplome_startup
   - action: utter_mecanisme_diplome_startup
+
+- rule: Response to ask_mecanisme_diplome_startup #english
+  steps:
+  - intent: ask_mecanisme_diplome_startup_E
+  - action: utter_mecanisme_diplome_startup_E
 
 - rule: Réponse à ask_formation_bmc
   steps:
   - intent: ask_formation_bmc
   - action: utter_formation_bmc
 
+- rule: Response to ask_formation_bmc #english
+  steps:
+  - intent: ask_formation_bmc_E
+  - action: utter_formation_bmc_E
+
 - rule: Réponse à ask_startup_funding
   steps:
   - intent: ask_startup_funding
   - action: utter_startup_funding
+
+- rule: Response to ask_startup_funding #english
+  steps:
+  - intent: ask_startup_funding_E
+  - action: utter_startup_funding_E
 
 - rule: Réponse à ask_startup_steps
   steps:
   - intent: ask_startup_steps
   - action: utter_startup_steps
 
+- rule: Response to ask_startup_steps #english
+  steps:
+  - intent: ask_startup_steps_E
+  - action: utter_startup_steps_E
+
 - rule: Réponse à ask_non_pfe_startup
   steps:
   - intent: ask_non_pfe_startup
   - action: utter_non_pfe_startup
+
+- rule: Response to ask_non_pfe_startup #english
+  steps:
+  - intent: ask_non_pfe_startup_E
+  - action: utter_non_pfe_startup_E
 
 - rule: Réponse à ask_startup_team
   steps:
   - intent: ask_startup_team
   - action: utter_startup_team
 
+- rule: Response to ask_startup_team #english
+  steps:
+  - intent: ask_startup_team_E
+  - action: utter_startup_team_E
+
 - rule: Réponse à ask_startup_legal
   steps:
   - intent: ask_startup_legal
   - action: utter_startup_legal
+
+- rule: Response to ask_startup_legal #english
+  steps:
+  - intent: ask_startup_legal_E
+  - action: utter_startup_legal_E
 
 - rule: Reponse a c_quoi_une_startup
   steps:
   - intent: c_quoi_une_startup
   - action: utter_c_quoi_une_startup
 
+- rule: Response to c_quoi_une_startup #english
+  steps:
+  - intent: c_quoi_une_startup_E
+  - action: utter_c_quoi_une_startup_E
+
 - rule: Réponse à ask_MVP
   steps:
   - intent: ask_MVP
   - action: utter_MVP_deff
+
+- rule: Response to ask_MVP #english
+  steps:
+  - intent: ask_MVP_E
+  - action: utter_MVP_deff_E
 
 - rule: Réponse à ask_cadre_institutionnel
   steps:
   - intent: ask_cadre_institutionnel
   - action: utter_Cadre_institutionnel
 
+- rule: Response to ask_cadre_institutionnel #english
+  steps:
+  - intent: ask_cadre_institutionnel_E
+  - action: utter_Cadre_institutionnel_E
+
 - rule: Réponse à ask_Mecanisme_DSB
   steps:
   - intent: ask_Mecanisme_DSB
   - action: utter_Mecanisme_DSB
+
+- rule: Response to ask_Mecanisme_DSB #english
+  steps:
+  - intent: ask_Mecanisme_DSB_E
+  - action: utter_Mecanisme_DSB_E
 
 - rule: Réponse à ask_Accès_aux_ressources
   steps:
   - intent: ask_Accès_aux_ressources
   - action: utter_Accès_aux_ressources
 
+- rule: Response to ask_Accès_aux_ressources #english
+  steps:
+  - intent: ask_Accès_aux_ressources_E
+  - action: utter_Accès_aux_ressources_E
+
 - rule: Réponse à ask_Rôle_des_acteurs
   steps:
   - intent: ask_Rôle_des_acteurs
   - action: utter_Rôle_des_acteurs
+
+- rule: Response to ask_Rôle_des_acteurs #english
+  steps:
+  - intent: ask_Rôle_des_acteurs_E
+  - action: utter_Rôle_des_acteurs_E
 
 - rule: Réponse à ask_Processus_de_labellisation
   steps:
   - intent: ask_Processus_de_labellisation
   - action: utter_Processus_de_labellisation
 
+- rule: Response to ask_Processus_de_labellisation #english
+  steps:
+  - intent: ask_Processus_de_labellisation_E
+  - action: utter_Processus_de_labellisation_E
+
 - rule: Réponse à ask_Références_légales
   steps:
   - intent: ask_Références_légales
   - action: utter_Références_légales
-  
+
+- rule: Response to ask_Références_légales #english
+  steps:
+  - intent: ask_Références_légales_E
+  - action: utter_Références_légales_E
+
 - rule: Réponse à la question sur la décision 008
   steps:
     - intent: objet_decision_008
@@ -151,12 +261,12 @@ rules:
     - intent: terme_startup
     - action: utter_terme_startup
 
-  # youcef-------------------------------------------------
-  - rule: Respond to PFE types question
+# youcef-------------------------------------------------
+- rule: Respond to PFE types question
   steps:
     - intent: ask_diff_pfe_types
     - action: utter_diff_pfe_types
-  # --------------------------------------------------------
+# --------------------------------------------------------
 
 - rule: Réponse à la question sur la publication de la décision
   steps:
