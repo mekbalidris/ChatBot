@@ -1,91 +1,153 @@
 version: "3.1"
 
 nlu:
-- intent: greet
+- intent: salutation
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - Bonjour
+    - Salut
+    - Coucou
+    - Salut tout le monde
+    - Salut, comment ça va ?
+    - Bonsoir
+    - Yo
+    - Hé, ça va ?
+    - Hey
+    - Bienvenue
+    - Salut, toi
+    - Hello
 
-- intent: goodbye
+
+- intent: au_revoir
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - Au revoir
+    - À bientôt
+    - À plus
+    - Salut, à bientôt
+    - À tout à l'heure
+    - À la prochaine
+    - Bye
+    - Ciao
+    - À plus tard
+    - À tout de suite
+    - À plus tard !
+    - À la prochaine fois
+    - Bye-bye
 
-- intent: affirm
+
+
+- intent: startup_memoire_fin_etude_qes
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - Est-ce que je peux créer une start-up comme mémoire de fin d'études ?
+    - Puis-je concevoir une start-up pour mon mémoire de fin d'études ?
+    - Est-il envisageable de faire une start-up comme sujet de mémoire de fin d'études ?
+    - Est-ce que la création d'une start-up peut être un projet de mémoire de fin d'études ?
+    - Est-ce que créer une start-up est une option pour mon mémoire de fin d'études ?
+    - Peut-on considérer la création d'une start-up comme un projet pour le mémoire de fin d'études ?
+    - Est-il possible d'utiliser la création d'une start-up comme base pour mon mémoire de fin d'études ? 
+    - Est-il faisable de faire de la création d'une start-up le thème de mon mémoire de fin d'études 
+    - Est-ce une bonne idée de faire une start-up comme sujet pour mon mémoire de fin d'études ?
+    - La création d'une start-up peut-elle être un projet pour mon mémoire de fin d'études ?
 
-- intent: deny
+
+- intent: qui_peut_faire_startup_comme_memorie_qes
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - Qui peut faire un mémoire de fin d'études sous forme de start-up ?
+    - Qui est autorisé à faire une start-up comme mémoire de fin d'études ?
+    - Qui peut choisir une start-up pour son projet de mémoire ?
+    - Qui est éligible pour faire une start-up comme sujet de mémoire ?
+    - Quelles personnes peuvent faire un mémoire sous forme de start-up ?
+    - Qui peut présenter une start-up comme projet de mémoire de fin d'études ?
 
-- intent: mood_great
+- intent: criteres_acceptee_memorie_startup_qes
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - Quels sont les critères pour que mon idée soit acceptée comme mémoire start-up ?
+    - Quelles conditions doivent être remplies pour que mon idée soit acceptée comme mémoire de start-up ?
+    - Quels sont les critères nécessaires pour faire accepter une start-up comme mémoire ?
+    - Quelles sont les exigences pour que mon projet de start-up soit accepté comme mémoire ?
+    - Quels critères doivent être remplis pour que mon idée de start-up soit validée comme sujet de mémoire ?
+    - Quels éléments doivent être pris en compte pour qu'une idée de start-up soit acceptée en tant que mémoire ?
 
-- intent: mood_unhappy
+- intent: incubateur_universite_qes
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - Est-ce qu'il y a un incubateur à l'université pour m'aider à développer mon idée ?
+    - L'université propose-t-elle un incubateur pour aider au développement d'une idée ?
+    - Existe-t-il un incubateur à l'université pour m'accompagner dans le développement de mon projet ?
+    - Y a-t-il un incubateur dans mon université pour soutenir le développement de mon idée ?
+    - L'université met-elle à disposition un incubateur pour m'aider à concrétiser mon projet ?
+    - Est-ce que mon université offre un incubateur pour accompagner les projets comme le mien ?
 
+- intent: formation_memorie_startup_qes
+  examples: |
+    - Est-ce que je vais être formé si je fais un mémoire start-up ?
+    - Vais-je recevoir une formation si je choisis un mémoire sous forme de start-up ?
+    - Y a-t-il une formation prévue si je fais un mémoire en start-up ?
+    - Est-ce que le mémoire start-up inclut une formation pour m'aider à développer mon projet ?
+    - Vais-je bénéficier d'une formation pour créer une start-up dans le cadre de mon mémoire ?
+    - Le mémoire de type start-up prévoit-il une formation spécifique ?
+
+
+- intent: projet_en_groupe_qes
+  examples: |
+    - Est-ce que je peux faire ce projet en groupe avec d'autres étudiants ?
+    - Puis-je réaliser ce projet de mémoire en équipe avec d'autres étudiants ?
+    - Est-il possible de faire ce mémoire sous forme de start-up à plusieurs ?
+    - Peut-on travailler en groupe sur un projet de mémoire start-up ?
+    - Est-ce autorisé de faire un mémoire start-up en collaboration avec d'autres étudiants ?
+    - Puis-je travailler avec d'autres étudiants pour développer ce projet de start-up ?
+
+- intent: evaluation_qes
+  examples: |
+    - Qui va évaluer mon projet start-up à la fin ?
+    - Qui sera chargé d'évaluer mon projet de mémoire start-up ?
+    - Qui évalue le projet start-up une fois terminé ?
+    - Qui est responsable de l'évaluation de mon projet start-up ?
+    - Qui va juger mon projet de start-up à la fin de mon mémoire ?
+    - Quelle personne ou organisation évalue le projet start-up à la fin ?
+
+- intent: recompense_acception_qes
+  examples: |
+    - Qu'est-ce que je reçois si mon projet de start-up est accepté ?
+    - Quelles sont les récompenses si mon projet de start-up est validé ?
+    - Que vais-je obtenir si mon projet start-up est accepté ?
+    - Quels bénéfices vais-je avoir si mon projet de start-up est accepté ?
+    - Qu'est-ce qui m'est offert si mon projet start-up est accepté ?
+    - Est-ce qu'il y a des avantages si mon projet start-up est accepté ?
+
+
+- intent: reconnaissance_projets_innovants_qes
+  examples: |
+    - Est-ce qu'il existe une reconnaissance officielle pour les projets innovants ?
+    - Y a-t-il une reconnaissance officielle pour les projets innovants ?
+    - Existe-t-il une certification officielle pour les projets innovants ?
+    - Les projets innovants peuvent-ils recevoir une reconnaissance officielle ?
+    - Y a-t-il des distinctions officielles pour les projets innovants ?
+    - Est-ce qu'il y a une reconnaissance officielle pour un projet innovant à l'université ?
+
+- intent: consequences_label_projet_qes
+  examples: |
+    - Que se passe-t-il si mon projet obtient le label ?
+    - Quels sont les avantages si mon projet obtient le label ?
+    - Que va-t-il se passer si mon projet reçoit ce label ?
+    - Quelles sont les conséquences si mon projet est labellisé ?
+    - Que se passe-t-il lorsque mon projet obtient le label ?
+    - Quelles récompenses ou bénéfices sont associés à l'obtention du label pour mon projet ?
+
+- intent: concours_aides_meilleurs_projets_qes
+  examples: |
+    - Est-ce qu'il y a des concours ou aides pour les meilleurs projets ?
+    - Y a-t-il des concours pour récompenser les meilleurs projets ?
+    - Existe-t-il des aides pour soutenir les meilleurs projets ?
+    - Les meilleurs projets peuvent-ils bénéficier de concours ou de financements ?
+    - Y a-t-il des opportunités pour les projets les plus innovants, comme des concours ou des aides ?
+    - Est-ce que des concours ou des aides sont offerts pour les meilleurs projets ?
+
+
+- intent: 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - Es-tu un robot ?
+    - Est-ce que tu es un robot ?
+    - Tu es un robot ?
+    - Es-tu un programme informatique ?
+    - Tu es un agent virtuel, n'est-ce pas ?
+    - Tu n'es pas un humain, n'est-ce pas ?    

@@ -2,29 +2,85 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: salut
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: salutation
+  - action: salutation_rep
+ 
+- story: Bye_bye
+  steps:
+  - intent: au_revoir
+  - action: au_revoir_rep
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
 
-- story: sad path 2
+- story: startup_memoire_fin_etude
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - intent: startup_memoire_fin_etude_qes
+  - action: startup_memoire_rep
+
+
+- story: qui_peut_faire_startup_comme_memorie
+  steps:
+  - intent: qui_peut_faire_startup_comme_memorie_qes
+  - action: qui_peut_faire_startup_comme_memorie_rep
+
+- story: criteres_acceptee_memorie_startup
+  steps:
+  - intent: criteres_acceptee_memorie_startup_qes
+  - action: criteres_acceptee_memorie_startup_rep
+
+- story: incubateur_universite
+  steps:
+  - intent: incubateur_universite_qes
+  - action: incubateur_universite_rep
+
+- story: formation_memorie_startup
+  steps:
+  - intent: formation_memorie_startup_qes
+  - action: formation_memorie_startup_rep
+
+
+- story: projet_en_groupe
+  steps:
+  - intent: projet_en_groupe_qes
+  - action: projet_en_groupe_rep
+
+  
+- story: evaluation
+  steps:
+  - intent: evaluation_qes
+  - action: evaluation_rep
+
+  
+- story: recompense_acception
+  steps:
+  - intent: recompense_acception_qes
+  - action: recompense_acception_rep
+
+
+- story: reconnaissance_projets_innovants
+  steps:
+  - intent: reconnaissance_projets_innovants_qes
+  - action: reconnaissance_projets_innovants_rep
+
+  
+- story: consequences_label_projet
+  steps:
+  - intent: consequences_label_projet_qes
+  - action: consequences_label_projet_rep
+
+  
+  
+- story:  concours_aides_meilleurs_projets
+  steps:
+  - intent: concours_aides_meilleurs_projets_qes
+  - action: concours_aides_meilleurs_projets_rep
+  
+
+- story:  are_you_a_bot
+  steps:
+  - intent: bot_challenge
+  - action: je_suis_un_robot
+
+
+

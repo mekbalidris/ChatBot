@@ -1,34 +1,63 @@
 version: "3.1"
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - salutation
+  - au_revoir
+  - startup_memoire_fin_etude_qes
+  - qui_peut_faire_startup_comme_memorie_qes
+  - criteres_acceptee_memorie_startup_qes
+  - incubateur_universite_qes
+  - formation_memorie_startup_qes
+  - projet_en_groupe
+  - evaluation_qes
+  - recompense_acception_qes
+  - reconnaissance_projets_innovants_qes
+  - consequences_label_projet_qes
+  - concours_aides_meilleurs_projets_qes
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+  salutation_rep:
+  - text: "Bonjour! comment puis-je vous assisster"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
+  au_revoir_rep:
   - text: "Bye"
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  je_suis_un_robot:
+  - text: "Je suis un bot, alimenté par Rasa."
 
+  startup_memoire_rep:
+  - text: "Oui, si tu es en dernière année d'études et que tu as une idée innovante, tu peux transformer ton mémoire en projet de start-up."
+
+  qui_peut_faire_startup_comme_memorie_rep:
+  - text: "Les étudiants de licence, master, doctorat, ingénierie, architecture, et sciences vétérinaires peuvent tous le faire."
+ 
+  criteres_acceptee_memorie_startup_rep:
+  - text: "Il faut que ton idée apporte une solution innovante, technique ou numérique, à un besoin réel"
+  
+
+  incubateur_universite_rep:
+  - text: "Oui, tu peux être accompagné par l'incubateur de ton université.L'incubateur universitaire accompagne les étudiants dans le développement de leurs projets de start-up en leur offrant des ressources comme des conseils en création d'entreprise, des ateliers pratiques, du mentorat, et des formations sur des sujets clés tels que la gestion, le marketing et le financement. Il aide à structurer les projets, à affiner le business model et à préparer les étudiants à lancer leur start-up avec succès."
+
+  formation_memorie_startup_rep:
+  - text: "Oui, tu recevras des formations en e-marketing, modèle économique, gestion, et création d'entreprise."
+
+  projet_en_groupe_rep:
+  - text: "Tu peux former une équipe de 2 à 6 étudiants, même s'ils viennent d'autres spécialités."
+
+  evaluation_rep:
+  - text: "Ton projet sera évalué par un comité composé de ton encadrant, d'un expert de l'incubateur et d'un représentant du secteur socio-économique."
+
+  recompense_acception_rep:
+  - text: "Si ton projet est validé, tu obtiens un certificat de fin d'études et un diplôme spécifique de start-up."
+  
+  reconnaissance_projets_innovants_rep:
+  - text: "Oui, les projets les plus innovants peuvent recevoir le label « Label », une reconnaissance officielle de leur caractère innovant."
+
+  consequences_label_projet_rep:
+  - text: "Les projets labellisés sont accompagnés pour devenir de vraies start-ups."
+
+  concours_aides_meilleurs_projets_rep:
+  - text: " Oui, les projets les plus prometteurs peuvent participer à un concours national et recevoir un soutien financier."
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
