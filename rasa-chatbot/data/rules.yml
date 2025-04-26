@@ -272,3 +272,95 @@ rules:
   steps:
     - intent: publication_decision
     - action: utter_publication_decision
+
+#Imad--------------------------
+
+- rule: répondre à pfe_f_1
+    steps:
+      - intent: pfe_f_1
+      - action: utter_pfe_f_1
+
+- rule: répondre à pfe_e_1
+  steps:
+    - intent: pfe_e_1
+    - action: utter_pfe_e_1
+
+- rule: répondre à pfe_a_1
+  steps:
+    - intent: pfe_a_1
+    - action: utter_pfe_a_1
+
+- rule: répondre à pfe_f_2
+  steps:
+    - intent: pfe_f_2
+    - action: utter_pfe_f_2
+
+- rule: répondre à pfe_e_2
+  steps:
+    - intent: pfe_e_2
+    - action: utter_pfe_e_2
+
+- rule: répondre à pfe_a_2
+  steps:
+    - intent: pfe_a_2
+    - action: utter_pfe_a_2
+
+- rule: répondre à pfe_f_3
+  steps:
+    - intent: pfe_f_3
+    - action: utter_pfe_f_3
+
+- rule: répondre à pfe_e_3
+  steps:
+    - intent: pfe_e_3
+    - action: utter_pfe_e_3
+
+- rule: répondre à pfe_a_3
+  steps:
+    - intent: pfe_a_3
+    - action: utter_pfe_a_3
+
+- rule: répondre à pfe_f_4
+  steps:
+    - intent: pfe_f_4
+    - action: utter_pfe_f_4
+
+- rule: répondre à pfe_e_4
+  steps:
+    - intent: pfe_e_4
+    - action: utter_pfe_e_4
+
+- rule: répondre à pfe_a_4
+  steps:
+    - intent: pfe_a_4
+    - action: utter_pfe_a_4
+
+- rule: répondre à pfe_f_5
+  steps:
+    - intent: pfe_f_5
+    - action: utter_pfe_f_5
+
+- rule: répondre à pfe_e_5
+  steps:
+    - intent: pfe_e_5
+    - action: utter_pfe_e_5
+
+- rule: répondre à pfe_a_5
+  steps:
+    - intent: pfe_a_5
+    - action: utter_pfe_a_5
+
+- rule: répondre à pfe_f_6
+  steps:
+    - intent: pfe_f_6
+    - action: utter_pfe_f_6
+
+- rule: répondre à pfe_e_6
+  steps:
+    - intent: pfe_e_6
+    - action: utter_pfe_e_6
+
+- rule: répondre à pfe_a_6
+  steps:
+    - intent: pfe_a_6
+    - action: utter_pfe_a_6

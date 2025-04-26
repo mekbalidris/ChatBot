@@ -155,7 +155,73 @@ responses:
         ✓ Clarifie votre stratégie.  
         ✓ Attire les investisseurs.  
       **Conseil** : Pratiquez le BMC tôt pour tester votre idée !
+
+  startup_memoire_rep:
+  - text: "Oui, si tu es en dernière année d'études et que tu as une idée innovante, tu peux transformer ton mémoire en projet de start-up."
+
+  qui_peut_faire_startup_comme_memorie_rep:
+  - text: "Les étudiants de licence, master, doctorat, ingénierie, architecture, et sciences vétérinaires peuvent tous le faire."
+ 
+  criteres_acceptee_memorie_startup_rep:
+  - text: "Il faut que ton idée apporte une solution innovante, technique ou numérique, à un besoin réel"
   
+  incubateur_universite_rep:
+  - text: "Oui, tu peux être accompagné par l'incubateur de ton université.L'incubateur universitaire accompagne les étudiants dans le développement de leurs projets de start-up en leur offrant des ressources comme des conseils en création d'entreprise, des ateliers pratiques, du mentorat, et des formations sur des sujets clés tels que la gestion, le marketing et le financement. Il aide à structurer les projets, à affiner le business model et à préparer les étudiants à lancer leur start-up avec succès."
+
+  formation_memorie_startup_rep:
+  - text: "Oui, tu recevras des formations en e-marketing, modèle économique, gestion, et création d'entreprise."
+
+  projet_en_groupe_rep:
+  - text: "Tu peux former une équipe de 2 à 6 étudiants, même s'ils viennent d'autres spécialités."
+
+  evaluation_rep:
+  - text: "Ton projet sera évalué par un comité composé de ton encadrant, d'un expert de l'incubateur et d'un représentant du secteur socio-économique."
+
+  recompense_acception_rep:
+  - text: "Si ton projet est validé, tu obtiens un certificat de fin d'études et un diplôme spécifique de start-up."
+  
+  reconnaissance_projets_innovants_rep:
+  - text: "Oui, les projets les plus innovants peuvent recevoir le label « Label », une reconnaissance officielle de leur caractère innovant."
+
+  consequences_label_projet_rep:
+  - text: "Les projets labellisés sont accompagnés pour devenir de vraies start-ups."
+
+  concours_aides_meilleurs_projets_rep:
+  - text: " Oui, les projets les plus prometteurs peuvent participer à un concours national et recevoir un soutien financier."
+  
+  startup_memoire_rep:
+  - text: "Yes, if you're in your final year of studies and have an innovative idea, you can turn your thesis into a startup project."
+
+  qui_peut_faire_startup_comme_memorie_rep:
+  - text: "Bachelor's, Master's, PhD students, as well as engineering, architecture, and veterinary science students can all do this."
+
+  criteres_acceptee_memorie_startup_rep:
+  - text: "Your idea must provide an innovative, technical or digital solution to a real need."
+
+  incubateur_universite_rep:
+  - text: "Yes, you can be supported by your university's incubator. The university incubator assists students in developing their startup projects by providing resources such as business creation advice, practical workshops, mentoring, and training on key topics like management, marketing, and financing. It helps structure projects, refine business models, and prepares students to successfully launch their startups."
+
+  formation_memorie_startup_rep:
+  - text: "Yes, you'll receive training in e-marketing, business models, management, and entrepreneurship."
+
+  projet_en_groupe_rep:
+  - text: "You can form a team of 2 to 6 students, even if they come from other specialties."
+
+  evaluation_rep:
+  - text: "Your project will be evaluated by a committee consisting of your supervisor, an incubator expert, and a representative from the socio-economic sector."
+
+  recompense_acception_rep:
+  - text: "If your project is validated, you'll receive a graduation certificate and a specific startup diploma."
+
+  reconnaissance_projets_innovants_rep:
+  - text: "Yes, the most innovative projects can receive the 'Label' designation, an official recognition of their innovative nature."
+
+  consequences_label_projet_rep:
+  - text: "Labeled projects receive support to become real startups."
+
+  concours_aides_meilleurs_projets_rep:
+  - text: "Yes, the most promising projects can participate in a national competition and receive financial support."
+
   utter_formation_bmc_E: #english
   - text: |
       The **Business Model Canvas (BMC)** training is essential:  
@@ -673,3 +739,119 @@ responses:
         **Who am I?** A stylish virtual assistant for startups!  
         • Here to guide you with clear and beautiful answers.  
         • **Ask me anything** about startups!
+
+#--------------------
+
+responses:
+  
+  # ========================
+  # PFE REGISTRATION RESPONSES
+  # ========================
+  
+  utter_pfe_registration_fr:
+    - text: "Pour s'inscrire, remplissez le formulaire au début de l'année M2 et choisissez un incubateur parmi les options disponibles."
+    - text: "L'inscription se fait en ligne via la plateforme de l'université en septembre, avec sélection d'un incubateur."
+
+  utter_pfe_registration_en:
+    - text: "To register, fill out the form at the beginning of the M2 year and select an incubator from available options."
+    - text: "Registration is done online through the university platform in September, with incubator selection."
+
+  utter_pfe_registration_ar:
+    - text: "باش تسجل، عَمّر الاستمارة فبداية عام M2 واختار حاضنة من الثلاثة المتوفرة."
+    - text: "التسجيل كاين على الأنترنيت عبر منصة الجامعة فشهر سبتمبر، مع اختيار الحاضنة."
+
+  # ========================
+  # TEAM COMPOSITION RESPONSES
+  # ========================
+  
+  utter_pfe_team_fr:
+    - text: "Une équipe peut être composée de 2 à 6 membres, de spécialités identiques ou différentes."
+    - text: "Les groupes doivent avoir entre 2 et 6 étudiants, avec possibilité de mélanger les spécialités."
+
+  utter_pfe_team_en:
+    - text: "A team can have 2 to 6 members, from the same or different specialties."
+    - text: "Groups must include 2-6 students, with possible mix of specialties."
+
+  utter_pfe_team_ar:
+    - text: "الفريق يقدر يكون فيه من 2 حتى لـ 6 أفراد، من نفس التخصص ولا مختلفين."
+    - text: "الفرق لازم تكون بين 2 و6 طلاب، ويمكن الجمع بين التخصصات."
+
+  # ========================
+  # INCUBATOR RESPONSES
+  # ========================
+  
+  utter_pfe_incubators_fr:
+    - text: "Les incubateurs disponibles sont ICOSNET (technologie), TECHINNOV (innovation) et GTA (agro-tech), situés au Start-Up Hall."
+    - text: "3 incubateurs au choix : ICOSNET pour projets tech, TECHINNOV pour innovation, GTA pour agroalimentaire."
+
+  utter_pfe_incubators_en:
+    - text: "Available incubators are ICOSNET (tech), TECHINNOV (innovation), and GTA (agro-tech), located in the Start-Up Hall."
+    - text: "3 incubator options: ICOSNET for tech, TECHINNOV for innovation, GTA for agri-food projects."
+
+  utter_pfe_incubators_ar:
+    - text: "الحاضنات المتوفرة هي ICOSNET (التكنولوجيا)، TECHINNOV (الابتكار)، وGTA (الفلاحة)، كاينين فـ Start-Up Hall."
+    - text: "3 حاضنات للاختيار: ICOSNET للمشاريع التقنية، TECHINNOV للابتكار، GTA للفلاحة."
+
+  # ========================
+  # BMC RESPONSES
+  # ========================
+  
+  utter_pfe_bmc_fr:
+    - text: "Le BMC (Business Model Canvas) est un outil pour modéliser votre projet. L'incubateur vous formera à son utilisation."
+    - text: "Le Business Model Canvas permet de structurer votre modèle économique. Des ateliers sont organisés pour vous aider."
+
+  utter_pfe_bmc_en:
+    - text: "The BMC (Business Model Canvas) helps design your business model. The incubator provides training workshops."
+    - text: "BMC is a strategic management tool to develop new business models. You'll receive guidance."
+
+  utter_pfe_bmc_ar:
+    - text: "BMC هو أداة لتصميم النموذج الاقتصادي. الحاضنة كتعطي تكوين خاص بيه."
+    - text: "BMC كيساعدك فتصميم المشروع. غادي تاخد ورشات فهاد الموضوع."
+
+  # ========================
+  # DEFENSE RESPONSES
+  # ========================
+  
+  utter_pfe_defense_fr:
+    - text: "La soutenance dure 30 minutes (15 présentation + 15 questions) devant un jury mixte université-professionnels."
+    - text: "Le jury évalue l'innovation et la faisabilité. Seule la note académique apparaît sur le relevé."
+
+  utter_pfe_defense_en:
+    - text: "The defense lasts 30 minutes (15 presentation + 15 Q&A) before academic and professional judges."
+    - text: "Jury evaluates innovation and feasibility. Only academic score appears on transcripts."
+
+  utter_pfe_defense_ar:
+    - text: "المناقشة كتاخد 30 دقيقة (15 عرض + 15 أسئلة) قدام لجنة من الجامعة والمحترفين."
+    - text: "اللجنة كتقيّم الابتكار والإنجاز. النقطة الأكاديمية هي اللي كاتبان فكشف النقط."
+
+  # ========================
+  # POST-DEFENSE RESPONSES
+  # ========================
+  
+  utter_pfe_aftermath_fr:
+    - text: "Après la soutenance, vous obtenez un double diplôme et pouvez continuer avec l'incubateur pendant 6 mois supplémentaires."
+    - text: "Les meilleurs projets reçoivent un financement et un accompagnement pour créer leur entreprise."
+
+  utter_pfe_aftermath_en:
+    - text: "After defense, you get a double diploma and can continue with incubator for 6 extra months."
+    - text: "Top projects receive funding and support to launch their business."
+
+  utter_pfe_aftermath_ar:
+    - text: "من بعد المناقشة، كتاخد دبلوم مزدوج ويمكن لك تكمل مع الحاضنة 6 أشهر زيادة."
+    - text: "أحسن المشاريع كتاخد دعم مادي ومرافقة باش تبدا الشركة."
+
+  # ========================
+  # DEFAULT RESPONSES
+  # ========================
+  
+  utter_default_fr:
+    - text: "Je n'ai pas bien compris. Pourriez-vous reformuler votre question s'il vous plaît ? 😊"
+    - text: "Pouvez-vous préciser votre demande ? Je n'ai pas saisi votre question."
+
+  utter_default_en:
+    - text: "I didn't understand. Could you rephrase your question please? 😊"
+    - text: "Can you clarify your request? I didn't get your question."
+
+  utter_default_ar:
+    - text: "ما فهمتش السؤال. تقدر تعاود تفرمولو من فضلك؟ 😊"
+    - text: "واش ممكن توضح اكثر؟ ما فهمتش بالضبط."
