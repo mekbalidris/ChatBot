@@ -132,7 +132,7 @@ const Chat = () => {
                 className={`p-2 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md ${
                   msg.sender === "user"
                     ? "bg-main text-[#36135a] font-normal self-end ml-auto"
-                    : "bg-black backdrop-blur-lg text-white font-secondary font-normal self-start flex-[2]"
+                    : "bg-transparent backdrop-blur-lg text-white font-secondary font-normal self-start flex-[2]"
                 }`}
               >
                 {msg.sender === "Bot" ? renderBotText(msg.text) : renderUserText(msg.text)}
