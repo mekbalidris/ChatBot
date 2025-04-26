@@ -1,8 +1,6 @@
 version: "3.1"
 
 intents:
-  - salutation
-  - au_revoir
   - startup_memoire_fin_etude_qes
   - qui_peut_faire_startup_comme_memorie_qes
   - criteres_acceptee_memorie_startup_qes
@@ -16,12 +14,6 @@ intents:
   - concours_aides_meilleurs_projets_qes
 
 responses:
-  salutation_rep:
-  - text: "Bonjour! comment puis-je vous assisster"
-
-  au_revoir_rep:
-  - text: "Bye"
-
   je_suis_un_robot:
   - text: "Je suis un bot, alimenté par Rasa."
 

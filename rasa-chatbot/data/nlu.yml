@@ -1,38 +1,6 @@
 version: "3.1"
 
 nlu:
-- intent: salutation
-  examples: |
-    - Bonjour
-    - Salut
-    - Coucou
-    - Salut tout le monde
-    - Salut, comment ça va ?
-    - Bonsoir
-    - Yo
-    - Hé, ça va ?
-    - Hey
-    - Bienvenue
-    - Salut, toi
-    - Hello
-
-
-- intent: au_revoir
-  examples: |
-    - Au revoir
-    - À bientôt
-    - À plus
-    - Salut, à bientôt
-    - À tout à l'heure
-    - À la prochaine
-    - Bye
-    - Ciao
-    - À plus tard
-    - À tout de suite
-    - À plus tard !
-    - À la prochaine fois
-    - Bye-bye
-
 
 
 - intent: startup_memoire_fin_etude_qes

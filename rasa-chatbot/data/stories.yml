@@ -2,17 +2,6 @@ version: "3.1"
 
 stories:
 
-- story: salut
-  steps:
-  - intent: salutation
-  - action: salutation_rep
- 
-- story: Bye_bye
-  steps:
-  - intent: au_revoir
-  - action: au_revoir_rep
-
-
 - story: startup_memoire_fin_etude
   steps:
   - intent: startup_memoire_fin_etude_qes
