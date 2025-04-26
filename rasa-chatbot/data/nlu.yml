@@ -14,6 +14,21 @@ nlu:
     - Bonne après-midi
     - Comment vas-tu?
 
+- intent: greetE
+  examples: | 
+    - Hello
+    - Hi
+    - Hey
+    - Good evening
+    - Hey there
+    - Yo
+    - Hello (phone greeting)
+    - Good morning
+    - Good afternoon
+    - How are you?
+
+
+
 - intent: goodbye
   examples: |
     - Au revoir
@@ -26,6 +41,19 @@ nlu:
     - Je m’en vais
     - À la prochaine
     - Salut, à plus tard
+
+- intent: goodbyeE #english
+  examples: |
+    - Goodbye
+    - See you
+    - See you soon
+    - Bye
+    - Have a good day
+    - Have a good evening
+    - I'm leaving
+    - Until next time
+    - Bye, see you later
+
 
 - intent: c_quoi_une_startup
   examples: |
@@ -43,6 +71,23 @@ nlu:
     - Comment tu définirais une startup ?
     - Est-ce qu’une startup, c’est juste une petite entreprise ?
     - Tu peux me dire ce que c’est une startup ?
+
+- intent: what_is_a_startupE #english
+  examples: |
+    - What is a startup?
+    - Can you explain what a startup is?
+    - What do we call a startup?
+    - What does "startup" mean?
+    - What exactly does startup mean?
+    - I’ve heard about startups, but I don’t quite understand, can you explain?
+    - What’s the definition of a startup?
+    - Is a startup like a regular company?
+    - What’s the difference between a company and a startup?
+    - What exactly is a startup?
+    - What is a startup for?
+    - How would you define a startup?
+    - Is a startup just a small company?
+    - Can you tell me what a startup is?
 
 - intent: ask_pfe_startup
   examples: |
@@ -62,6 +107,25 @@ nlu:
     - Quels documents faut-il pour un PFE Start-Up ?
     - Comment trouver des coéquipiers pour un PFE Start-Up ?
 
+- intent: ask_pfe_startupE #english
+  examples: |
+    - What is a PFE Startup?
+    - How do you do a PFE Startup?
+    - How do you register for a PFE Startup?
+    - How many members are required for a PFE Startup?
+    - What are the incubators for a PFE Startup?
+    - How does the defense of a PFE Startup go?
+    - What are the steps for a PFE Startup?
+    - Who can participate in a PFE Startup?
+    - What are the advantages of a PFE Startup?
+    - What do you need to succeed in a PFE Startup?
+    - What are the criteria for a PFE Startup?
+    - How do I validate my PFE Startup idea?
+    - What are the deadlines for a PFE Startup?
+    - What documents are needed for a PFE Startup?
+    - How do you find teammates for a PFE Startup?
+
+
 - intent: ask_incubateurs
   examples: |
     - Quels incubateurs existent pour les start-ups universitaires ?
@@ -74,7 +138,19 @@ nlu:
     - Comment choisir un incubateur ?
     - Quels incubateurs pour les non-étudiants ?
 
-- intent: ask_double_diplome
+- intent: ask_incubatorsE #english
+  examples: |
+    - What incubators are available for university startups?
+    - How do you register for an incubator?
+    - What are the missions of incubators?
+    - How does ICOSNET help students?
+    - What advantages do incubators offer?
+    - Where can I find an incubator for my project?
+    - What do TECHINNOV and GTA do?
+    - How do you choose an incubator?
+    - What incubators are available for non-students?
+
+- intent: ask_double_diplome 
   examples: |
     - Comment obtenir un double diplôme avec une start-up ?
     - Qu’est-ce que le diplôme Start-Up ?
@@ -83,6 +159,16 @@ nlu:
     - Que se passe-t-il après la soutenance pour le diplôme ?
     - Le double diplôme est-il reconnu ?
     - Comment ça marche pour le double diplôme ?
+
+- intent: ask_double_diplomaE #english
+  examples: |
+    - How do you get a double diploma with a startup?
+    - What is the Startup diploma?
+    - What is the value of the double diploma?
+    - What are the criteria for the double diploma?
+    - What happens after the defense for the diploma?
+    - Is the double diploma recognized?
+    - How does the double diploma work?
 
 - intent: ask_mecanisme_diplome_startup
   examples: |
@@ -93,6 +179,16 @@ nlu:
     - Comment accéder aux services des incubateurs via IBTIKAR ?
     - Que propose la plateforme IBTIKAR ?
     - Comment obtenir un label pour mon projet innovant ?
+    
+- intent: ask_diploma_startup_mechanism #english
+  examples: |
+    - What is the "one diploma, one startup" mechanism?
+    - How does "one diploma, one patent" work?
+    - What are the advantages of the "one diploma, one startup" mechanism?
+    - Who can benefit from this mechanism?
+    - How can I access incubator services through IBTIKAR?
+    - What does the IBTIKAR platform offer?
+    - How do I get a label for my innovative project?
 
 - intent: ask_formation_bmc
   examples: |
@@ -102,6 +198,15 @@ nlu:
     - Qui dispense la formation au BMC ?
     - Comment le BMC aide-t-il une start-up ?
     - Où suivre une formation BMC ?
+
+- intent: ask_bmc_training #english
+  examples: |
+    - What is BMC training?
+    - What does the Business Model Canvas consist of?
+    - When does BMC training take place?
+    - Who provides BMC training?
+    - How does the BMC help a startup?
+    - Where can I take BMC training?
 
 - intent: ask_startup_funding
   examples: |
@@ -114,6 +219,17 @@ nlu:
     - Comment financer une startup ?
     - Où trouver de l’argent pour une startup ?
 
+- intent: ask_startup_fundingE #english
+  examples: |
+    - How much money do you need to start a startup?
+    - What is the necessary budget to start a startup?
+    - How much do I need to create my startup?
+    - What is the cost to launch a startup?
+    - How much does it cost to start a startup?
+    - What budget should I plan for a startup?
+    - How do you finance a startup?
+    - Where can I find money for a startup?
+
 - intent: ask_startup_steps
   examples: |
     - Par où commencer pour lancer une startup ?
@@ -124,6 +240,18 @@ nlu:
     - Que faire pour créer une startup réussie ?
     - Où commencer une startup ?
     - Comment organiser le lancement d’une startup ?
+
+- intent: ask_startup_stepsE #english 
+  examples: |
+    - Where do I start to launch a startup?
+    - What are the steps to create a startup?
+    - How do I start a startup?
+    - What are the first steps for a startup?
+    - How do I launch my own startup?
+    - What should I do to create a successful startup?
+    - Where do I begin with a startup?
+    - How do I organize the launch of a startup?
+
 
 - intent: ask_non_pfe_startup
   examples: |
@@ -136,6 +264,17 @@ nlu:
     - Où trouver de l’aide pour une startup non PFE ?
     - Combien coûte une startup hors PFE ?
 
+- intent: ask_non_pfe_startup #english
+  examples: |
+    - What should I do if my startup is not a PFE startup?
+    - How do you launch a startup outside the PFE framework?
+    - What are the options for non-PFE startups?
+    - How do you create a startup without being a student?
+    - What programs are available for startups outside of university?
+    - How can I get support for a non-PFE startup?
+    - Where can I find help for a non-PFE startup?
+    - How much does a non-PFE startup cost?
+
 - intent: ask_startup_team
   examples: |
     - Comment former une équipe pour une startup ?
@@ -144,6 +283,15 @@ nlu:
     - Quels rôles sont nécessaires dans une startup ?
     - Comment gérer une équipe de startup ?
 
+
+- intent: ask_startup_team #english
+  examples: |
+    - How do you form a team for a startup?
+    - How many people are needed in a startup?
+    - Where can I find co-founders for my startup?
+    - What roles are necessary in a startup?
+    - How do you manage a startup team?
+
 - intent: ask_startup_legal
   examples: |
     - Quelles démarches légales pour une startup ?
@@ -151,6 +299,16 @@ nlu:
     - Quels documents juridiques pour une startup ?
     - Combien coûtent les frais juridiques d’une startup ?
     - Ai-je besoin d’un avocat pour ma startup ?
+#english
+- intent: ask_startup_legal
+  examples: |
+    - What legal steps are needed for a startup?
+    - How do you register a startup?
+    - What legal documents are needed for a startup?
+    - How much do legal fees for a startup cost?
+    - Do I need a lawyer for my startup?
+
+
 - intent: ask_objet_decision_008
   examples: |
     - Quel est l'objet de la décision 008 ?
@@ -158,6 +316,16 @@ nlu:
     - De quoi parle la décision numéro 008 ?
     - Quelle est la portée de la décision 008 ?
     - À quoi sert la décision du 23 février 2025 ?
+
+#english
+- intent: ask_subject_decision_008
+  examples: |
+    - What is the subject of decision 008?
+    - What is the decision of February 23, 2025?
+    - What is decision number 008 about?
+    - What is the scope of decision 008?
+    - What is the purpose of the decision from February 23, 2025?
+
 
 - intent: ask_objectif_memoire
   examples: |
@@ -167,6 +335,16 @@ nlu:
     - Quel est l'objectif de l'article 2 ?
     - Que dit l'article 2 modifié ?
 
+#english
+- intent: ask_objective_thesis
+  examples: |
+    - What is the objective of the final thesis?
+    - Why write a final thesis?
+    - What is the purpose of the thesis?
+    - What is the objective of article 2?
+    - What does the amended article 2 say?
+
+
 - intent: ask_formats_memoire
   examples: |
     - Quels sont les formats du mémoire ?
@@ -174,6 +352,17 @@ nlu:
     - Format mémoire de fin d'études ?
     - Quels sont les types de mémoire possibles ?
     - Que propose l'article 3 modifié ?
+
+#english
+- intent: ask_thesis_formats
+  examples: |
+    - What are the formats for the thesis?
+    - What are the two possible formats for the thesis?
+    - Final thesis format?
+    - What are the possible types of thesis?
+    - What does the amended article 3 propose?
+
+
 
 - intent: ask_formations_etudiant
   examples: |
@@ -183,6 +372,16 @@ nlu:
     - Quels sont les ateliers à suivre ?
     - Que dit l'article 5 modifié ?
 
+#english
+- intent: ask_student_trainings
+  examples: |
+    - What trainings should the student attend?
+    - What are the mandatory trainings for students?
+    - What should the student learn?
+    - What workshops should be attended?
+    - What does the amended article 5 say?
+
+
 - intent: ask_beneficiaires_accompagnement
   examples: |
     - Qui peut être accompagné par l'université ?
@@ -190,6 +389,16 @@ nlu:
     - Quels étudiants peuvent être aidés ?
     - L'accompagnement est-il réservé à certains étudiants ?
     - Que dit l'article 6 modifié à ce sujet ?
+
+#english
+- intent: ask_support_beneficiaries
+  examples: |
+    - Who can be supported by the university?
+    - Who can benefit from support structures?
+    - Which students can receive help?
+    - Is support reserved for certain students?
+    - What does the amended article 6 say about this?
+
 
 - intent: ask_missions_cellule_orientation
   examples: |
@@ -199,6 +408,16 @@ nlu:
     - Qui compose la cellule d’orientation ?
     - Quels sont les objectifs de la cellule d’orientation ?
 
+#english
+- intent: ask_orientation_cell_missions
+  examples: |
+    - What are the missions of the Orientation Cell?
+    - What does the Orientation Cell do?
+    - What is the role of the orientation cell?
+    - Who is part of the orientation cell?
+    - What are the objectives of the orientation cell?
+
+
 - intent: ask_diplomes_obtenus
   examples: |
     - Quels diplômes obtient l'étudiant ?
@@ -206,6 +425,16 @@ nlu:
     - Quels certificats sont délivrés ?
     - Diplôme après mémoire de fin d’études ?
     - Que dit l’article 7 modifié ?
+
+#english
+- intent: ask_degrees_awarded
+  examples: |
+    - What degrees does the student receive?
+    - What does the student receive after the defense?
+    - What certificates are issued?
+    - Degree after final thesis?
+    - What does the amended article 7 say?
+
 
 - intent: ask_terme_startup
   examples: |
@@ -215,6 +444,16 @@ nlu:
     - Quelle est la nouvelle appellation ?
     - Que dit l'article 8 modifié ?
 
+#english
+- intent: ask_startup_term
+  examples: |
+    - What word replaces "startup"?
+    - What term is used instead of startup?
+    - Why replace the word startup?
+    - What is the new name?
+    - What does the amended article 8 say?
+
+
 - intent: ask_publication_decision
   examples: |
     - Où est publiée la décision ?
@@ -222,6 +461,16 @@ nlu:
     - Publication de la décision 008 ?
     - Où peut-on consulter la décision ?
     - Dans quel bulletin est-elle publiée ?
+
+#english
+- intent: ask_decision_publication
+  examples: |
+    - Where is the decision published?
+    - In which official document does the decision appear?
+    - Publication of decision 008?
+    - Where can the decision be consulted?
+    - In which bulletin is it published?
+
 
 - intent: ask_MVP
   examples: |
@@ -233,6 +482,19 @@ nlu:
     - C’est quoi le product-market fit ?
     - Quels outils utiliser pour créer un MVP ?
     - Est-ce que le no-code suffit pour lancer un projet ?
+
+#english
+- intent: ask_MVP_E
+  examples: |
+    - What is an MVP?
+    - How do you create a prototype?
+    - Should I build an app right from the start?
+    - How do I test my idea before launching it?
+    - How do I know if my startup idea is good?
+    - What is product-market fit?
+    - What tools can be used to create an MVP?
+    - Is no-code enough to launch a project?
+
 
 - intent: ask_cadre_institutionnel
   examples: |
@@ -247,6 +509,21 @@ nlu:
     - Quel est le budget alloué et comment est-il réparti ?
     - Existe-t-il des rapports d'évaluation annuels sur ce dispositif ?
 
+#english
+- intent: ask_institutional_framework
+  examples: |
+    - What is the specific role of the Ministry in this mechanism?
+    - Which other ministries or public organizations collaborate on this program?
+    - How are universities selected to participate?
+    - Is there a national steering committee to oversee this program?
+    - What are the performance indicators to evaluate this program?
+    - How are research centers concretely involved?
+    - Are there partnerships with the private sector in this framework?
+    - How does this program align with other government initiatives for innovation?
+    - What is the allocated budget and how is it distributed?
+    - Are there annual evaluation reports on this program?
+
+
 - intent: ask_Mecanisme_DSB
   examples: |
     - Quels types de projets sont prioritaires (tech, social, environnemental...) ?
@@ -259,6 +536,21 @@ nlu:
     - Comment sont protégées les idées déposées (propriété intellectuelle) ?
     - Les projets abandonnés en cours de route sont-ils pénalisés ?
     - Des mentors externes sont-ils assignés aux projets sélectionnés ?
+
+#english
+- intent: ask_DSB_mechanism
+  examples: |
+    - What types of projects are prioritized (tech, social, environmental...)?
+    - Can students in their bachelor's program apply exceptionally?
+    - How is the originality of the submitted projects guaranteed?
+    - Is there a quota for the number of labeled projects per year?
+    - Are group projects accepted? If yes, what is the maximum group size?
+    - Can this label be combined with other innovation grants?
+    - Are there geographical restrictions (priority regions)?
+    - How are submitted ideas protected (intellectual property)?
+    - Are projects abandoned mid-way penalized?
+    - Are external mentors assigned to selected projects?
+
 
 - intent: ask_Accès_aux_ressources
   examples: |
@@ -273,6 +565,21 @@ nlu:
     - Des licences logicielles professionnelles sont-elles fournies gratuitement ?
     - Comment sont gérés les conflits d'accès aux ressources en cas de forte demande ?
 
+#english
+- intent: ask_Access_to_resources
+  examples: |
+    - Does the IBTIKAR platform offer training webinars?
+    - How are partner incubators selected?
+    - Do rural students have equitable access to resources?
+    - Can the technological platforms be accessed without going through IBTIKAR?
+    - Is there a catalog of available equipment for prototyping?
+    - Are there specific scholarships that cover prototyping costs?
+    - Can alumni continue to use these resources after graduation?
+    - Is there dedicated technical support for using the platforms?
+    - Are professional software licenses provided for free?
+    - How are access conflicts to resources managed in case of high demand?
+
+
 - intent: ask_Rôle_des_acteurs
   examples: |
     - Les enseignants référents reçoivent-ils une compensation pour l'encadrement ?
@@ -285,6 +592,21 @@ nlu:
     - Les responsables d'incubateurs suivent-ils une formation spécifique ?
     - Comment les feedbacks des étudiants sont-ils collectés et pris en compte ?
     - Y a-t-il des bonnes pratiques partagées entre établissements ?
+
+#english
+- intent: ask_Role_of_actors
+  examples: |
+    - Do the referent teachers receive compensation for supervision?
+    - How are the performances of incubators evaluated in this program?
+    - Are local businesses involved in evaluating projects?
+    - Is there a national network of certified mentors?
+    - Do the heads of institutions have specific measurable goals to achieve?
+    - How are students informed about the existence of this system?
+    - Are awareness workshops organized in universities?
+    - Do incubator managers undergo specific training?
+    - How is student feedback collected and taken into account?
+    - Are best practices shared between institutions?
+
 
 - intent: ask_Processus_de_labellisation
   examples: |
@@ -299,6 +621,21 @@ nlu:
     - Une cérémonie officielle est-elle organisée pour les lauréats ?
     - Comment les lauréats sont-ils médiatisés ?
 
+#english
+- intent: ask_Labeling_process
+  examples: |
+    - Who makes up the project evaluation jury?
+    - How many steps are there in the labeling process?
+    - Are there elimination criteria in the preliminary phase?
+    - Is the label awarded permanently or does it require renewal?
+    - What is the average success rate for applications?
+    - Can rejected projects be resubmitted after modifications?
+    - Is there a fixed annual period for submitting applications?
+    - Does the label provide access to national/international networking events?
+    - Is an official ceremony organized for the winners?
+    - How are the winners publicized?
+
+
 - intent: ask_Références_légales
   examples: |
     - L'Arrêté n°1275 est-il disponible en ligne ? Si oui, où ?
@@ -311,7 +648,58 @@ nlu:
     - Existe-t-il un recours en cas de rejet injustifié d'un projet ?
     - La fiscalité des startups labellisées est-elle avantageuse ?
     - Des modèles de contrats type sont-ils fournis pour la création de startups ?
+#english
+- intent: ask_Legal_references
+  examples: |
+    - Is Order No. 1275 available online? If so, where?
+    - Is this mechanism compliant with Algerian intellectual property laws?
+    - Are amendments to the Order planned?
+    - How are disputes (e.g., plagiarism) legally handled?
+    - Does this program rely on international conventions?
+    - Can foreign students participate in this program?
+    - What are the sanctions for false declarations in applications?
+    - Is there an appeal process for unjustified project rejections?
+    - Is the taxation for labeled startups advantageous?
+    - Are standard contract templates provided for creating startups?
 
+
+# youcef------------------------------------------------
+- intent: ask_diff_pfe_types
+  examples: |
+    - quelle est la différence entre pfe startup et pfe académique ?
+    - c'est quoi la diff entre pfe startup et normal ?
+    - pfe classique vs pfe startup
+    - je sais pas choisir entre pfe startup et académique
+    - lequel est mieux pfe startup ou normal ?
+    - avantages pfe startup vs classique
+    - pfe traditionnel et pfe startup différence
+    - comment choisir entre les deux types de pfe ?
+    - c'est quoi un pfe académique ?
+    - pfe startup c'est différent comment ?
+    - pourquoi faire un pfe startup plutôt qu'un classique ?
+    - qu'est-ce qui change entre les deux pfe ?
+    - lequel est plus dur ?
+    - est-ce que le pfe startup compte double ?
+
+    #english
+- intent: ask_diff_pfe_types_E
+  examples: |
+    - What’s the difference between a startup PFE and an academic PFE?
+    - What’s the difference between a startup PFE and a regular one?
+    - Classic PFE vs startup PFE
+    - I don’t know which one to choose, startup PFE or academic
+    - Which one is better, startup PFE or regular?
+    - Advantages of startup PFE vs classic
+    - Traditional PFE and startup PFE, what’s the difference?
+    - How do you choose between the two types of PFEs?
+    - What’s an academic PFE?
+    - How is a startup PFE different?
+    - Why do a startup PFE instead of a regular one?
+    - What’s different between the two PFEs?
+    - Which one is harder?
+    - Does the startup PFE count double?
+
+# -------------------------------------------------------
 - intent: out_of_scope
   examples: |
     - Quelle heure est-il ?
@@ -320,6 +708,17 @@ nlu:
     - Raconte-moi une blague
     - Quel temps fait-il ?
     - Comment faire du pain ?
+
+#english
+- intent: out_of_scope_E
+  examples: |
+    - What time is it?
+    - Talk to me about politics
+    - What’s your favorite movie?
+    - Tell me a joke
+    - What’s the weather like?
+    - How do you make bread?
+
 
 - intent: affirm
   examples: |
@@ -330,6 +729,17 @@ nlu:
     - Ça me va
     - D’accord
 
+#english
+- intent: affirm_E
+  examples: |
+    - Yes
+    - Of course
+    - Exactly
+    - Totally
+    - That works for me
+    - Alright
+
+
 - intent: deny
   examples: |
     - Non
@@ -339,6 +749,17 @@ nlu:
     - Pas vraiment
     - Absolument pas
 
+#english
+- intent: deny_E
+  examples: |
+    - No
+    - Not at all
+    - Never
+    - I don't think so
+    - Not really
+    - Absolutely not
+
+
 - intent: bot_challenge
   examples: |
     - Es-tu un robot ?
@@ -346,3 +767,12 @@ nlu:
     - Suis-je en train de parler à un bot ?
     - Qui es-tu ?
     - Qu’es-tu ?
+
+#english
+- intent: bot_challenge_E
+  examples: |
+    - Are you a robot?
+    - Are you human?
+    - Am I talking to a bot?
+    - Who are you?
+    - What are you?
