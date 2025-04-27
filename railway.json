@@ -1,5 +1,6 @@
 {
-    "build": {
-      "builder": "docker"
-    }
+  "build": {
+    "builder": "docker",
+    "dockerfilePath": "rasa-chatbot/Dockerfile"
   }
+}
