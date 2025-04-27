@@ -59,7 +59,7 @@ stories:
 - story: are_you_a_bot
   steps:
   - intent: bot_challenge
-  - action: je_suis_un_robot
+  - action: utter_bot_challenge
 
 - story: Demande info PFE Startup
   steps:
@@ -111,144 +111,54 @@ stories:
 - story: thesis_startup
   steps:
   - intent: thesis_startup_question
-  - action: thesis_startup_response
+  - action: startup_memoire_rep
 
 - story: who_can_do_startup_thesis
   steps:
   - intent: who_can_do_startup_thesis
-  - action: who_can_do_startup_thesis_response
+  - action: qui_peut_faire_startup_comme_memorie_rep
 
 - story: startup_thesis_acceptance_criteria
   steps:
   - intent: startup_thesis_acceptance_criteria
-  - action: startup_thesis_acceptance_criteria_response
+  - action: criteres_acceptee_memorie_startup_rep
 
 - story: university_incubator
   steps:
   - intent: university_incubator_question
-  - action: university_incubator_response
+  - action: incubateur_universite_rep
 
 - story: startup_thesis_training
   steps:
   - intent: startup_thesis_training_question
-  - action: startup_thesis_training_response
+  - action: formation_memorie_startup_rep
 
 - story: group_project
   steps:
   - intent: group_project_question
-  - action: group_project_response
+  - action: projet_en_groupe_rep
 
 - story: project_evaluation
   steps:
   - intent: evaluation_question
-  - action: evaluation_response
+  - action: evaluation_rep
 
 - story: acceptance_rewards
   steps:
   - intent: acceptance_rewards_question
-  - action: acceptance_rewards_response
+  - action: recompense_acception_rep
 
 - story: innovative_projects_recognition
   steps:
   - intent: innovative_projects_recognition
-  - action: innovative_projects_recognition_response
+  - action: reconnaissance_projets_innovants_rep
 
 - story: label_consequences
   steps:
   - intent: label_consequences_question
-  - action: label_consequences_response
+  - action: consequences_label_projet_rep
 
 - story: competitions_aids
   steps:
   - intent: competitions_aids_question
-  - action: competitions_aids_response
-
-- story: répondre à pfe_f_1
-  steps:
-    - intent: pfe_f_1
-    - action: utter_pfe_f_1
-
-- story: répondre à pfe_e_1
-  steps:
-    - intent: pfe_e_1
-    - action: utter_pfe_e_1
-
-- story: répondre à pfe_a_1
-  steps:
-    - intent: pfe_a_1
-    - action: utter_pfe_a_1
-
-- story: répondre à pfe_f_2
-  steps:
-    - intent: pfe_f_2
-    - action: utter_pfe_f_2
-
-- story: répondre à pfe_e_2
-  steps:
-    - intent: pfe_e_2
-    - action: utter_pfe_e_2
-
-- story: répondre à pfe_a_2
-  steps:
-    - intent: pfe_a_2
-    - action: utter_pfe_a_2
-
-- story: répondre à pfe_f_3
-  steps:
-    - intent: pfe_f_3
-    - action: utter_pfe_f_3
-
-- story: répondre à pfe_e_3
-  steps:
-    - intent: pfe_e_3
-    - action: utter_pfe_e_3
-
-- story: répondre à pfe_a_3
-  steps:
-    - intent: pfe_a_3
-    - action: utter_pfe_a_3
-
-- story: répondre à pfe_f_4
-  steps:
-    - intent: pfe_f_4
-    - action: utter_pfe_f_4
-
-- story: répondre à pfe_e_4
-  steps:
-    - intent: pfe_e_4
-    - action: utter_pfe_e_4
-
-- story: répondre à pfe_a_4
-  steps:
-    - intent: pfe_a_4
-    - action: utter_pfe_a_4
-
-- story: répondre à pfe_f_5
-  steps:
-    - intent: pfe_f_5
-    - action: utter_pfe_f_5
-
-- story: répondre à pfe_e_5
-  steps:
-    - intent: pfe_e_5
-    - action: utter_pfe_e_5
-
-- story: répondre à pfe_a_5
-  steps:
-    - intent: pfe_a_5
-    - action: utter_pfe_a_5
-
-- story: répondre à pfe_f_6
-  steps:
-    - intent: pfe_f_6
-    - action: utter_pfe_f_6
-
-- story: répondre à pfe_e_6
-  steps:
-    - intent: pfe_e_6
-    - action: utter_pfe_e_6
-
-- story: répondre à pfe_a_6
-  steps:
-    - intent: pfe_a_6
-    - action: utter_pfe_a_6
+  - action: concours_aides_meilleurs_projets_rep

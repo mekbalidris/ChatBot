@@ -1,366 +1,250 @@
 version: "3.1"
 
 rules:
-- rule: Réponse aux salutations
+- rule: Greeting response
   steps:
   - intent: greet
   - action: utter_greet
 
-- rule: greating response #english
-  steps:
-  - intent: greetE
-  - action: utter_greet_E
-
-- rule: Réponse aux au revoir
+- rule: Goodbye response
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Goodbye response #english
-  steps:
-  - intent: goodbyeE
-  - action: utter_goodbye_E
-
-- rule: Réponse hors sujet
+- rule: Out of scope response
   steps:
   - intent: out_of_scope
   - action: utter_out_of_scope
 
-- rule: Out of scope response #english
-  steps:
-  - intent: out_of_scope_E
-  - action: utter_out_of_scope_E
-
-- rule: Réponse à bot_challenge
+- rule: Bot challenge response
   steps:
   - intent: bot_challenge
   - action: utter_bot_challenge
 
-- rule: Bot challenge response #english
-  steps:
-  - intent: bot_challenge_E
-  - action: utter_bot_challenge_E
-
-- rule: Réponse à ask_pfe_startup
+- rule: PFE Startup information
   steps:
   - intent: ask_pfe_startup
   - action: utter_pfe_startup_info
 
-- rule: Response to ask_pfe_startup #english
-  steps:
-  - intent: ask_pfe_startup_E
-  - action: utter_pfe_startup_info_E
-
-- rule: Réponse à ask_incubateurs
+- rule: Incubators information
   steps:
   - intent: ask_incubateurs
   - action: utter_incubateurs_info
 
-- rule: Response to ask_incubateurs #english
-  steps:
-  - intent: ask_incubateurs_E
-  - action: utter_incubateurs_info_E
-
-- rule: Réponse à ask_double_diplome
+- rule: Double diploma information
   steps:
   - intent: ask_double_diplome
   - action: utter_double_diplome_info
 
-- rule: Response to ask_double_diplome #english
-  steps:
-  - intent: ask_double_diplome_E
-  - action: utter_double_diplome_info_E
-
-- rule: Réponse à ask_mecanisme_diplome_startup
+- rule: Diploma-Startup mechanism
   steps:
   - intent: ask_mecanisme_diplome_startup
   - action: utter_mecanisme_diplome_startup
 
-- rule: Response to ask_mecanisme_diplome_startup #english
-  steps:
-  - intent: ask_mecanisme_diplome_startup_E
-  - action: utter_mecanisme_diplome_startup_E
-
-- rule: Réponse à ask_formation_bmc
+- rule: BMC training information
   steps:
   - intent: ask_formation_bmc
   - action: utter_formation_bmc
 
-- rule: Response to ask_formation_bmc #english
-  steps:
-  - intent: ask_formation_bmc_E
-  - action: utter_formation_bmc_E
-
-- rule: Réponse à ask_startup_funding
+- rule: Startup funding information
   steps:
   - intent: ask_startup_funding
   - action: utter_startup_funding
 
-- rule: Response to ask_startup_funding #english
-  steps:
-  - intent: ask_startup_funding_E
-  - action: utter_startup_funding_E
-
-- rule: Réponse à ask_startup_steps
+- rule: Startup steps information
   steps:
   - intent: ask_startup_steps
   - action: utter_startup_steps
 
-- rule: Response to ask_startup_steps #english
-  steps:
-  - intent: ask_startup_steps_E
-  - action: utter_startup_steps_E
-
-- rule: Réponse à ask_non_pfe_startup
+- rule: Non-PFE startup options
   steps:
   - intent: ask_non_pfe_startup
   - action: utter_non_pfe_startup
 
-- rule: Response to ask_non_pfe_startup #english
-  steps:
-  - intent: ask_non_pfe_startup_E
-  - action: utter_non_pfe_startup_E
-
-- rule: Réponse à ask_startup_team
+- rule: Startup team building
   steps:
   - intent: ask_startup_team
   - action: utter_startup_team
 
-- rule: Response to ask_startup_team #english
-  steps:
-  - intent: ask_startup_team_E
-  - action: utter_startup_team_E
-
-- rule: Réponse à ask_startup_legal
+- rule: Startup legal steps
   steps:
   - intent: ask_startup_legal
   - action: utter_startup_legal
 
-- rule: Response to ask_startup_legal #english
-  steps:
-  - intent: ask_startup_legal_E
-  - action: utter_startup_legal_E
-
-- rule: Reponse a c_quoi_une_startup
+- rule: What is a startup
   steps:
   - intent: c_quoi_une_startup
   - action: utter_c_quoi_une_startup
 
-- rule: Response to c_quoi_une_startup #english
-  steps:
-  - intent: c_quoi_une_startup_E
-  - action: utter_c_quoi_une_startup_E
-
-- rule: Réponse à ask_MVP
+- rule: MVP definition
   steps:
   - intent: ask_MVP
   - action: utter_MVP_deff
 
-- rule: Response to ask_MVP #english
-  steps:
-  - intent: ask_MVP_E
-  - action: utter_MVP_deff_E
-
-- rule: Réponse à ask_cadre_institutionnel
+- rule: Institutional framework
   steps:
   - intent: ask_cadre_institutionnel
   - action: utter_Cadre_institutionnel
 
-- rule: Response to ask_cadre_institutionnel #english
-  steps:
-  - intent: ask_cadre_institutionnel_E
-  - action: utter_Cadre_institutionnel_E
+# Removed DSB mechanism rule since the action isn't defined
 
-- rule: Réponse à ask_Mecanisme_DSB
-  steps:
-  - intent: ask_Mecanisme_DSB
-  - action: utter_Mecanisme_DSB
-
-- rule: Response to ask_Mecanisme_DSB #english
-  steps:
-  - intent: ask_Mecanisme_DSB_E
-  - action: utter_Mecanisme_DSB_E
-
-- rule: Réponse à ask_Accès_aux_ressources
+- rule: Resource access
   steps:
   - intent: ask_Accès_aux_ressources
-  - action: utter_Accès_aux_ressources
+  - action: utter_Access_to_resources  # Changed to match domain
 
-- rule: Response to ask_Accès_aux_ressources #english
-  steps:
-  - intent: ask_Accès_aux_ressources_E
-  - action: utter_Accès_aux_ressources_E
-
-- rule: Réponse à ask_Rôle_des_acteurs
+- rule: Actors roles
   steps:
   - intent: ask_Rôle_des_acteurs
   - action: utter_Rôle_des_acteurs
 
-- rule: Response to ask_Rôle_des_acteurs #english
-  steps:
-  - intent: ask_Rôle_des_acteurs_E
-  - action: utter_Rôle_des_acteurs_E
-
-- rule: Réponse à ask_Processus_de_labellisation
+- rule: Labeling process
   steps:
   - intent: ask_Processus_de_labellisation
   - action: utter_Processus_de_labellisation
 
-- rule: Response to ask_Processus_de_labellisation #english
-  steps:
-  - intent: ask_Processus_de_labellisation_E
-  - action: utter_Processus_de_labellisation_E
-
-- rule: Réponse à ask_Références_légales
+- rule: Legal references
   steps:
   - intent: ask_Références_légales
   - action: utter_Références_légales
 
-- rule: Response to ask_Références_légales #english
-  steps:
-  - intent: ask_Références_légales_E
-  - action: utter_Références_légales_E
-
-- rule: Réponse à la question sur la décision 008
+- rule: Decision 008 information
   steps:
     - intent: objet_decision_008
     - action: utter_objet_decision_008
 
-- rule: Réponse à la question sur l'objectif du mémoire
+- rule: Thesis objective
   steps:
     - intent: objectif_memoire
     - action: utter_objectif_memoire
 
-- rule: Réponse à la question sur les formats du mémoire
+- rule: Thesis formats
   steps:
     - intent: formats_memoire
     - action: utter_formats_memoire
 
-- rule: Réponse à la question sur les formations
+- rule: Student training
   steps:
     - intent: formations_etudiant
     - action: utter_formations_etudiant
 
-- rule: Réponse à la question sur les bénéficiaires de l'accompagnement
+- rule: Support beneficiaries
   steps:
     - intent: beneficiaires_accompagnement
     - action: utter_beneficiaires_accompagnement
 
-- rule: Réponse à la question sur la Cellule d'Orientation
+- rule: Orientation cell
   steps:
     - intent: missions_cellule_orientation
     - action: utter_missions_cellule_orientation
 
-- rule: Réponse à la question sur les diplômes obtenus
+- rule: Obtained diplomas
   steps:
     - intent: diplomes_obtenus
     - action: utter_diplomes_obtenus
 
-- rule: Réponse à la question sur le remplacement du terme start-up
+- rule: Startup term replacement
   steps:
     - intent: terme_startup
     - action: utter_terme_startup
 
-# youcef-------------------------------------------------
-- rule: Respond to PFE types question
+- rule: PFE types comparison
   steps:
     - intent: ask_diff_pfe_types
     - action: utter_diff_pfe_types
-# --------------------------------------------------------
 
-- rule: Réponse à la question sur la publication de la décision
+- rule: Decision publication
   steps:
     - intent: publication_decision
     - action: utter_publication_decision
 
-#Imad--------------------------
-
-- rule: répondre à pfe_f_1
-    steps:
-      - intent: pfe_f_1
-      - action: utter_pfe_f_1
-
-- rule: répondre à pfe_e_1
+# PFE registration responses
+- rule: PFE registration (French)
   steps:
-    - intent: pfe_e_1
-    - action: utter_pfe_e_1
+    - intent: pfe_registration_fr
+    - action: utter_pfe_registration_fr
 
-- rule: répondre à pfe_a_1
+- rule: PFE registration (English)
   steps:
-    - intent: pfe_a_1
-    - action: utter_pfe_a_1
+    - intent: pfe_registration_en
+    - action: utter_pfe_registration_en
 
-- rule: répondre à pfe_f_2
+- rule: PFE registration (Arabic)
   steps:
-    - intent: pfe_f_2
-    - action: utter_pfe_f_2
+    - intent: pfe_registration_ar
+    - action: utter_pfe_registration_ar
 
-- rule: répondre à pfe_e_2
+- rule: PFE team composition (French)
   steps:
-    - intent: pfe_e_2
-    - action: utter_pfe_e_2
+    - intent: pfe_team_fr
+    - action: utter_pfe_team_fr
 
-- rule: répondre à pfe_a_2
+- rule: PFE team composition (English)
   steps:
-    - intent: pfe_a_2
-    - action: utter_pfe_a_2
+    - intent: pfe_team_en
+    - action: utter_pfe_team_en
 
-- rule: répondre à pfe_f_3
+- rule: PFE team composition (Arabic)
   steps:
-    - intent: pfe_f_3
-    - action: utter_pfe_f_3
+    - intent: pfe_team_ar
+    - action: utter_pfe_team_ar
 
-- rule: répondre à pfe_e_3
+- rule: PFE incubators (French)
   steps:
-    - intent: pfe_e_3
-    - action: utter_pfe_e_3
+    - intent: pfe_incubators_fr
+    - action: utter_pfe_incubators_fr
 
-- rule: répondre à pfe_a_3
+- rule: PFE incubators (English)
   steps:
-    - intent: pfe_a_3
-    - action: utter_pfe_a_3
+    - intent: pfe_incubators_en
+    - action: utter_pfe_incubators_en
 
-- rule: répondre à pfe_f_4
+- rule: PFE incubators (Arabic)
   steps:
-    - intent: pfe_f_4
-    - action: utter_pfe_f_4
+    - intent: pfe_incubators_ar
+    - action: utter_pfe_incubators_ar
 
-- rule: répondre à pfe_e_4
+- rule: PFE BMC (French)
   steps:
-    - intent: pfe_e_4
-    - action: utter_pfe_e_4
+    - intent: pfe_formation_bmc_fr
+    - action: utter_pfe_bmc_fr
 
-- rule: répondre à pfe_a_4
+- rule: PFE BMC (English)
   steps:
-    - intent: pfe_a_4
-    - action: utter_pfe_a_4
+    - intent: pfe_formation_bmc_en
+    - action: utter_pfe_bmc_en
 
-- rule: répondre à pfe_f_5
+- rule: PFE BMC (Arabic)
   steps:
-    - intent: pfe_f_5
-    - action: utter_pfe_f_5
+    - intent: pfe_formation_bmc_ar
+    - action: utter_pfe_bmc_ar
 
-- rule: répondre à pfe_e_5
+- rule: PFE defense (French)
   steps:
-    - intent: pfe_e_5
-    - action: utter_pfe_e_5
+    - intent: pfe_defense_fr
+    - action: utter_pfe_defense_fr
 
-- rule: répondre à pfe_a_5
+- rule: PFE defense (English)
   steps:
-    - intent: pfe_a_5
-    - action: utter_pfe_a_5
+    - intent: pfe_defense_en
+    - action: utter_pfe_defense_en
 
-- rule: répondre à pfe_f_6
+- rule: PFE defense (Arabic)
   steps:
-    - intent: pfe_f_6
-    - action: utter_pfe_f_6
+    - intent: pfe_defense_ar
+    - action: utter_pfe_defense_ar
 
-- rule: répondre à pfe_e_6
+- rule: PFE aftermath (French)
   steps:
-    - intent: pfe_e_6
-    - action: utter_pfe_e_6
+    - intent: pfe_aftermath_fr
+    - action: utter_pfe_aftermath_fr
 
-- rule: répondre à pfe_a_6
+- rule: PFE aftermath (English)
   steps:
-    - intent: pfe_a_6
-    - action: utter_pfe_a_6
+    - intent: pfe_aftermath_en
+    - action: utter_pfe_aftermath_en
+
+- rule: PFE aftermath (Arabic)
+  steps:
+    - intent: pfe_aftermath_ar
+    - action: utter_pfe_aftermath_ar
