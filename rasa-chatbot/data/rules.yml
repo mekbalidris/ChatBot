@@ -248,3 +248,273 @@ rules:
   steps:
     - intent: pfe_aftermath_ar
     - action: utter_pfe_aftermath_ar
+
+
+#=====================
+# from "google forms"
+#=====================
+
+- rule: utter_pivoter_stratégiquement_modèle_initial_ne_fonctionne_pas_Qes_FR
+  steps:
+    - intent: pivoter_stratégiquement_modèle_initial_ne_fonctionne_pas_Qes_FR
+    - action: utter_pivoter_stratégiquement_modèle_initial_ne_fonctionne_pas_Qes_FR
+
+- rule: pivoter_stratégiquement_modèle_initial_ne_fonctionne_pas_Qes_EN
+  steps:
+    - intent: pivoter_stratégiquement_modèle_initial_ne_fonctionne_pas_Qes_EN
+    - action: utter_pivoter_stratégiquement_modèle_initial_ne_fonctionne_pas_Qes_EN
+
+
+
+- rule: equilibrer_innovation_viabilite_FR
+  steps:
+    - intent: equilibrer_innovation_viabilite_Qes_FR
+    - action: utter_equilibrer_innovation_viabilite_rep_FR
+
+  
+- rule: equilibrer_innovation_viabilite_EN
+  steps:
+    - intent: equilibrer_innovation_viabilite_Qes_EN
+    - action: utter_equilibrer_innovation_viabilite_rep_EN
+
+
+
+
+- rule: erreurs_echec_startup_FR
+  steps:
+    - intent: erreurs_echec_startup_Qes_FR
+    - action: utter_erreurs_echec_startup_rep_FR
+    
+
+- rule: erreurs_echec_startup_EN
+  steps:
+    - intent: erreurs_echec_startup_Qes_EN
+    - action: utter_erreurs_echec_startup_rep_EN
+
+
+
+
+
+
+- rule: strategies_acquisition_clients_FR
+  steps:
+    - intent: strategies_acquisition_clients_Qes_FR
+    - action: utter_strategies_acquisition_clients_rep_FR
+
+
+- rule: strategies_acquisition_clients_EN
+  steps:
+    - intent: strategies_acquisition_clients_Qes_EN
+    - action: utter_strategies_acquisition_clients_rep_EN
+
+
+
+
+
+
+
+- rule: calcul_marge_commerciale_FR
+  steps:
+    - intent: calcul_marge_commerciale_Qes_FR
+    - action: utter_calcul_marge_commerciale_rep_FR
+
+
+
+- rule: calcul_marge_commerciale_EN
+  steps:
+    - intent: calcul_marge_commerciale_Qes_EN
+    - action: utter_calcul_marge_commerciale_rep_EN
+
+
+
+
+
+
+
+- rule: droits_createur_startup_FR
+  steps:
+    - intent: droits_createur_startup_Qes_FR
+    - action: utter_droits_createur_startup_rep_FR
+
+
+- rule: droits_createur_startup_EN
+  steps:
+    - intent: droits_createur_startup_Qes_EN
+    - action: utter_droits_createur_startup_rep_EN
+
+
+
+
+
+
+
+- rule: financement_startup_FR
+  steps:
+    - intent: financement_startup_Qes_FR
+    - action: utter_financement_startup_rep_FR
+
+
+- rule: financement_startup_EN
+  steps:
+    - intent: financement_startup_Qes_EN
+    - action: utter_financement_startup_rep_EN
+
+
+
+
+
+
+- rule: nombre_startups_algerie_FR
+  steps:
+    - intent: nombre_startups_algerie_Qes_FR
+    - action: utter_nombre_startups_algerie_rep_FR
+
+- rule: nombre_startups_algerie_EN
+  steps:
+    - intent: nombre_startups_algerie_Qes_EN
+    - action: utter_nombre_startups_algerie_rep_EN
+
+
+
+
+
+
+
+- rule: difference_startup_projet_innovant_FR
+  steps:
+    - intent: difference_startup_projet_innovant_Qes_FR
+    - action: utter_difference_startup_projet_innovant_rep_FR
+
+
+- rule: difference_startup_projet_innovant_EN
+  steps:
+    - intent: difference_startup_projet_innovant_Qes_EN
+    - action: utter_difference_startup_projet_innovant_rep_EN
+
+
+
+
+
+
+- rule: obtenir_label_startup_FR
+  steps:
+    - intent: obtenir_label_startup_Qes_FR
+    - action: utter_obtenir_label_startup_rep_FR
+
+- rule: obtenir_label_startup_EN
+  steps:
+    - intent: obtenir_label_startup_Qes_EN
+    - action: utter_obtenir_label_startup_rep_EN
+
+
+
+
+
+- rule: criteres_startup_technologique_FR
+  steps:
+    - intent: criteres_startup_technologique_Qes_FR
+    - action: utter_criteres_startup_technologique_rep_FR
+
+
+- rule: criteres_startup_technologique_EN
+  steps:
+    - intent: criteres_startup_technologique_Qes_EN
+    - action: utter_criteres_startup_technologique_rep_EN
+
+
+
+
+
+- rule: transition_startup_entreprise_FR
+  steps:
+    - intent: transition_startup_entreprise_Qes_FR
+    - action: utter_transition_startup_entreprise_FR
+
+
+- rule: transition_startup_entreprise_EN
+  steps:
+    - intent: transition_startup_entreprise_Qes_EN
+    - action: utter_transition_startup_entreprise_EN
+
+
+
+
+- rule: difference_startup_entreprise_FR
+  steps:
+    - intent: difference_startup_entreprise_Qes_FR
+    - action: utter_difference_startup_entreprise_rep_FR
+
+
+- rule: difference_startup_entreprise_EN
+  steps:
+    - intent: difference_startup_entreprise_Qes_EN
+    - action: utter_difference_startup_entreprise_rep_EN
+
+
+
+
+- rule: caracteristiques_startup_FR
+  steps:
+    - intent: caracteristiques_startup_Qes_FR
+    - action: utter_caracteristiques_startup_rep_FR
+
+- rule: caracteristiques_startup_EN
+  steps:
+    - intent: caracteristiques_startup_Qes_EN
+    - action: utter_caracteristiques_startup_rep_EN
+
+
+
+
+- rule: objectif_marketing_startup_FR
+  steps:
+    - intent: objectif_marketing_startup_Qes_FR
+    - action: utter_objectif_marketing_startup_rep_FR
+
+
+
+- rule: objectif_marketing_startup_EN
+  steps:
+    - intent: objectif_marketing_startup_Qes_EN
+    - action: utter_objectif_marketing_startup_rep_EN
+
+
+
+
+
+- rule: etude_marche_startup_FR
+  steps:
+    - intent: etude_marche_startup_Qes_FR
+    - action: utter_etude_marche_startup_rep_FR
+
+
+- rule: etude_marche_startup_EN
+  steps:
+    - intent: etude_marche_startup_Qes_EN
+    - action: utter_etude_marche_startup_rep_EN
+
+
+
+- rule: demarches_legales_lancer_startup_FR
+  steps:
+    - intent: demarches_legales_lancer_startup_Qes_FR
+    - action: utter_demarches_legales_lancer_startup_rep_FR
+
+- rule: demarches_legales_lancer_startup_EN
+  steps:
+    - intent: demarches_legales_lancer_startup_Qes_EN
+    - action: utter_demarches_legales_lancer_startup_rep_EN
+
+
+
+
+- rule: reussir_startup_FR
+  steps:
+    - intent: reussir_startup_Qes_FR
+    - action: utter_reussir_startup_rep_FR
+
+
+- rule: reussir_startup_EN
+  steps:
+    - intent: reussir_startup_Qes_EN
+    - action: utter_reussir_startup_rep_EN
