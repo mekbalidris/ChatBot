@@ -1664,6 +1664,8 @@ nlu:
     - Comment apprendre à jouer de la guitare ?
     - Donne-moi une recette de gâteau au chocolat
     - Qui a gagné le dernier match de foot ?
+    - tu peux me donner une methode pour mieux etudier?
+    - tu aime la pasta ?
 
 - intent: out_of_scope_E
   examples: |
@@ -1678,6 +1680,9 @@ nlu:
     - How can I learn to play the guitar?
     - Give me a chocolate cake recipe
     - Who won the last soccer match?
+    - Can you give me a method to study better?
+    - do you like pasta?
+
 
 
 
@@ -2032,3 +2037,477 @@ nlu:
     - واش كاينين جوائز ولا دعم ؟
     - كيفاش نحولو المشروع لـ startup حقيقية ؟
     - واش كاين متابعة من بعد الـ PFE ؟
+
+
+#=====================
+# from "google forms"
+#=====================
+
+- intent: pivoter stratégiquement-modèle initial ne fonctionne pas_Qes_FR
+  examples: |
+    - Quelles sont les meilleures pratiques pour pivoter stratégiquement lorsque le modèle initial ne fonctionne pas comme prévu ?
+    - Que faire si mon business model ne marche pas ?
+    - Comment adapter ma startup si le modèle de départ échoue ?
+    - Quelles stratégies adopter pour changer d’orientation dans une startup ?
+    - Mon idée de départ ne fonctionne pas, comment réagir ?
+    - Comment pivoter efficacement dans une startup ?
+    - C’est quoi un bon pivot stratégique pour une startup ?
+    - Que conseillez-vous quand une startup doit changer son modèle ?
+    - Comment savoir quand il faut pivoter ?
+    - Quels sont les conseils pour faire un pivot réussi ?
+    - Que faire quand les résultats ne suivent pas avec le modèle initial ?
+    - Quand et comment décider de pivoter ?
+    - Le modèle ne marche pas, quelles alternatives ?
+    - Comment faire évoluer son business model intelligemment ?
+    - Quelles étapes suivre pour changer de stratégie dans une startup ?
+    - Comment transformer son idée sans tout recommencer ?
+    - Peut-on changer de stratégie sans perdre l’objectif initial ?
+    - Comment faire un pivot sans tout casser ?
+
+
+- intent: pivoter stratégiquement-modèle initial ne fonctionne pas_Qes_EN
+  examples: |
+  - What are the best practices for pivoting strategically when the original model doesn’t work as expected?
+  - What should I do if my startup model isn’t working?
+  - How can I pivot my startup when the initial idea fails?
+  - What’s a good strategy to pivot a startup?
+  - How to adapt when my business model doesn’t bring results?
+  - My business model failed, now what?
+  - How do I know when it’s time to pivot?
+  - What are smart ways to change direction in a startup?
+  - How to shift the startup’s focus effectively?
+  - What should a startup do when the plan doesn’t go well?
+  - Any advice on pivoting a business?
+  - What steps should I follow to pivot successfully?
+  - When should I consider a strategic pivot?
+  - Is it possible to change the model without starting over?
+  - How can I make a smooth pivot?
+  - How to pivot while staying aligned with the vision?
+  - What’s the best way to shift strategies in a startup?
+
+
+intent: equilibrer_innovation_viabilite_Qes_FR
+examples: |
+  - Comment équilibrer l'innovation produit et la viabilité commerciale ?
+  - Comment trouver un équilibre entre innovation et rentabilité ?
+  - Comment allier innovation technologique et viabilité économique ?
+  - Comment conjuguer innovation et modèle économique viable ?
+  - Comment assurer l'équilibre entre un produit innovant et un business rentable ?
+  - Quelle est la meilleure façon d'équilibrer l'innovation avec les contraintes commerciales ?
+  - Comment gérer le dilemme entre innover et générer du revenu ?
+  - Est-il possible de rester innovant tout en gardant une viabilité commerciale ?
+  - Comment concilier technologie innovante et faisabilité commerciale ?
+  - Quels sont les conseils pour équilibrer innovation et viabilité ?
+
+
+intent: equilibrer_innovation_viabilite_Qes_EN
+examples: |
+  - How to balance product innovation and business viability?
+  - How can a startup manage both innovation and commercial success?
+  - What’s the best way to align innovation with market needs?
+  - How do you combine innovation and economic sustainability?
+  - How to ensure your product is both innovative and financially viable?
+  - Is it possible to innovate and stay commercially viable?
+  - How to keep innovation without sacrificing revenue?
+  - How do tech startups balance creativity and market demand?
+  - What are some best practices to balance innovation and business viability?
+  - How to reconcile innovation with a working business model?
+
+
+
+intent: erreurs_echec_startup_Qes_FR
+examples: |
+  - Quelles sont les erreurs qui mènent à l'échec d'une startup ?
+  - Quelles erreurs les startups commettent souvent au début ?
+  - Quelles sont les causes courantes d'échec pour une startup ?
+  - Pourquoi les startups échouent dans leurs premières années ?
+  - Quelles sont les erreurs à éviter pour ne pas faire échouer sa startup ?
+  - Qu'est-ce qui cause l'échec des startups dans les deux premières années ?
+  - Quels pièges peuvent conduire à l’échec d’une jeune startup ?
+  - Quelles fautes peuvent ruiner une startup au démarrage ?
+  - Quelles sont les erreurs fréquentes des startups en début d’activité ?
+  - Quelles sont les raisons principales de l’échec des startups ?
+
+
+
+intent: erreurs_echec_startup_Qes_EN
+examples: |
+  - What are the common mistakes that lead to startup failure?
+  - Why do startups fail in the first two years?
+  - What are the typical causes of startup failure?
+  - What mistakes should startups avoid early on?
+  - What leads to a startup failing quickly?
+  - What are the main reasons startups fail in their early stage?
+  - What are the errors that can destroy a startup?
+  - What causes most startups to fail?
+  - What should entrepreneurs avoid to prevent failure?
+  - What are common early mistakes in startups?
+
+
+intent: strategies_acquisition_clients_Qes_FR
+examples: |
+  - Quelles sont les stratégies d'acquisition client les plus rentables pour une startup avec un budget limité ?
+  - Comment acquérir des clients sans dépenser beaucoup ?
+  - Quelles méthodes marketing sont efficaces pour une startup avec peu de moyens ?
+  - Comment attirer des clients avec un budget marketing restreint ?
+  - Quelles sont les meilleures techniques d’acquisition client à faible coût ?
+  - Comment une startup peut-elle gagner des clients sans trop dépenser ?
+  - Quelles stratégies marketing adopter quand on a un petit budget ?
+  - Comment optimiser l’acquisition client avec peu d’argent ?
+  - Quelles approches sont rentables pour une startup débutante en marketing ?
+  - Quels canaux d’acquisition client sont les plus efficaces et peu coûteux ?
+
+
+intent: strategies_acquisition_clients_Qes_EN
+examples: |
+  - What are the most cost-effective customer acquisition strategies for a startup with a limited marketing budget?
+  - How to acquire customers without spending much?
+  - What marketing methods work well for startups with low budgets?
+  - How to attract customers on a tight marketing budget?
+  - What are the best low-cost customer acquisition techniques?
+  - How can a startup gain customers without spending a lot?
+  - What marketing strategies should startups with small budgets use?
+  - How to optimize customer acquisition with limited funds?
+  - What are profitable approaches for startups starting marketing?
+  - Which customer acquisition channels are effective and low cost?
+
+intent: calcul_marge_commerciale_Qes_FR
+examples: |
+  - Comment calculer une bonne marge commerciale pour un produit ?
+  - Quelle est la marge idéale pour un produit ?
+  - Comment savoir si ma marge commerciale est correcte ?
+  - Quelle marge appliquer pour rester rentable ?
+  - Comment fixer la bonne marge sur un produit ?
+  - Quel pourcentage de marge devrais-je choisir ?
+  - Comment estimer une marge commerciale raisonnable ?
+  - Y a-t-il une marge standard pour les produits ?
+  - Quelle est la meilleure façon de définir une marge commerciale ?
+  - Comment déterminer la rentabilité d’un produit via la marge ?
+
+intent: calcul_marge_commerciale_Qes_EN
+examples: |
+  - How do I calculate a good profit margin for a product?
+  - What is the ideal margin for a product?
+  - How do I know if my profit margin is correct?
+  - What margin should I apply to stay profitable?
+  - How to set the right margin on a product?
+  - What percentage margin should I choose?
+  - How can I estimate a reasonable profit margin?
+  - Is there a standard margin for products?
+  - What's the best way to define a profit margin?
+  - How can I determine if a product is profitable based on margin?
+
+intent: droits_createur_startup_Qes_FR
+examples: |
+  - Quels sont les droits d’un créateur de startup ?
+  - Pourquoi créer une startup ?
+  - Quels sont les avantages juridiques d’un fondateur de startup ?
+  - Est-ce que les créateurs de startup ont des droits spécifiques ?
+  - Quels bénéfices a-t-on en tant que fondateur d'une startup ?
+  - Quel est l’intérêt de lancer sa propre startup ?
+  - Que gagne-t-on à créer une startup ?
+  - Quels sont les droits légaux d’un créateur d’entreprise innovante ?
+  - Quels avantages pour un étudiant qui crée une startup ?
+  - Pourquoi se lancer dans la création d’une startup ?
+
+
+intent: droits_createur_startup_Qes_EN
+examples: |
+  - What rights do startup founders have?
+  - Why should someone create a startup?
+  - What are the legal advantages for startup creators?
+  - Do startup founders benefit from specific rights?
+  - What are the benefits of being a startup founder?
+  - What’s the point of starting your own startup?
+  - Why launch a startup as a student?
+  - Are there incentives for startup creators?
+  - What legal support is available for startup founders?
+  - What do you get from creating a startup?
+
+
+
+
+intent: financement_startup_Qes_FR
+examples: |
+  - Comment financer ma startup ?
+  - Quels sont les moyens pour financer une startup ?
+  - Comment trouver de l'argent pour mon projet ?
+  - Quelles sont les sources de financement pour une jeune entreprise ?
+  - Comment une startup peut-elle obtenir des fonds ?
+  - Où chercher des financements pour lancer ma startup ?
+  - Est-ce qu'il existe des aides pour financer ma startup ?
+  - Qui peut financer ma startup ?
+  - Comment lever des fonds quand on débute ?
+  - Quels types de financement existent pour une startup ?
+
+intent: financement_startup_Qes_EN
+examples: |
+  - How can I fund my startup?
+  - What are the ways to finance a startup?
+  - Where can I find money for my project?
+  - How do startups get funding?
+  - What are the funding options for a new company?
+  - Are there any financial aids for startups?
+  - How to raise capital for my startup?
+  - What are the best sources of funding?
+  - Can students get funding for startups?
+  - Who can finance a startup?
+
+
+
+
+intent: nombre_startups_algerie_Qes_FR
+examples: |
+  - Quel est le nombre de startups en Algérie actuellement ?
+  - Combien de startups existent en Algérie ?
+  - Nombre de startups labellisées en Algérie ?
+  - Combien de startups actives en Algérie en 2025 ?
+  - Quelle est la taille de l'écosystème startup en Algérie ?
+  - Y a-t-il des statistiques sur les startups en Algérie ?
+  - Quelle est la croissance des startups en Algérie ?
+  - Combien de startups ont obtenu le label en Algérie ?
+  - Quelle est la position de l'Algérie en Afrique en matière de startups ?
+  - Quel est le classement de l'Algérie en termes de startups ?
+
+intent: nombre_startups_algerie_Qes_EN
+examples: |
+  - How many startups are there in Algeria currently?
+  - What is the number of startups in Algeria?
+  - How many labeled startups exist in Algeria?
+  - Number of active startups in Algeria in 2025?
+  - What is the size of the startup ecosystem in Algeria?
+  - Are there statistics on startups in Algeria?
+  - What is the growth of startups in Algeria?
+  - How many startups have obtained the label in Algeria?
+  - What is Algeria's position in Africa regarding startups?
+  - What is Algeria's ranking in terms of startups?
+
+
+
+intent: difference_startup_projet_innovant_Qes_FR
+examples: |
+  - Quelle est la différence entre une startup et un projet innovant ?
+  - Est-ce qu'une startup est la même chose qu'un projet innovant ?
+  - Qu'est-ce qui différencie une startup d'un simple projet innovant ?
+  - C’est quoi la différence entre un projet innovant et une startup ?
+  - Une startup est-elle forcément un projet innovant ?
+  - Peut-on dire qu’un projet innovant est une startup ?
+  - Startup ou projet innovant, quelle est la distinction ?
+  - Comment reconnaître une startup par rapport à un projet innovant ?
+  - Quelle est la nuance entre startup et projet innovant ?
+  - Qu’est-ce qui caractérise une startup comparée à un projet innovant ?
+
+intent: difference_startup_projet_innovant_Qes_EN
+examples: |
+  - What's the difference between a startup and an innovative project?
+  - Is a startup the same as an innovative project?
+  - How is a startup different from an innovative project?
+  - Startup vs innovative project: what's the distinction?
+  - Can an innovative project be considered a startup?
+  - Are all startups innovative projects?
+  - What makes a startup different from a normal project?
+  - What are the differences between a startup and a regular innovative project?
+  - How to tell the difference between a startup and an innovative idea?
+  - What's the main difference between a startup and a project?
+
+
+
+
+intent: obtenir_label_startup_Qes_FR
+examples: |
+  - Comment obtenir le label startup ?
+  - Que faut-il faire pour avoir le label startup ?
+  - Quelles sont les étapes pour décrocher le label startup ?
+  - Comment avoir une startup labellisée ?
+  - C’est quoi le label startup et comment l’avoir ?
+  - Où peut-on demander le label startup ?
+  - Qui donne le label startup ?
+  - Quelles conditions pour obtenir le label startup ?
+  - Comment faire pour faire reconnaître ma startup officiellement ?
+  - J’ai une startup, comment obtenir le label ?
+
+
+intent: obtenir_label_startup_Qes_EN
+examples: |
+  - How can I get the startup label?
+  - What do I need to do to obtain the startup label?
+  - What are the steps to get labeled as a startup?
+  - How to register my startup officially?
+  - Where do I apply for the startup label?
+  - What is the startup label and how can I get it?
+  - Who gives the startup label?
+  - What are the requirements for the startup label?
+  - I have a startup, how do I make it recognized?
+  - How to be officially labeled as a startup?
+
+
+
+
+
+intent: criteres_startup_technologique_Qes_FR
+examples: |
+  - Qu'est-ce qu'une startup technologique ?
+  - Quels sont les critères d'une startup technologique ?
+  - Comment savoir si ma startup est technologique ?
+  - C’est quoi une startup tech ?
+  - Quelle est la différence entre une startup normale et une technologique ?
+  - Une startup technologique, ça veut dire quoi ?
+  - En quoi consiste une startup technologique ?
+  - Quelles caractéristiques pour une startup technologique ?
+
+
+intent: criteres_startup_technologique_Qes_EN
+examples: |
+  - What is a tech startup?
+  - What defines a technological startup?
+  - What are the criteria of a tech startup?
+  - How do I know if my startup is a tech one?
+  - What's the difference between a normal startup and a tech startup?
+  - Is my startup considered technological?
+  - What makes a startup technological?
+
+
+intent: transition_startup_entreprise_Qes_FR
+examples: |
+  - Comment passer d'une startup à une entreprise ?
+  - Comment faire évoluer une startup en entreprise ?
+  - À quel moment une startup devient une entreprise ?
+  - Comment transformer une startup en société ?
+  - Quelles étapes pour faire grandir une startup en entreprise ?
+  - Quand est-ce qu'une startup devient une vraie entreprise ?
+  - Quels sont les signes qu’une startup devient une entreprise ?
+
+intent: transition_startup_entreprise_Qes_EN
+examples: |
+  - How to move from a startup to a company?
+  - How does a startup become a company?
+  - When does a startup turn into a company?
+  - What steps to transform a startup into a company?
+  - How to grow a startup into a full business?
+  - What's needed for a startup to become a company?
+
+
+
+
+intent: difference_startup_entreprise_Qes_FR
+examples: |
+  - Quelle est la différence entre une startup et une entreprise ?
+  - Startup ou entreprise, c’est pareil ?
+  - Comment différencier une startup d'une entreprise classique ?
+  - Qu'est-ce qui distingue une startup d’une société normale ?
+  - Est-ce qu'une startup est une entreprise ?
+  - Startup vs entreprise : quelles différences ?
+
+intent: difference_startup_entreprise_Qes_EN
+examples: |
+  - What's the difference between a startup and a company?
+  - Is a startup the same as a company?
+  - How to tell the difference between a startup and a regular business?
+  - Startup vs company: what's different?
+  - What distinguishes a startup from a traditional business?
+
+
+intent: caracteristiques_startup_Qes_FR
+examples: |
+  - Quelles sont les caractéristiques d'une startup ?
+  - C’est quoi les particularités d’une startup ?
+  - Comment reconnaître une startup ?
+  - Une startup, ça se définit comment ?
+  - Qu’est-ce qui définit une startup ?
+
+
+intent: caracteristiques_startup_Qes_EN
+examples: |
+  - What are the characteristics of a startup?
+  - How can I recognize a startup?
+  - What makes a company a startup?
+  - What defines a startup?
+  - Key traits of a startup?
+
+
+
+
+intent: objectif_marketing_startup_Qes_FR
+examples: |
+  - Quel est l’objectif marketing principal pour une startup ?
+  - C’est quoi l’objectif marketing d’une startup ?
+  - Qu’est-ce qu’une startup doit viser en premier en marketing ?
+  - Objectif marketing principal pour une startup ?
+  - Quelle est la première priorité marketing d’une startup ?
+
+
+intent: objectif_marketing_startup_Qes_EN
+examples: |
+  - What is the main marketing goal for a startup?
+  - What should a startup aim for in marketing first?
+  - What’s the primary marketing objective of a startup?
+  - Main marketing goal for startups?
+  - What should be the marketing focus for startups?
+
+
+
+
+
+intent: etude_marche_startup_Qes_FR
+examples: |
+  - Comment étudier le marché pour mieux développer mon idée de startup ?
+  - Je veux faire une étude de marché pour valider mon idée de startup.
+  - Comment savoir si mon idée peut marcher sur le marché algérien ?
+  - Aide-moi à analyser le marché pour ma startup.
+  - Tu peux me proposer une idée de startup adaptée aux clients en Algérie ?
+  - Donne-moi des idées de startup qui peuvent marcher ici en Algérie.
+
+
+
+intent: etude_marche_startup_Qes_EN
+examples: |
+  - How can I study the market to develop my startup idea better?
+  - I want to do market research for my startup idea.
+  - How do I know if my idea will work in the Algerian market?
+  - Help me analyze the market for my startup.
+  - Can you suggest a startup idea that fits Algerian clients?
+  - Give me startup ideas that can succeed in Algeria.
+
+
+
+intent: demarches_legales_lancer_startup_Qes_FR
+examples: |
+  - Quelles sont les démarches légales pour créer une startup en Algérie ?
+  - Comment lancer une startup de manière officielle sur le papier ?
+  - Quelles sont les étapes administratives pour créer une startup ?
+  - Comment structurer et légaliser ma startup en Algérie ?
+  - Une fois que j'ai l'idée, comment je la transforme en startup officielle ?
+  - Que dois-je faire pour lancer ma startup légalement ?
+  - Quelles sont les étapes pour bien lancer une startup en Algérie ?
+
+
+intent: demarches_legales_lancer_startup_Qes_EN
+examples: |
+  - What are the legal steps to create a startup in Algeria?
+  - How can I officially register a startup on paper?
+  - What are the administrative procedures for launching a startup?
+  - Once I have the idea, how do I turn it into an official startup?
+  - How do I structure and legally launch my startup in Algeria?
+  - What should I do to start a legal business in Algeria?
+  - What steps should I follow to launch a startup in Algeria?
+
+
+intent: reussir_startup_Qes_FR
+examples: |
+  - Comment réussir ma startup ?
+  - Que dois-je faire pour bien réussir ma start-up ?
+  - Comment faire pour que ma startup marche bien ?
+  - Comment faire pour réussir dans l'entrepreneuriat avec une startup ?
+  - Quels conseils pour assurer le succès d'une start-up ?
+  - Comment faire évoluer ma start-up avec succès ?
+  - Quelles sont les étapes pour garantir le succès de ma startup ?
+
+intent: reussir_startup_Qes_EN
+examples: |
+  - How can I succeed with my startup?
+  - What should I do to make my startup successful?
+  - How to make sure my startup does well?
+  - What are the keys to succeeding as a startup founder?
+  - What steps should I follow to succeed with a startup?
+  - How to grow and succeed with my startup?
+  - What advice do you have for startup success?
