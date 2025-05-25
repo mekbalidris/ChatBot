@@ -25,14 +25,19 @@ function Log_in() {
       });
 
       if (response.status === 200) {
-        // Store token in localStorage
-        if (response.data.token) {
-          localStorage.setItem("token", response.data.token);
-        }
+        console.log(response.data);
+        
+        // Store user data in localStorage
+        const userData = {
+          username: username,
+          token: response.data.token,
+          isAuthenticated: true
+        };
+        localStorage.setItem("user", JSON.stringify(userData));
         
         // If remember me is checked, store username
         if (isRememberMe) {
-          localStorage.setItem("username", username);
+          localStorage.setItem("rememberedUsername", username);
         }
         
         navigate("/chatpage");

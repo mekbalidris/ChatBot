@@ -83,15 +83,15 @@ function Sign_up() {
       });
 
       if (response.status === 201) {
-        // Store token if provided
-        if (response.data.token) {
-          localStorage.setItem("token", response.data.token);
-        }
-        
-        // Store profile image if provided
-        if (imagePreview) {
-          localStorage.setItem("image", imagePreview);
-        }
+        // Store user data in localStorage
+        const userData = {
+          username: username,
+          email: email,
+          token: response.data.token,
+          isAuthenticated: true,
+          profilePicture: imagePreview || null
+        };
+        localStorage.setItem("user", JSON.stringify(userData));
         
         navigate("/chatpage");
       }
