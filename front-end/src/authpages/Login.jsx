@@ -1,34 +1,49 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Log_in() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isRememberMe, setIsRememberMe] = useState(false);
+  const [error, setError] = useState("");
 
-  // Remplace la fonction handleLogin par celle-ci :
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setError("");
 
     if (!username || !password) {
-      alert("Veuillez remplir tous les champs.");
+      setError("Please fill in all fields");
       return;
     }
 
-    // Comparaison
-    const validUsername = localStorage.getItem("username");
-    const validEmail = localStorage.getItem("email");
-    const validPassword = localStorage.getItem("password");
+    try {
+      const response = await axios.post("http://localhost:3000/auth/login", {
+        username,
+        password,
+      });
 
-    const isValid =
-      (username === validUsername || username === validEmail) &&
-      password === validPassword;
-
-    if (isValid) {
-      navigate("/chatpage");
-    } else {
-      alert("Identifiants incorrects.");
+      if (response.status === 200) {
+        // Store token in localStorage
+        if (response.data.token) {
+          localStorage.setItem("token", response.data.token);
+        }
+        
+        // If remember me is checked, store username
+        if (isRememberMe) {
+          localStorage.setItem("username", username);
+        }
+        
+        navigate("/chatpage");
+      }
+    } catch (error) {
+      if (error.code === 'ERR_NETWORK') {
+        setError("Cannot connect to server. Please make sure the backend is running.");
+      } else {
+        setError(error.response?.data?.msg || "Login failed. Please try again.");
+      }
+      console.log("Error details:", error.response?.data?.msg);
     }
   };
 
@@ -45,6 +60,9 @@ function Log_in() {
           minWidth: "320px",
         }}
       >
+        {error && (
+          <div className="text-red-500 mt-2 text-center w-[80%]">{error}</div>
+        )}
         {/* Inputs */}
         <div
           className="inputs w-full flex flex-col font-[ZenDots] items-center justify-center"

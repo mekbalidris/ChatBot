@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 function Sign_up() {
   const navigate = useNavigate();
@@ -8,6 +9,7 @@ function Sign_up() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
 
   // Fonction pour gérer l'upload de l'image
   const ImageChange = (e) => {
@@ -40,40 +42,66 @@ function Sign_up() {
     return regex.test(email);
   };
 
-  // Validation du nom d'utilisateur
   const validateAll = () => {
-    const regex = /^[a-zA-Z0-9._]+$/;
     if (username.length < 3) {
-      alert("Le nom d'utilisateur doit contenir au moins 3 caractères.");
+      setError("Username must be at least 3 characters long");
       return false;
     }
-    if (!regex.test(username)) {
-      alert(
-        "Le nom d'utilisateur ne doit contenir que des lettres, des chiffres, des '.' et des '_'."
-      );
+    if (!/^[a-zA-Z0-9._]+$/.test(username)) {
+      setError("Username can only contain letters, numbers, '.' and '_'");
       return false;
     }
-
     if (!isValidEmail(email)) {
-      alert("Email must be @gmail.com, @yahoo.com, or @usthb.edu");
+      setError("Please enter a valid email address");
+      return false;
+    }
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return false;
+    }
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long");
       return false;
     }
     return true;
   };
 
-  // Soumettre le formulaire
-  const handleSubmit = () => {
-    if (validateAll()) {
-      localStorage.removeItem("username");
-      localStorage.removeItem("email");
-      localStorage.removeItem("password");
-      // Stocker l'utilisateur dans le localStorage
-      localStorage.setItem("username", username);
-      localStorage.setItem("email", email);
-      localStorage.setItem("password", password);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
 
-      // Naviguer vers la page suivante
-      navigate("/chatpage");
+    if (!validateAll()) {
+      return;
+    }
+
+    try {
+      const response = await axios.post("http://localhost:3000/auth/register", {
+        username,
+        email,
+        password,
+        confirmPassword,
+      });
+
+      if (response.status === 201) {
+        // Store token if provided
+        if (response.data.token) {
+          localStorage.setItem("token", response.data.token);
+        }
+        
+        // Store profile image if provided
+        if (imagePreview) {
+          localStorage.setItem("image", imagePreview);
+        }
+        
+        navigate("/chatpage");
+      }
+    } catch (error) {
+      if (error.code === 'ERR_NETWORK') {
+        setError("Cannot connect to server. Please make sure the backend is running.");
+      } else {
+        setError(error.response?.data?.msg || "Registration failed. Please try again.");
+      }
+      console.log("Error details:", error.response?.data?.msg);
     }
   };
 
@@ -84,6 +112,9 @@ function Sign_up() {
         className="mx-auto mt-4 flex flex-col items-center justify-center bg-[rgba(126,97,171,0.25)] backdrop-transparent border-4 border-[#cab2fb] rounded-2xl"
         style={{ height: "70vh", width: "80%", maxWidth: "520px" }}
       >
+        {error && (
+          <div className="text-red-500 mt-2 text-center w-[80%]">{error}</div>
+        )}
         {/* Champ Username */}
         <div className="flex items-center justify-center w-[80%] h-[9%] mt-3 border-2 border-[#cab2fb] rounded-xl bg-transparent font-[ZenDots] shadow-lg">
           <input
