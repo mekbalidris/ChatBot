@@ -112,10 +112,8 @@ export const logoutController = async (request, response) => {
 
     return response.status(200).json({ msg: "Logged out successfully" });
   } catch (error) {
-    return response
-      .status(500)
-      .json({
-        msg: "An error occurred during logout. Please try again later.",
-      });
+    return response.status(500).json({
+      msg: "An error occurred during logout. Please try again later.",
+    });
   }
 };

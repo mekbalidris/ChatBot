@@ -18,6 +18,6 @@ router.post("/", postRoomController);
 
 // Message routes with rate limiting
 router.post("/:id", postMessageController);
-router.get("/:id",getRoomController)
+router.get("/:id", getRoomController);
 
 export default router;

@@ -6,15 +6,13 @@ import authRouter from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
 import roomsRouter from "./routes/rooms.route.js";
 import cors from "cors";
-import helmet from "helmet";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Security middleware
-app.use(helmet());
+
 
 // CORS configuration
 app.use(
