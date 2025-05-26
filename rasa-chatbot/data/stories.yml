@@ -45,11 +45,7 @@ stories:
   steps:
   - intent: reconnaissance_projets_innovants_qes
   - action: reconnaissance_projets_innovants_rep
-  
-- story: consequences_label_projet
-  steps:
-  - intent: consequences_label_projet_qes
-  - action: consequences_label_projet_rep
+
   
 - story: concours_aides_meilleurs_projets
   steps:
