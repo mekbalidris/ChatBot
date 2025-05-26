@@ -6,85 +6,170 @@ rules:
   - intent: greet
   - action: utter_greet
 
+- rule: Greeting responseE
+  steps:
+  - intent: greetE
+  - action: utter_greetE
+
 - rule: Goodbye response
   steps:
   - intent: goodbye
   - action: utter_goodbye
+
+- rule: Goodbye responseE
+  steps:
+  - intent: goodbyeE
+  - action: utter_goodbyeE
 
 - rule: Out of scope response
   steps:
   - intent: out_of_scope
   - action: utter_out_of_scope
 
+- rule: Out of scope responseE
+  steps:
+  - intent: out_of_scopeE
+  - action: utter_out_of_scopeE
+
 - rule: Bot challenge response
   steps:
   - intent: bot_challenge
   - action: utter_bot_challenge
+
+- rule: Bot challenge responseE
+  steps:
+  - intent: bot_challengeE
+  - action: utter_bot_challengeE
 
 - rule: PFE Startup information
   steps:
   - intent: ask_pfe_startup
   - action: utter_pfe_startup_info
 
+- rule: PFE Startup informationE
+  steps:
+  - intent: ask_pfe_startupE
+  - action: utter_pfe_startup_infoE
+
 - rule: Incubators information
   steps:
   - intent: ask_incubateurs
   - action: utter_incubateurs_info
+
+- rule: Incubators informationE
+  steps:
+  - intent: ask_incubatorsE
+  - action: utter_incubateurs_infoE
 
 - rule: Double diploma information
   steps:
   - intent: ask_double_diplome
   - action: utter_double_diplome_info
 
+- rule: Double diploma informationE
+  steps:
+  - intent: ask_double_diplomaE
+  - action: utter_double_diplome_infoE
+
 - rule: Diploma-Startup mechanism
   steps:
   - intent: ask_mecanisme_diplome_startup
   - action: utter_mecanisme_diplome_startup
+
+- rule: Diploma-Startup mechanismE
+  steps:
+  - intent: ask_diploma_startup_mechanism
+  - action: utter_mecanisme_diplome_startupE
 
 - rule: BMC training information
   steps:
   - intent: ask_formation_bmc
   - action: utter_formation_bmc
 
+- rule: BMC training informationE
+  steps:
+  - intent: ask_bmc_training
+  - action: utter_formation_bmcE
+
 - rule: Startup funding information
   steps:
   - intent: ask_startup_funding
   - action: utter_startup_funding
+
+- rule: Startup funding informationE
+  steps:
+  - intent: ask_startup_fundingE
+  - action: utter_startup_fundingE
 
 - rule: Startup steps information
   steps:
   - intent: ask_startup_steps
   - action: utter_startup_steps
 
+- rule: Startup steps informationE
+  steps:
+  - intent: ask_startup_stepsE
+  - action: utter_startup_stepsE
+
 - rule: Non-PFE startup options
   steps:
   - intent: ask_non_pfe_startup
   - action: utter_non_pfe_startup
+
+- rule: Non-PFE startup optionsE
+  steps:
+  - intent: ask_non_pfe_startupE
+  - action: utter_non_pfe_startupE
 
 - rule: Startup team building
   steps:
   - intent: ask_startup_team
   - action: utter_startup_team
 
+- rule: Startup team buildingE
+  steps:
+  - intent: ask_startup_teamE
+  - action: utter_startup_teamE
+
 - rule: Startup legal steps
   steps:
   - intent: ask_startup_legal
   - action: utter_startup_legal
+
+- rule: Startup legal stepsE
+  steps:
+  - intent: ask_startup_legal
+  - action: utter_startup_legalE
 
 - rule: What is a startup
   steps:
   - intent: c_quoi_une_startup
   - action: utter_c_quoi_une_startup
 
+- rule: What is a startupE
+  steps:
+  - intent: what_is_a_startupE
+  - action: utter_c_quoi_une_startupE
+
 - rule: MVP definition
   steps:
   - intent: ask_MVP
   - action: utter_MVP_deff
 
+- rule: MVP definitionE
+  steps:
+  - intent: ask_MVP_E
+  - action: utter_MVP_deffE
+
 - rule: Institutional framework
   steps:
   - intent: ask_cadre_institutionnel
   - action: utter_Cadre_institutionnel
+
+- rule: Institutional frameworkE
+  steps:
+  - intent: ask_institutional_framework
+  - action: utter_Cadre_institutionnelE
 
 # Removed DSB mechanism rule since the action isn't defined
 
@@ -98,65 +183,130 @@ rules:
   - intent: ask_Rôle_des_acteurs
   - action: utter_Rôle_des_acteurs
 
+- rule: Actors rolesE
+  steps:
+  - intent: ask_Role_of_actors
+  - action: utter_Rôle_des_acteursE
+
 - rule: Labeling process
   steps:
   - intent: ask_Processus_de_labellisation
   - action: utter_Processus_de_labellisation
+
+- rule: Labeling processE
+  steps:
+  - intent: ask_Labeling_process
+  - action: utter_Processus_de_labellisationE
 
 - rule: Legal references
   steps:
   - intent: ask_Références_légales
   - action: utter_Références_légales
 
+- rule: Legal referencesE
+  steps:
+  - intent: ask_Legal_references
+  - action: utter_Références_légalesE
+
 - rule: Decision 008 information
   steps:
     - intent: objet_decision_008
     - action: utter_objet_decision_008
 
+- rule: Decision 008 informationE
+  steps:
+    - intent: ask_subject_decision_008
+    - action: utter_objet_decision_008E
+
 - rule: Thesis objective
   steps:
-    - intent: objectif_memoire
+    - intent: ask_objectif_memoire
     - action: utter_objectif_memoire
+
+- rule: Thesis objectiveE
+  steps:
+    - intent: ask_objective_thesis
+    - action: utter_objectif_memoireE
 
 - rule: Thesis formats
   steps:
-    - intent: formats_memoire
+    - intent: ask_formats_memoire
     - action: utter_formats_memoire
+
+- rule: Thesis formatsE
+  steps:
+    - intent: ask_thesis_formats
+    - action: utter_formats_memoireE
 
 - rule: Student training
   steps:
-    - intent: formations_etudiant
+    - intent: ask_formations_etudiant
     - action: utter_formations_etudiant
+
+- rule: Student trainingE
+  steps:
+    - intent: ask_student_trainings
+    - action: utter_formations_etudiantE
 
 - rule: Support beneficiaries
   steps:
-    - intent: beneficiaires_accompagnement
+    - intent: ask_beneficiaires_accompagnement
     - action: utter_beneficiaires_accompagnement
+
+- rule: Support beneficiariesE
+  steps:
+    - intent: ask_support_beneficiaries
+    - action: utter_beneficiaires_accompagnementE
 
 - rule: Orientation cell
   steps:
-    - intent: missions_cellule_orientation
+    - intent: ask_missions_cellule_orientation
     - action: utter_missions_cellule_orientation
+
+- rule: Orientation cellE
+  steps:
+    - intent: ask_orientation_cell_missions
+    - action: utter_missions_cellule_orientationE
 
 - rule: Obtained diplomas
   steps:
-    - intent: diplomes_obtenus
+    - intent: ask_diplomes_obtenus
     - action: utter_diplomes_obtenus
+
+- rule: Obtained diplomasE
+  steps:
+    - intent: ask_degrees_awarded
+    - action: utter_diplomes_obtenusE
 
 - rule: Startup term replacement
   steps:
-    - intent: terme_startup
+    - intent: ask_terme_startup
     - action: utter_terme_startup
+
+- rule: Startup term replacementE
+  steps:
+    - intent: ask_startup_term
+    - action: utter_terme_startupE
 
 - rule: PFE types comparison
   steps:
     - intent: ask_diff_pfe_types
     - action: utter_diff_pfe_types
 
+- rule: PFE types comparisonE
+  steps:
+    - intent: ask_diff_pfe_types_E
+    - action: utter_diff_pfe_typesE
+
 - rule: Decision publication
   steps:
-    - intent: publication_decision
+    - intent: ask_publication_decision
     - action: utter_publication_decision
+
+- rule: Decision publicationE
+  steps:
+    - intent: ask_decision_publication
+    - action: utter_publication_decisionE
 
 # PFE registration responses
 - rule: PFE registration (French)
