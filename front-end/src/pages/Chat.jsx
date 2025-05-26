@@ -8,6 +8,20 @@ const Chat = () => {
   const messagesEndRef = useRef(null);
   const [chatToolsDisplay, setChatToolsDisplay] = useState(false);
 
+  // Helper function to parse text with bold formatting
+  const parseBoldText = (text) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        // Remove the ** and make it bold
+        const boldText = part.slice(2, -2);
+        return <span key={index} className="font-bold">{boldText}</span>;
+      }
+      // Regular text with lighter font weight
+      return <span key={index} className="font-normal">{part}</span>;
+    });
+  };
+
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -97,10 +111,10 @@ const Chat = () => {
                 className={`p-2 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md ${
                   msg.sender === "user"
                     ? "bg-main text-[#36135a] font-bold self-end ml-auto"
-                    : "bg-transparent backdrop-blur-lg text-white font-secondary font-bold self-start flex-[2]"
+                    : "bg-transparent backdrop-blur-lg text-white font-secondary self-start flex-[2]"
                 }`}
               >
-                {msg.text}
+                {msg.sender === "Bot" ? parseBoldText(msg.text) : msg.text}
               </div>
             </div>
           ))}
