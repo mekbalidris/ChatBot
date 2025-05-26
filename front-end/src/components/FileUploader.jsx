@@ -19,9 +19,9 @@ const FileUploader = () => {
         <>
           <label
             htmlFor="file-upload"
-            className="cursor-pointer w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[#CAB3E8]"
+            className="cursor-pointer w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[var(--color-3)]"
           >
-            <i className="bx bxs-file-blank text-[#36135a] text-xl"></i>
+            <i className="bx bxs-file-blank text-[var(--color-1)] text-xl"></i>
           </label>
 
           <input
@@ -36,14 +36,14 @@ const FileUploader = () => {
 
       {/* AFFICHAGE DU FICHIER SÉLECTIONNÉ */}
       {selectedFile && (
-        <div className="flex items-center gap-2 px-3 py-2 bg-[#CAB3E8] rounded-xl border border-white">
-          <i className="bx bxs-file-blank text-[#36135a] text-xl" />
-          <span className="text-[#36135a] text-sm max-w-[150px] truncate">
+        <div className="flex items-center gap-2 px-3 py-2 bg-[var(--color-3)] rounded-xl border border-white">
+          <i className="bx bxs-file-blank text-[var(--color-1)] text-xl" />
+          <span className="text-[var(--color-1)] text-sm max-w-[150px] truncate">
             {selectedFile.name}
           </span>
           <button
             onClick={removeFile}
-            className="ml-1 text-[#36135a] hover:text-red-500 font-bold"
+            className="ml-1 text-[var(--color-1)] hover:text-red-500 font-bold"
           >
             <i className="bx bx-x"></i>
           </button>

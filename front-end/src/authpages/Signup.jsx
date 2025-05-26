@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState } from "react";
+import ProfileIcon from "../components/ProfileIcon";
 
 function Sign_up() {
   const navigate = useNavigate();
@@ -9,38 +9,6 @@ function Sign_up() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    const checkAuth = () => {
-      const storedUser = localStorage.getItem('user');
-      if (storedUser) {
-        try {
-          const parsedUser = JSON.parse(storedUser);
-          setIsAuthenticated(parsedUser.isAuthenticated);
-        } catch (error) {
-          console.error('Error parsing user data:', error);
-        }
-      }
-    };
-    checkAuth();
-  }, []);
-
-  if (isAuthenticated) {
-    return (
-      <div className="flex flex-col items-center justify-center h-screen">
-        <h1 className="text-4xl font-bold text-red-500 mb-4">Access Denied</h1>
-        <p className="text-xl text-gray-300">You are already logged in!</p>
-        <button 
-          onClick={() => navigate("/chatpage")}
-          className="mt-4 px-6 py-2 bg-[#36135A] text-white rounded-lg hover:bg-[#cab2fb] transition-colors"
-        >
-          Go to Chat
-        </button>
-      </div>
-    );
-  }
 
   // Fonction pour gérer l'upload de l'image
   const ImageChange = (e) => {
@@ -73,68 +41,40 @@ function Sign_up() {
     return regex.test(email);
   };
 
+  // Validation du nom d'utilisateur
   const validateAll = () => {
+    const regex = /^[a-zA-Z0-9._]+$/;
     if (username.length < 3) {
-      setError("Username must be at least 3 characters long");
+      alert("Le nom d'utilisateur doit contenir au moins 3 caractères.");
       return false;
     }
-    if (!/^[a-zA-Z0-9._]+$/.test(username)) {
-      setError("Username can only contain letters, numbers, '.' and '_'");
+    if (!regex.test(username)) {
+      alert(
+        "Le nom d'utilisateur ne doit contenir que des lettres, des chiffres, des '.' et des '_'."
+      );
       return false;
     }
+
     if (!isValidEmail(email)) {
-      setError("Please enter a valid email address");
-      return false;
-    }
-    if (password !== confirmPassword) {
-      setError("Passwords do not match");
-      return false;
-    }
-    if (password.length < 6) {
-      setError("Password must be at least 6 characters long");
+      alert("Email must be @gmail.com, @yahoo.com, or @usthb.edu");
       return false;
     }
     return true;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
+  // Soumettre le formulaire
+  const handleSubmit = () => {
+    if (validateAll()) {
+      localStorage.removeItem("username");
+      localStorage.removeItem("email");
+      localStorage.removeItem("password");
+      // Stocker l'utilisateur dans le localStorage
+      localStorage.setItem("username", username);
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password);
 
-    if (!validateAll()) {
-      return;
-    }
-
-    try {
-      const response = await axios.post("http://localhost:3000/auth/register", {
-        username,
-        email,
-        password,
-        confirmPassword,
-      });
-
-      if (response.status === 201) {
-        // Store user data in localStorage
-        const userData = {
-          username: username,
-          email: email,
-          token: response.data.token,
-          isAuthenticated: true,
-          profilePicture: imagePreview || null
-        };
-        localStorage.setItem("user", JSON.stringify(userData));
-        navigate("/chatpage");
-
-        window.location.reload();
-
-      }
-    } catch (error) {
-      if (error.code === 'ERR_NETWORK') {
-        setError("Cannot connect to server. Please make sure the backend is running.");
-      } else {
-        setError(error.response?.data?.msg || "Registration failed. Please try again.");
-      }
-      console.log("Error details:", error.response?.data?.msg);
+      // Naviguer vers la page suivante
+      navigate("/chatpage");
     }
   };
 
@@ -142,14 +82,11 @@ function Sign_up() {
     <>
       {/* Formulaire */}
       <div
-        className="mx-auto mt-4 flex flex-col items-center justify-center bg-[rgba(126,97,171,0.25)] backdrop-transparent border-4 border-[#cab2fb] rounded-2xl"
+        className="mx-auto mt-4 flex flex-col items-center justify-center bg-[rgba(126,97,171,0.25)] backdrop-transparent border-4 border-[var(--color-3)] rounded-2xl"
         style={{ height: "70vh", width: "80%", maxWidth: "520px" }}
       >
-        {error && (
-          <div className="text-red-500 mt-2 text-center w-[80%]">{error}</div>
-        )}
         {/* Champ Username */}
-        <div className="flex items-center justify-center w-[80%] h-[9%] mt-3 border-2 border-[#cab2fb] rounded-xl bg-transparent font-[ZenDots] shadow-lg">
+        <div className="flex items-center justify-center w-[80%] h-[9%] mt-3 border-2 border-[var(--color-3)] rounded-xl bg-transparent font-[ZenDots] shadow-lg">
           <input
             type="text"
             placeholder="Username"
@@ -158,14 +95,13 @@ function Sign_up() {
             required
             className="w-full h-full bg-transparent text-[#F5F5F5] p-5 focus:outline-none"
           />
-          <div
-            className="w-8 h-8 bg-center bg-no-repeat p-5"
-            style={{ backgroundImage: "url('/public/account_circle.svg')" }}
-          ></div>
+          <div className="profile flex items-center justify-center mr-1.5">
+            <ProfileIcon size={28} color={"#e3e3e3"} />
+          </div>
         </div>
 
         {/* Champ email */}
-        <div className="flex items-center justify-center w-[80%] h-[9%] mt-3 border-2 border-[#cab2fb] rounded-xl bg-transparent font-[ZenDots] shadow-lg">
+        <div className="flex items-center justify-center w-[80%] h-[9%] mt-3 border-2 border-[var(--color-3)] rounded-xl bg-transparent font-[ZenDots] shadow-lg">
           <input
             type="text"
             placeholder="email"
@@ -181,7 +117,7 @@ function Sign_up() {
         </div>
 
         {/* Champ Password */}
-        <div className="flex items-center justify-center w-[80%] h-[9%] mt-3 border-2 border-[#cab2fb] rounded-xl bg-transparent font-[ZenDots] shadow-lg">
+        <div className="flex items-center justify-center w-[80%] h-[9%] mt-3 border-2 border-[var(--color-3)] rounded-xl bg-transparent font-[ZenDots] shadow-lg">
           <input
             type="password"
             placeholder="Password"
@@ -197,7 +133,7 @@ function Sign_up() {
         </div>
 
         {/* Champ Confirm Password */}
-        <div className="flex items-center justify-center w-[80%] h-[9%] mt-3 border-2 border-[#cab2fb] rounded-xl bg-transparent font-[ZenDots] shadow-lg">
+        <div className="flex items-center justify-center w-[80%] h-[9%] mt-3 border-2 border-[var(--color-3)] rounded-xl bg-transparent font-[ZenDots] shadow-lg">
           <input
             type="password"
             placeholder="Confirm Password"
@@ -255,7 +191,7 @@ function Sign_up() {
           <button
             type="submit"
             onClick={handleSubmit}
-            className="w-[80%] sm:w-[330px] h-[50px] rounded-xl bg-[#36135A] shadow-lg text-white font-semibold flex items-center justify-center hover:bg-gray-300 hover:text-[#36135A] hover:cursor-pointer transition duration-300"
+            className="w-[80%] sm:w-[330px] h-[50px] rounded-xl bg-[var(--color-1)] shadow-lg text-white font-semibold flex items-center justify-center hover:bg-gray-300 hover:text-[var(--color-2)] hover:cursor-pointer transition duration-300"
           >
             Sign up
           </button>

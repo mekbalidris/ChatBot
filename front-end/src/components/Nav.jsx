@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import SideBar from "./sideBar";
 import ProfileBar from "./profileBar";
-import profile from "../assets/profile.png";
+import ProfileIcon from "./ProfileIcon";
+import MenuIcon from "./MenuIcon";
 import { Link } from "react-router-dom";
 
 export default function Nav() {
@@ -13,7 +15,6 @@ export default function Nav() {
     setDisplaySideBar(!displaySideBar);
     if (!displaySideBar) setDisplayProfileList(false);
   };
-
   const toggleProfileBar = () => {
     setDisplayProfileList(!displayProfileList);
     if (!displayProfileList) setDisplaySideBar(false);
@@ -37,24 +38,25 @@ export default function Nav() {
       />
 
       <header className="flex flex-row lg:px-20 px-3 pt-2 justify-between items-center">
-        <button
-          className="text-4xl text-white hover:cursor-pointer"
-          onClick={toggleSideBar}
-        >
-          ☰
-        </button>
+        <MenuIcon
+          color={"var(--color-3)"}
+          size={60}
+          onClick={() => {
+            toggleSideBar();
+          }}
+        />
         <Link
           to="/"
-          className="sm:text-4xl text-xl font-main text-main drop-shadow-lg hover:cursor-pointer"
+          className="sm:text-4xl text-xl font-main text-[var(--color-3)] drop-shadow-lg hover:cursor-pointer"
         >
           StartupGenie
         </Link>
-        <img
-          className="pt-2 hover:cursor-pointer"
-          src={profile}
-          width={60}
-          alt="profile"
-          onClick={toggleProfileBar}
+        <ProfileIcon
+          size={50}
+          color={"var(--color-3)"}
+          onClick={() => {
+            toggleProfileBar();
+          }}
         />
       </header>
     </motion.nav>

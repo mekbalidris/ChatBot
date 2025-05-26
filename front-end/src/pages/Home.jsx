@@ -40,13 +40,17 @@ export default function Home() {
             {displayedText.split(" ").map((word, i) => (
               <span
                 key={i}
-                className={word === "dream!" || word === "..." ? "text-second" : ""}
+                className={
+                  word === "dream!" || word === "..."
+                    ? "text-[var(--color-1)]"
+                    : ""
+                }
               >
                 {word}{" "}
               </span>
             ))}
             <motion.span
-              className="text-second"
+              className="text-[var(--color-1)]"
               animate={{ opacity: [0, 1, 0] }}
               transition={{ repeat: Infinity, duration: 1 }}
             >
@@ -67,7 +71,7 @@ export default function Home() {
 
       <section className="w-full flex flex-col justify-center items-center px-4 md:px-20 gap-10">
         <div className="flex flex-col justify-center items-center text-center">
-          <div className="font-main text-main text-2xl sm:text-3xl">
+          <div className="font-main text-[var(--color-2)] text-2xl sm:text-3xl">
             Start Innovating
           </div>
           <div className="font-secondary font-bold text-2xl sm:text-3xl text-white mt-4">
@@ -75,7 +79,7 @@ export default function Home() {
           </div>
 
           <button
-            className="bg-purplefonce px-5 py-3 text-lg sm:text-xl mt-10 rounded-4xl text-white font-bold hover:bg-purplefoncehover transition-all duration-500"
+            className="bg-[var(--color-1)] px-5 py-3 text-lg sm:text-xl mt-10 rounded-4xl text-white font-bold hover:bg-[var(--color-2)] transition-all duration-500"
             onClick={goToChatPage}
           >
             Click To Chat
@@ -132,7 +136,6 @@ export default function Home() {
                 </a>
               </blockquote>
             </div>
-
           </Marquee>
           <script
             async

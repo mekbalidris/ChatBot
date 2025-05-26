@@ -1,30 +1,27 @@
 import { useEffect, useRef, useState } from "react";
 import FileUploader from "../components/FileUploader";
 
-const Chat = () => {
+function Chat() {
   const textareaRef = useRef(null);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
   const [chatToolsDisplay, setChatToolsDisplay] = useState(false);
+  const [sessionId, setSessionId] = useState(Date.now());
 
-  // Helper function to parse text with bold formatting
-  const parseBoldText = (text) => {
-    const parts = text.split(/(\*\*.*?\*\*)/g);
-    return parts.map((part, index) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        // Remove the ** and make it bold
-        const boldText = part.slice(2, -2);
-        return <span key={index} className="font-bold">{boldText}</span>;
-      }
-      // Regular text with lighter font weight
-      return <span key={index} className="font-normal">{part}</span>;
-    });
-  };
-
+  // À ajouter en bas du composant Chat, avant le return
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+    // Sauvegarde de l'historique à chaque changement de session
+    const hist = JSON.parse(localStorage.getItem("historique")) || [];
+    // On retire l'ancien enregistrement de cette session (si déjà existant)
+    const filtered = hist.filter((c) => c.id !== sessionId);
+    // On ajoute la nouvelle version avec la date et les messages complets
+    const updated = [
+      ...filtered,
+      { id: sessionId, date: new Date().toLocaleString(), messages },
+    ];
+    localStorage.setItem("historique", JSON.stringify(updated));
+  }, [sessionId, messages]);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -90,6 +87,87 @@ const Chat = () => {
     textarea.style.height = Math.min(textarea.scrollHeight, 170) + "px";
   };
 
+  const micRef = useRef(null); // pour le micro
+
+  // Lance l'écoute vocale
+  const lancerMicro = () => {
+    const ReconnaissanceVocale =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!ReconnaissanceVocale) {
+      alert("Ton navigateur ne supporte pas le micro");
+      return;
+    }
+
+    const envoyerMessage = async (textePerso = null) => {
+      const message = textePerso || input;
+      if (!message.trim()) return;
+
+      const nouveauMessage = [...messages, { text: message, sender: "user" }];
+      setMessages(nouveauMessage);
+      setInput("");
+      if (textareaRef.current) {
+        textareaRef.current.value = "";
+        textareaRef.current.style.height = "auto";
+      }
+
+      try {
+        const reponse = await fetch(
+          "http://localhost:5005/webhooks/rest/webhook",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              sender: "user",
+              message: message,
+            }),
+          }
+        );
+
+        const data = await reponse.json();
+
+        const messagesBot = data.map((item) => ({
+          text: item.text,
+          sender: "Bot",
+        }));
+
+        setMessages((ancien) => [...ancien, ...messagesBot]);
+
+        // Parler chaque réponse
+        data.forEach((item) => {
+          if (item.text) parler(item.text);
+        });
+      } catch (erreur) {
+        console.error("Erreur avec Rasa :", erreur);
+        setMessages((ancien) => [
+          ...ancien,
+          { text: "Désolé, une erreur est survenue.", sender: "Bot" },
+        ]);
+      }
+    };
+
+    micRef.current = new ReconnaissanceVocale();
+    micRef.current.lang = "fr-FR";
+    micRef.current.interimResults = false;
+
+    micRef.current.onresult = (event) => {
+      const texteEntendu = event.results[0][0].transcript;
+      setInput(texteEntendu);
+      envoyerMessage(texteEntendu);
+    };
+
+    micRef.current.start();
+  };
+
+  // Parle avec la voix du bot
+  const parler = (texte) => {
+    const phrase = new SpeechSynthesisUtterance(texte);
+    phrase.lang = "fr-FR";
+    speechSynthesis.speak(phrase);
+  };
+
   return (
     <section className="relative w-full flex flex-col">
       <div className="h-[70vh] overflow-y-scroll custom-scrollbar">
@@ -110,11 +188,11 @@ const Chat = () => {
               <div
                 className={`p-2 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md ${
                   msg.sender === "user"
-                    ? "bg-main text-[#36135a] font-bold self-end ml-auto"
-                    : "bg-transparent backdrop-blur-lg text-white font-secondary self-start flex-[2]"
+                    ? "bg-main text-[var(--color-1)] font-bold self-end ml-auto"
+                    : "bg-transparent backdrop-blur-lg text-white font-secondary font-bold self-start flex-[2]"
                 }`}
               >
-                {msg.sender === "Bot" ? parseBoldText(msg.text) : msg.text}
+                {msg.text}
               </div>
             </div>
           ))}
@@ -136,20 +214,20 @@ const Chat = () => {
               {/* BOUTON D'OUVERTURE DES OUTILS (le "+") */}
               {!chatToolsDisplay ? (
                 <button
-                  className="cursor-pointer mr-3 bg-[#36135a] text-2xl font-bold text-white w-12 h-12 rounded-full flex items-center text-center justify-center flex-shrink-0"
+                  className="cursor-pointer mr-3 bg-[var(--color-1)] text-2xl font-bold text-white w-12 h-12 rounded-full flex items-center text-center justify-center flex-shrink-0"
                   onClick={() => setChatToolsDisplay(!chatToolsDisplay)}
                 >
                   <i className="bx bx-plus"></i>
                 </button>
               ) : (
                 // GROUPE D'OUTILS AFFICHÉ APRÈS CLIC SUR LE "+"
-                <div className="mr-3 w-auto p-2 rounded-full bg-[#36135a] h-12 flex flex-row items-center gap-2">
+                <div className="mr-3 w-auto p-2 rounded-full bg-[var(--color-1)] h-12 flex flex-row items-center gap-2">
                   {/* BOUTON POUR FERMER LE MENU DES OUTILS */}
                   <button
-                    className="cursor-pointer w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[#CAB3E8]"
+                    className="cursor-pointer w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[var(--color-3)]"
                     onClick={() => setChatToolsDisplay(!chatToolsDisplay)}
                   >
-                    <i className="bx bx-x text-[#36135a] text-xl"></i>
+                    <i className="bx bx-x text-[var(--color-1)] text-xl"></i>
                   </button>
 
                   {/* BOUTON POUR UPLOAD DE FICHIER (désactivé ici) */}
@@ -157,10 +235,10 @@ const Chat = () => {
 
                   {/* BOUTON POUR MICROPHONE (renvoie un message par défaut) */}
                   <button
-                    className="cursor-pointer w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[#CAB3E8]"
-                    onClick={defaultMessageFile}
+                    className="cursor-pointer w-10 h-10 flex justify-center items-center rounded-full border border-white bg-[var(--color-3)]"
+                    onClick={lancerMicro}
                   >
-                    <i className="bx bx-microphone text-[#36135a] text-xl"></i>
+                    <i className="bx bx-microphone text-[var(--color-1)] text-xl"></i>
                   </button>
                 </div>
               )}
@@ -168,7 +246,7 @@ const Chat = () => {
                 <>
                   {/* BOUTON "Search" (peut servir à une future recherche web) */}
                   <button
-                    className="cursor-pointer mr-3 font-bold border border-[#36135a] bg-main text-[#36135a] w-12 md:w-30 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                    className="cursor-pointer mr-3 font-bold border border-[var(--color-1)] bg-main text-[var(--color-1)] w-12 md:w-30 h-12 rounded-full flex items-center justify-center flex-shrink-0"
                     onClick={defaultMessageFile}
                   >
                     <i className="bx bx-globe"></i>{" "}
@@ -176,7 +254,7 @@ const Chat = () => {
                   </button>
                   {/* BOUTON "Think" (autre action possible pour IA plus tard) */}
                   <button
-                    className="cursor-pointer mr-3 font-bold border border-[#36135a] bg-main text-[#36135a] w-12 md:w-30 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                    className="cursor-pointer mr-3 font-bold border border-[var(--color-1)] bg-main text-[var(--color-1)] w-12 md:w-30 h-12 rounded-full flex items-center justify-center flex-shrink-0"
                     onClick={defaultMessageFile}
                   >
                     <i className="bx bx-sun"></i>{" "}
@@ -187,7 +265,7 @@ const Chat = () => {
             </div>
             {/*button send*/}
             <button
-              className="cursor-pointer text-2xl border border-[#36135a] bg-main font-extrabold text-[#36135a] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+              className="cursor-pointer text-2xl border border-[var(--color-1)] bg-main font-extrabold text-[var(--color-1)] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
               onClick={sendMessage}
             >
               <i className="bx bx-up-arrow-alt"></i>
@@ -197,6 +275,6 @@ const Chat = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Chat;
