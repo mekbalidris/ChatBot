@@ -138,7 +138,7 @@ rules:
 
 - rule: Startup legal stepsE
   steps:
-  - intent: ask_startup_legal
+  - intent: ask_startup_legalE
   - action: utter_startup_legalE
 
 - rule: What is a startup

@@ -19,6 +19,20 @@ intents:
   - ask_Rôle_des_acteurs
   - ask_Processus_de_labellisation
   - ask_Références_légales
+  - startup_memoire_fin_etude_qes
+  - thesis_startup_question
+  - qui_peut_faire_startup_comme_memorie_qes
+  - who_can_do_startup_thesis
+  - criteres_acceptee_memorie_startup_qes
+  - startup_thesis_acceptance_criteria
+  - incubateur_universite_qes
+  - university_incubator_question
+  - formation_memorie_startup_qes
+  - startup_thesis_training_question
+  - projet_en_groupe_qes
+  - group_project_question
+  - evaluation_qes
+  - evaluation_question
 
 
 responses:
