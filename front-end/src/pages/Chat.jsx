@@ -9,6 +9,20 @@ function Chat() {
   const [chatToolsDisplay, setChatToolsDisplay] = useState(false);
   const [sessionId, setSessionId] = useState(Date.now());
 
+  // Helper function to parse text with bold formatting
+  const parseBoldText = (text) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        // Remove the ** and make it bold
+        const boldText = part.slice(2, -2);
+        return <span key={index} className="font-bold">{boldText}</span>;
+      }
+      // Regular text with lighter font weight
+      return <span key={index} className="font-normal">{part}</span>;
+    });
+  };
+
   // À ajouter en bas du composant Chat, avant le return
   useEffect(() => {
     // Sauvegarde de l'historique à chaque changement de session
@@ -189,10 +203,10 @@ function Chat() {
                 className={`p-2 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md ${
                   msg.sender === "user"
                     ? "bg-main text-[var(--color-1)] font-bold self-end ml-auto"
-                    : "bg-transparent backdrop-blur-lg text-white font-secondary font-bold self-start flex-[2]"
+                    : "bg-transparent backdrop-blur-lg text-white font-secondary self-start flex-[2]"
                 }`}
               >
-                {msg.text}
+                {msg.sender === "Bot" ? parseBoldText(msg.text) : msg.text}
               </div>
             </div>
           ))}
