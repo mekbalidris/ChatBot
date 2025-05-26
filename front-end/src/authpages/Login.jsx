@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -8,6 +8,37 @@ function Log_in() {
   const [password, setPassword] = useState("");
   const [isRememberMe, setIsRememberMe] = useState(false);
   const [error, setError] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const checkAuth = () => {
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        try {
+          const parsedUser = JSON.parse(storedUser);
+          setIsAuthenticated(parsedUser.isAuthenticated);
+        } catch (error) {
+          console.error('Error parsing user data:', error);
+        }
+      }
+    };
+    checkAuth();
+  }, []);
+
+  if (isAuthenticated) {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen">
+        <h1 className="text-4xl font-bold text-red-500 mb-4">Access Denied</h1>
+        <p className="text-xl text-gray-300">You are already logged in!</p>
+        <button 
+          onClick={() => navigate("/chatpage")}
+          className="mt-4 px-6 py-2 bg-[#36135A] text-white rounded-lg hover:bg-[#cab2fb] transition-colors"
+        >
+          Go to Chat
+        </button>
+      </div>
+    );
+  }
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -39,10 +70,10 @@ function Log_in() {
         if (isRememberMe) {
           localStorage.setItem("rememberedUsername", username);
         }
-
+        navigate("/chatpage");
         window.location.reload();
 
-        navigate("/chatpage");
+        
       }
     } catch (error) {
       if (error.code === 'ERR_NETWORK') {
