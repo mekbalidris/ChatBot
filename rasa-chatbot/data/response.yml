@@ -13,6 +13,7 @@ responses:
         • Whether it's about funding, stages, or team building — I'm here!  
         **How can I help you today?**
 
+
   utter_goodbye:
     - text: |
         **Au revoir !** 🚀  
