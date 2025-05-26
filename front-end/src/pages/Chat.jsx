@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import FileUploader from "../components/FileUploader";
+import React from 'react';
 
 function Chat() {
   const textareaRef = useRef(null);
@@ -9,17 +10,24 @@ function Chat() {
   const [chatToolsDisplay, setChatToolsDisplay] = useState(false);
   const [sessionId, setSessionId] = useState(Date.now());
 
-  // Helper function to parse text with bold formatting
+  // Helper function to parse text with bold formatting and newlines
   const parseBoldText = (text) => {
-    const parts = text.split(/(\*\*.*?\*\*)/g);
-    return parts.map((part, index) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        // Remove the ** and make it bold
-        const boldText = part.slice(2, -2);
-        return <span key={index} className="font-bold">{boldText}</span>;
+    const boldParts = text.split(/(\*\*.*?\*\*)/g); // Split by bold markers
+    return boldParts.map((boldPart, boldIndex) => {
+      if (boldPart.startsWith('**') && boldPart.endsWith('**')) {
+        // It's a bold part
+        const boldText = boldPart.slice(2, -2);
+        return <span key={boldIndex} className="font-bold">{boldText}</span>;
+      } else {
+        // It's a regular text part, split by newlines
+        const lineParts = boldPart.split('\n');
+        return lineParts.map((linePart, lineIndex) => (
+          <React.Fragment key={`${boldIndex}-${lineIndex}`}>
+            {lineIndex > 0 && <br />} {/* Add <br /> before each line except the first */}
+            <span className="font-normal">{linePart}</span> {/* Render the line with lighter font */}
+          </React.Fragment>
+        ));
       }
-      // Regular text with lighter font weight
-      return <span key={index} className="font-normal">{part}</span>;
     });
   };
 
@@ -66,13 +74,21 @@ function Chat() {
       );
 
       const data = await response.json();
-      // Rasa returns an array of responses; map them to your messages
-      const botMessages = data.map((item) => ({
-        text: item.text,
-        sender: "Bot",
-      }));
+      // Rasa returns an array of responses; combine them into a single message
+      const botResponseText = data.map(item => item.text).join('\n');
 
-      setMessages((prev) => [...prev, ...botMessages]);
+      const botMessage = {
+        text: botResponseText,
+        sender: "Bot",
+      };
+
+      setMessages((prev) => [...prev, botMessage]);
+
+      // Parler chaque réponse (if using speech synthesis)
+      data.forEach((item) => {
+        if (item.text && typeof parler === 'function') parler(item.text);
+      });
+
     } catch (error) {
       console.error("Error communicating with Rasa:", error);
       setMessages((prev) => [
@@ -202,7 +218,7 @@ function Chat() {
               <div
                 className={`p-2 sm:max-w-[80%] max-w-[100%] my-2 rounded-b-lg shadow-md ${
                   msg.sender === "user"
-                    ? "bg-main text-[var(--color-1)] font-bold self-end ml-auto"
+                    ? "bg-[var(--color-3)] text-[var(--color-1)] font-bold self-end ml-auto"
                     : "bg-transparent backdrop-blur-lg text-white font-secondary self-start flex-[2]"
                 }`}
               >
@@ -215,7 +231,7 @@ function Chat() {
       </div>
 
       <div className="fixed bottom-2 flex flex-row items-center justify-center w-full md:px-0">
-        <div className="w-[95%] flex flex-col md:w-[60%] bg-main rounded-4xl p-2 backdrop-blur-sm shadow-[0_0_15px_10px_rgba(0,0,0,0.6)]">
+        <div className="w-[95%] flex flex-col md:w-[60%] bg-[var(--color-3)] rounded-4xl p-2 backdrop-blur-sm shadow-[0_0_15px_10px_rgba(0,0,0,0.6)]">
           <textarea
             placeholder="Poser une question ..."
             ref={textareaRef}
@@ -260,7 +276,7 @@ function Chat() {
                 <>
                   {/* BOUTON "Search" (peut servir à une future recherche web) */}
                   <button
-                    className="cursor-pointer mr-3 font-bold border border-[var(--color-1)] bg-main text-[var(--color-1)] w-12 md:w-30 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                    className="cursor-pointer mr-3 font-bold border border-[var(--color-1)] bg-[var(--color-3)] text-[var(--color-1)] w-12 md:w-30 h-12 rounded-full flex items-center justify-center flex-shrink-0"
                     onClick={defaultMessageFile}
                   >
                     <i className="bx bx-globe"></i>{" "}
@@ -268,7 +284,7 @@ function Chat() {
                   </button>
                   {/* BOUTON "Think" (autre action possible pour IA plus tard) */}
                   <button
-                    className="cursor-pointer mr-3 font-bold border border-[var(--color-1)] bg-main text-[var(--color-1)] w-12 md:w-30 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                    className="cursor-pointer mr-3 font-bold border border-[var(--color-1)] bg-[var(--color-3)] text-[var(--color-1)] w-12 md:w-30 h-12 rounded-full flex items-center justify-center flex-shrink-0"
                     onClick={defaultMessageFile}
                   >
                     <i className="bx bx-sun"></i>{" "}
@@ -279,7 +295,7 @@ function Chat() {
             </div>
             {/*button send*/}
             <button
-              className="cursor-pointer text-2xl border border-[var(--color-1)] bg-main font-extrabold text-[var(--color-1)] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+              className="cursor-pointer text-2xl border border-[var(--color-1)] bg-[var(--color-3)] font-extrabold text-[var(--color-1)] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
               onClick={sendMessage}
             >
               <i className="bx bx-up-arrow-alt"></i>
