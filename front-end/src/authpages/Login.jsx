@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import ProfileIcon from "../components/ProfileIcon";
 
 function Log_in() {
@@ -7,29 +8,102 @@ function Log_in() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isRememberMe, setIsRememberMe] = useState(false);
+  const [error, setError] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Remplace la fonction handleLogin par celle-ci :
-  const handleLogin = (e) => {
+  useEffect(() => {
+    const checkAuth = () => {
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        try {
+          const parsedUser = JSON.parse(storedUser);
+          setIsAuthenticated(parsedUser.isAuthenticated);
+        } catch (error) {
+          console.error('Error parsing user data:', error);
+        }
+      }
+    };
+    checkAuth();
+  }, []);
+
+  if (isAuthenticated) {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen">
+        <h1 className="text-4xl font-bold text-red-500 mb-4">Access Denied</h1>
+        <p className="text-xl text-gray-300">You are already logged in!</p>
+        <button 
+          onClick={() => navigate("/chatpage")}
+          className="mt-4 px-6 py-2 bg-[var(--color-1)] text-white rounded-lg hover:bg-[var(--color-3)] transition-colors"
+        >
+          Go to Chat
+        </button>
+      </div>
+    );
+  }
+
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setError("");
 
     if (!username || !password) {
-      alert("Veuillez remplir tous les champs.");
+      setError("Please fill in all fields");
       return;
     }
 
-    // Comparaison
-    const validUsername = localStorage.getItem("username");
-    const validEmail = localStorage.getItem("email");
-    const validPassword = localStorage.getItem("password");
+    try {
+      // Try backend authentication first
+      const response = await axios.post("http://localhost:3000/auth/login", {
+        username,
+        password,
+      });
 
-    const isValid =
-      (username === validUsername || username === validEmail) &&
-      password === validPassword;
+      if (response.status === 200) {
+        // Store user data in localStorage
+        const userData = {
+          username: username,
+          token: response.data.token,
+          isAuthenticated: true
+        };
+        localStorage.setItem("user", JSON.stringify(userData));
+        
+        // If remember me is checked, store username
+        if (isRememberMe) {
+          localStorage.setItem("rememberedUsername", username);
+        }
+        navigate("/chatpage");
+        window.location.reload();
+      }
+    } catch (error) {
+      // If backend fails, fall back to frontend authentication
+      if (error.code === 'ERR_NETWORK' || error.response?.status !== 200) {
+        console.log("Backend unavailable, falling back to frontend auth");
+        
+        // Frontend authentication logic
+        const validUsername = localStorage.getItem("username");
+        const validEmail = localStorage.getItem("email");
+        const validPassword = localStorage.getItem("password");
 
-    if (isValid) {
-      navigate("/chatpage");
-    } else {
-      alert("Identifiants incorrects.");
+        const isValid =
+          (username === validUsername || username === validEmail) &&
+          password === validPassword;
+
+        if (isValid) {
+          const userData = {
+            username: username,
+            isAuthenticated: true
+          };
+          localStorage.setItem("user", JSON.stringify(userData));
+          if (isRememberMe) {
+            localStorage.setItem("rememberedUsername", username);
+          }
+          navigate("/chatpage");
+        } else {
+          setError(error.response?.data?.msg || "Login failed. Please try again.");
+        }
+      } else {
+        setError(error.response?.data?.msg || "Login failed. Please try again.");
+      }
+      console.log("Error details:", error.response?.data?.msg);
     }
   };
 
@@ -38,7 +112,7 @@ function Log_in() {
       {/* Conteneur principal */}
       <form
         onSubmit={handleLogin}
-        className="box flex flex-col items-center  bg-[rgba(126,97,171,0.25)] bg-transparentS border-[3px] border-[var(--color-3)] rounded-[20px] text-sm z-10 mx-auto mt-4"
+        className="box flex flex-col items-center bg-[rgba(126,97,171,0.25)] bg-transparentS border-[3px] border-[var(--color-3)] rounded-[20px] text-sm z-10 mx-auto mt-4"
         style={{
           height: "65vh",
           width: "80%",
@@ -46,6 +120,9 @@ function Log_in() {
           minWidth: "320px",
         }}
       >
+        {error && (
+          <div className="text-red-500 mt-2 text-center w-[80%]">{error}</div>
+        )}
         {/* Inputs */}
         <div
           className="inputs w-full flex flex-col font-[ZenDots] items-center justify-center"
@@ -111,7 +188,7 @@ function Log_in() {
             <span className="ml-2 text-[#AEAEAE]">Remember me</span>
           </span>
 
-          <button className="forgot text-[#AEAEAE]  cursor-pointer bg-transparent hover:underline hover:text-[#F8E7F6]">
+          <button className="forgot text-[#AEAEAE] cursor-pointer bg-transparent hover:underline hover:text-[#F8E7F6]">
             Forgot password!
           </button>
         </div>
@@ -123,7 +200,7 @@ function Log_in() {
         >
           <button
             type="submit"
-            className="btn  w-[80%] h-[50px] rounded-[15px] bg-[var(--color-1)] shadow-[0_5px_10px_rgba(0,0,0,0.3)] text-white font-semibold flex items-center justify-center hover:bg-[rgb(207,207,207)] hover:text-[var(--color-2)] cursor-pointer"
+            className="btn w-[80%] h-[50px] rounded-[15px] bg-[var(--color-1)] shadow-[0_5px_10px_rgba(0,0,0,0.3)] text-white font-semibold flex items-center justify-center hover:bg-[rgb(207,207,207)] hover:text-[var(--color-2)] cursor-pointer"
             disabled={!username || !password}
           >
             Log in
@@ -148,7 +225,7 @@ function Log_in() {
       </form>
 
       {/* Section help */}
-      <div className="help w-full flex items-center justify-center font-[ZenDots] text-[#AEAEAE]  z-10 fixed bottom-0 p-4">
+      <div className="help w-full flex items-center justify-center font-[ZenDots] text-[#AEAEAE] z-10 fixed bottom-0 p-4">
         <span className="contact flex items-center justify-center w-full text-center">
           If you have a problem,
           <a className="acc ml-2 hover:underline text-blue-500" href="">

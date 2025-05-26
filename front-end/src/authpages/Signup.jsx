@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import ProfileIcon from "../components/ProfileIcon";
 
 function Sign_up() {
@@ -9,8 +10,40 @@ function Sign_up() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Fonction pour gérer l'upload de l'image
+  useEffect(() => {
+    const checkAuth = () => {
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        try {
+          const parsedUser = JSON.parse(storedUser);
+          setIsAuthenticated(parsedUser.isAuthenticated);
+        } catch (error) {
+          console.error('Error parsing user data:', error);
+        }
+      }
+    };
+    checkAuth();
+  }, []);
+
+  if (isAuthenticated) {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen">
+        <h1 className="text-4xl font-bold text-red-500 mb-4">Access Denied</h1>
+        <p className="text-xl text-gray-300">You are already logged in!</p>
+        <button 
+          onClick={() => navigate("/chatpage")}
+          className="mt-4 px-6 py-2 bg-[var(--color-1)] text-white rounded-lg hover:bg-[var(--color-3)] transition-colors"
+        >
+          Go to Chat
+        </button>
+      </div>
+    );
+  }
+
+  // Handle image upload
   const ImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -23,17 +56,12 @@ function Sign_up() {
     }
   };
 
-  // Charger l'image depuis le localStorage au démarrage
-  const loadImage = () => {
+  // Load image from localStorage on component mount
+  useEffect(() => {
     const storedImage = localStorage.getItem("image");
     if (storedImage) {
       setImagePreview(storedImage);
     }
-  };
-
-  // Charger l'image au chargement du composant
-  useState(() => {
-    loadImage();
   }, []);
 
   const isValidEmail = (email) => {
@@ -41,51 +69,102 @@ function Sign_up() {
     return regex.test(email);
   };
 
-  // Validation du nom d'utilisateur
   const validateAll = () => {
-    const regex = /^[a-zA-Z0-9._]+$/;
     if (username.length < 3) {
-      alert("Le nom d'utilisateur doit contenir au moins 3 caractères.");
+      setError("Username must be at least 3 characters long");
       return false;
     }
-    if (!regex.test(username)) {
-      alert(
-        "Le nom d'utilisateur ne doit contenir que des lettres, des chiffres, des '.' et des '_'."
-      );
+    if (!/^[a-zA-Z0-9._]+$/.test(username)) {
+      setError("Username can only contain letters, numbers, '.' and '_'");
       return false;
     }
-
     if (!isValidEmail(email)) {
-      alert("Email must be @gmail.com, @yahoo.com, or @usthb.edu");
+      setError("Please enter a valid email address");
+      return false;
+    }
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return false;
+    }
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long");
       return false;
     }
     return true;
   };
 
-  // Soumettre le formulaire
-  const handleSubmit = () => {
-    if (validateAll()) {
-      localStorage.removeItem("username");
-      localStorage.removeItem("email");
-      localStorage.removeItem("password");
-      // Stocker l'utilisateur dans le localStorage
-      localStorage.setItem("username", username);
-      localStorage.setItem("email", email);
-      localStorage.setItem("password", password);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
 
-      // Naviguer vers la page suivante
-      navigate("/chatpage");
+    if (!validateAll()) {
+      return;
+    }
+
+    try {
+      // Try backend registration first
+      const response = await axios.post("http://localhost:3000/auth/register", {
+        username,
+        email,
+        password,
+        confirmPassword,
+      });
+
+      if (response.status === 201) {
+        // Store user data in localStorage
+        const userData = {
+          username: username,
+          email: email,
+          token: response.data.token,
+          isAuthenticated: true,
+          profilePicture: imagePreview || null
+        };
+        localStorage.setItem("user", JSON.stringify(userData));
+        navigate("/chatpage");
+        window.location.reload();
+      }
+    } catch (error) {
+      // If backend fails, fall back to frontend registration
+      if (error.code === 'ERR_NETWORK' || error.response?.status !== 201) {
+        console.log("Backend unavailable, falling back to frontend registration");
+        
+        // Frontend registration logic
+        localStorage.removeItem("username");
+        localStorage.removeItem("email");
+        localStorage.removeItem("password");
+        
+        localStorage.setItem("username", username);
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password);
+
+        const userData = {
+          username: username,
+          email: email,
+          isAuthenticated: true,
+          profilePicture: imagePreview || null
+        };
+        localStorage.setItem("user", JSON.stringify(userData));
+        
+        navigate("/chatpage");
+      } else {
+        setError(error.response?.data?.msg || "Registration failed. Please try again.");
+      }
+      console.log("Error details:", error.response?.data?.msg);
     }
   };
 
   return (
     <>
-      {/* Formulaire */}
+      {/* Form container */}
       <div
         className="mx-auto mt-4 flex flex-col items-center justify-center bg-[rgba(126,97,171,0.25)] backdrop-transparent border-4 border-[var(--color-3)] rounded-2xl"
         style={{ height: "70vh", width: "80%", maxWidth: "520px" }}
       >
-        {/* Champ Username */}
+        {error && (
+          <div className="text-red-500 mt-2 text-center w-[80%]">{error}</div>
+        )}
+        
+        {/* Username field */}
         <div className="flex items-center justify-center w-[80%] h-[9%] mt-3 border-2 border-[var(--color-3)] rounded-xl bg-transparent font-[ZenDots] shadow-lg">
           <input
             type="text"
@@ -100,7 +179,7 @@ function Sign_up() {
           </div>
         </div>
 
-        {/* Champ email */}
+        {/* Email field */}
         <div className="flex items-center justify-center w-[80%] h-[9%] mt-3 border-2 border-[var(--color-3)] rounded-xl bg-transparent font-[ZenDots] shadow-lg">
           <input
             type="text"
@@ -116,7 +195,7 @@ function Sign_up() {
           ></div>
         </div>
 
-        {/* Champ Password */}
+        {/* Password field */}
         <div className="flex items-center justify-center w-[80%] h-[9%] mt-3 border-2 border-[var(--color-3)] rounded-xl bg-transparent font-[ZenDots] shadow-lg">
           <input
             type="password"
@@ -132,7 +211,7 @@ function Sign_up() {
           ></div>
         </div>
 
-        {/* Champ Confirm Password */}
+        {/* Confirm Password field */}
         <div className="flex items-center justify-center w-[80%] h-[9%] mt-3 border-2 border-[var(--color-3)] rounded-xl bg-transparent font-[ZenDots] shadow-lg">
           <input
             type="password"
@@ -148,9 +227,8 @@ function Sign_up() {
           ></div>
         </div>
 
-        {/* Image de profil */}
+        {/* Profile image upload */}
         <div className="input-img w-[80%] mt-3 h-28 border-2 border-dashed border-gray-300 text-[#F5F5F5] rounded-xl flex items-center justify-center relative">
-          {/* Bouton pour supprimer l'image */}
           {imagePreview && (
             <button
               onClick={() => {
@@ -186,7 +264,7 @@ function Sign_up() {
           )}
         </div>
 
-        {/* Bouton Sign up */}
+        {/* Sign up button */}
         <div className="flex items-center justify-center w-full h-[18%] mt-4">
           <button
             type="submit"
@@ -197,7 +275,7 @@ function Sign_up() {
           </button>
         </div>
 
-        {/* Lien vers Log in */}
+        {/* Link to Log in */}
         <div className="w-full flex items-end justify-center text-[#AEAEAE] font-[ZenDots] flex-grow">
           <span className="p-2">
             You have an account?{" "}
@@ -210,8 +288,9 @@ function Sign_up() {
           </span>
         </div>
       </div>
-      {/* Section aide / contact */}
-      <div className="w-full flex items-center justify-center fixed bottom-0 p-4 font-[ZenDots] text-[#AEAEAE]  z-10">
+      
+      {/* Help/contact section */}
+      <div className="w-full flex items-center justify-center fixed bottom-0 p-4 font-[ZenDots] text-[#AEAEAE] z-10">
         <span className="flex items-center justify-center w-full text-center">
           If you have a problem,
           <a className="ml-2 text-blue-500 hover:underline" href="">
