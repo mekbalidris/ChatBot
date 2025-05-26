@@ -92,7 +92,9 @@ function Sign_up() {
           profilePicture: imagePreview || null
         };
         localStorage.setItem("user", JSON.stringify(userData));
-        
+      
+        window.location.reload();
+
         navigate("/chatpage");
       }
     } catch (error) {

@@ -39,7 +39,9 @@ function Log_in() {
         if (isRememberMe) {
           localStorage.setItem("rememberedUsername", username);
         }
-        
+
+        window.location.reload();
+
         navigate("/chatpage");
       }
     } catch (error) {
