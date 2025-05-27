@@ -56,6 +56,72 @@ rules:
   - intent: ask_incubateurs
   - action: utter_incubateurs_info
 
+- rule: startup memoire fin etude qes
+  steps:
+  - intent: startup_memoire_fin_etude_qes
+  - action: utter_startup_memoire_fin_etude_qes
+
+- rule: qui_peut_faire_startup_comme_memorie_qesd
+  steps:
+  - intent: qui_peut_faire_startup_comme_memorie_qes
+  - action: utter_qui_peut_faire_startup_comme_memorie_qes
+
+- rule: criteres_acceptee_memorie_startup_qesd
+  steps:
+  - intent: criteres_acceptee_memorie_startup_qes
+  - action: utter_criteres_acceptee_memorie_startup_qes
+
+- rule: incubateur_universite_qesr
+  steps:
+  - intent: incubateur_universite_qes
+  - action: utter_incubateur_universite_qes
+
+- rule: projet_en_groupe_qesd
+  steps:
+  - intent: projet_en_groupe_qes
+  - action: utter_projet_en_groupe_qes
+
+- rule: evaluation_qesd
+  steps:
+  - intent: evaluation_qes
+  - action: utter_evaluation_qes  
+
+
+- rule: recompense_acception_qesd
+  steps:
+  - intent: recompense_acception_qes
+  - action: utter_recompense_acception_qes
+
+- rule: reconnaissance_projets_innovants_qesd
+  steps:
+  - intent: reconnaissance_projets_innovants_qes
+  - action: utter_reconnaissance_projets_innovants_qes    
+
+- rule: consequences_label_projet_qesd
+  steps:
+  - intent: consequences_label_projet_qes
+  - action: utter_consequences_label_projet_qes
+
+- rule: ask mecanisme dsb
+  steps:
+  - intent: ask_Mecanisme_DSB
+  - action: utter_Mecanisme_DSB
+
+- rule: competitions aids question
+  steps:
+  - intent: competitions_aids_question
+  - action: utter_competitions_aids_question
+
+- rule: concours_aides_meilleurs_projets_qesd
+  steps:
+  - intent: concours_aides_meilleurs_projets_qes
+  - action: utter_concours_aides_meilleurs_projets_qes      
+
+- rule: formation_memorie_startup_qesd
+  steps:
+  - intent: formation_memorie_startup_qes
+  - action: utter_formation_memorie_startup_qes
+
 - rule: Incubators informationE
   steps:
   - intent: ask_incubatorsE
@@ -170,6 +236,8 @@ rules:
   steps:
   - intent: ask_institutional_framework
   - action: utter_Cadre_institutionnelE
+
+
 
 # Removed DSB mechanism rule since the action isn't defined
 

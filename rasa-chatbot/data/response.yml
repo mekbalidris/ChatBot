@@ -15,6 +15,111 @@ responses:
         • Whether it's about funding, stages, or team building — I'm here!  
         **How can I help you today?**
 
+  utter_startup_memoire_fin_etude_qes:
+    - text: |
+        Oui, c’est tout à fait possible. La création d’une start-up peut être acceptée comme projet de mémoire de fin d’études, notamment dans le cadre du dispositif "un diplôme, une start-up" (arrêté ministériel n°1275 du 27/09/2022). Cela concerne les étudiants en Master, ingéniorat ou doctorat.
+        Pour que ce soit accepté, votre projet doit :
+        + Être innovant (technique, social ou économique)
+        + Suivre une démarche structurée (Business Model, étude de marché, prototype, etc.)
+        + Être encadré par un enseignant ou une structure d’incubation
+        + Faire l’objet d’une soutenance devant un jury académique et professionnel
+        👉 En résumé : Oui, vous pouvez faire une start-up comme mémoire, si votre université participe au programme et que vous respectez les conditions."
+
+  utter_qui_peut_faire_startup_comme_memorie_qes:
+    - text: |
+        Les étudiants éligibles sont principalement :
+        ✔️ Les étudiants en Master 2, écoles d’ingénieurs ou doctorants
+        ✔️ Inscrits dans un établissement ayant signé l’arrêté n°1275 du 27/09/2022
+        ✔️ Et dont le projet présente un caractère innovant (technique, économique ou social)
+        👉 Ce n’est pas réservé à une seule filière : les étudiants en informatique, santé, agronomie, business, etc. peuvent proposer un projet de start-up comme mémoire, tant qu’il respecte les critères du programme.
+
+  utter_criteres_acceptee_memorie_startup_qes:
+    - text: |
+        Pour qu'une start-up soit acceptée comme sujet de mémoire, ton projet doit généralement remplir les critères suivants :
+        ✔️ Innovation : l’idée doit proposer une solution originale ou une amélioration significative (technologique, sociale, économique...).
+        ✔️ Faisabilité : le projet doit pouvoir être réalisé dans un délai de 12 à 18 mois.
+        ✔️ Potentiel réel : il doit exister une opportunité de marché ou une utilité claire pour les utilisateurs.
+        ✔️ Encadrement : un enseignant référent et éventuellement un incubateur doivent pouvoir accompagner le projet.
+        ✔️ Lien avec la formation : le projet doit rester cohérent avec ton domaine d’études.
+        👉 En résumé : une bonne idée, réaliste, utile, bien encadrée, et en lien avec ton cursus.
+
+  utter_incubateur_universite_qes:
+    - text: |
+        Oui, de nombreuses universités disposent aujourd’hui d’un incubateur ou d’un centre d’accompagnement à l’entrepreneuriat étudiant. Ces structures offrent généralement :
+        ✔️ Un espace de travail pour les porteurs de projets
+        ✔️ Du mentorat par des experts ou enseignants
+        ✔️ Des formations et ateliers pratiques (business model, pitch, financement, etc.)
+        ✔️ L’accès à un réseau professionnel (entreprises, investisseurs, etc.)
+        🎯 Astuce : Renseigne-toi directement auprès de ton service d’entrepreneuriat ou de ton pôle innovation universitaire. S’il existe un incubateur, il pourra t’orienter et t’accompagner dans le développement de ton idée.
+
+  utter_formation_memorie_startup_qes:
+    - text: |
+        Oui, si tu fais un mémoire de type start-up, une formation est généralement prévue. Elle peut inclure :
+        ✔️ Des ateliers pratiques sur le business plan, le pitch, ou la gestion de projet
+        ✔️ Un accompagnement par des enseignants, des experts ou des incubateurs
+        ✔️ Des ressources en ligne ou en présentiel sur l'entrepreneuriat et l'innovation
+        🎓 L’objectif est de t’aider à structurer ton projet et à acquérir des compétences entrepreneuriales utiles pour réussir.
+
+  utter_projet_en_groupe_qes:
+    - text: |
+        Oui, il est généralement possible de faire un mémoire start-up en groupe, à condition que cela soit validé par votre encadrant ou votre établissement.
+        ✅ Cela reflète la réalité d’une start-up, qui se construit souvent en équipe.
+        ✅ Chaque membre doit avoir des rôles clairs et contribuer au projet.
+        ✅ Le travail collectif doit rester équilibré et bien documenté dans le mémoire.
+        💡 Conseil : vérifiez les règles de votre filière ou faculté, car certaines imposent un travail individuel.
+
+  utter_evaluation_qes:
+    - text: |
+        En général, votre projet start-up est évalué par un jury académique, composé de :
+        ✅ Enseignants-chercheurs (dont votre encadrant),
+        ✅ Experts du domaine (ex. : en entrepreneuriat, innovation),
+        ✅ Parfois des professionnels ou partenaires de l’incubateur.
+        🎯 Ils jugent la qualité du projet, sa réalisation, son potentiel, et votre implication personnelle.
+        💡 La composition exacte du jury dépend du règlement de votre établissement.
+
+  utter_recompense_acception_qes:
+    - text: |
+        Si ton projet de start-up est accepté, tu peux bénéficier de plusieurs avantages, généralement :
+        ✅ Reconnaissance académique (validation de ton mémoire),
+        ✅ Accès à un incubateur universitaire pour développer ton idée,
+        ✅ Soutien financier (bourse, subvention ou accès à des concours),
+        ✅ Accompagnement personnalisé (mentorat, formations, coaching),
+        ✅ Visibilité auprès de partenaires, investisseurs ou institutions.
+        🎓 Ces avantages peuvent varier selon ton université ou le programme auquel tu participes.
+
+  utter_reconnaissance_projets_innovants_qes:
+    - text: |
+        Oui, il existe souvent une reconnaissance officielle pour les projets innovants. Cette reconnaissance peut prendre la forme de labels, certifications, distinctions ou prix délivrés par les universités, organismes publics ou institutions spécialisées. Elle atteste de la qualité, de l’originalité et de l’impact du projet, et facilite son accès à des financements, des réseaux d’accompagnement, ou des programmes d’incubation. Le type et le niveau de reconnaissance varient selon les structures et les dispositifs en place.
+
+  utter_consequences_label_projet_qes:
+    - text: |
+        Lorsque votre projet obtient le label, il bénéficie généralement de plusieurs avantages importants, tels que :
+          + Une meilleure visibilité et crédibilité auprès des milieux académiques et professionnels,
+          + L’accès à des soutiens financiers, des subventions ou des opportunités de financement spécifiques,
+          + L’éligibilité à des programmes d’incubation et un accompagnement par des experts,
+          + Des possibilités accrues de réseautage avec des investisseurs, partenaires et institutions,
+          + Un accès privilégié à des événements, formations et ressources dédiés aux start-ups.
+        En résumé, l’obtention du label renforce considérablement le développement, la reconnaissance et les chances de succès de votre projet.
+
+  utter_Mecanisme_DSB:
+    - text: |
+        Le label DSB est ouvert aux projets innovants dans divers domaines (tech, social, environnemental…). Il est accessible aux étudiants, y compris en licence dans certains cas, et aux projets individuels ou en groupe sans limite stricte de taille. L’originalité des projets est prise en compte, avec des recommandations sur la propriété intellectuelle. Il n’y a pas de quota fixe annuel, et le label peut être cumulé avec d’autres aides. Des mentors peuvent accompagner les projets sélectionnés, notamment ceux à impact social. L’attribution se fait après évaluation par un jury selon des critères tels que l’innovation, la faisabilité, l’impact et l’engagement. Le label est valable pour une durée déterminée, et le projet peut être ajusté après labellisation. Les projets abandonnés ne sont pas systématiquement pénalisés.
+
+  utter_competitions_aids_question:
+    - text: |
+        Yes, there are often contests, grants, and support mechanisms dedicated to rewarding and supporting the best or most innovative projects. These opportunities can include:
+        💡 Innovation competitions organized by institutions, incubators, or ministries
+        💰 Financial aid such as grants, scholarships, or seed funding for promising projects
+        🏆 Awards or labels that offer visibility and access to additional resources
+        📈 Support programs including mentoring, incubation, and technical or legal assistance
+        🌍 Regional, national, or international calls for projects, sometimes focused on specific themes (e.g., environment, social impact, tech)
+        Awarded or labeled projects are frequently eligible for further support, both financial and operational. These opportunities are typically announced on platforms related to entrepreneurship, university innovation offices, government agencies, or incubators. Projects that stand out for their originality, feasibility, and impact often have privileged access to these supports.
+
+  utter_concours_aides_meilleurs_projets_qes:
+    - text: |
+        Oui, il existe souvent des concours et des aides spécifiquement destinés à récompenser et soutenir les meilleurs projets innovants. Ces concours peuvent offrir des prix en argent, des bourses, des subventions, ou un accompagnement privilégié (mentorat, accès à des incubateurs, formations).
+        Les projets les plus prometteurs peuvent ainsi bénéficier de financements, de visibilité accrue, et d’opportunités pour se développer plus rapidement. Ces concours sont généralement organisés par des universités, des institutions publiques, des organisations privées, ou des programmes nationaux et internationaux d’innovation.
+        Pour trouver ces concours et aides, il est conseillé de consulter les plateformes universitaires, les réseaux d’incubateurs, les sites gouvernementaux dédiés à l’innovation, ainsi que les appels à projets locaux ou internationaux.
 
   utter_goodbye:
     - text: |
@@ -461,6 +566,8 @@ responses:
         + 2 months for pre-selection
         + 1 month for in-depth evaluation
         + 15 days for the final decision
+
+  
 
   utter_Références_légales:
     - text: |

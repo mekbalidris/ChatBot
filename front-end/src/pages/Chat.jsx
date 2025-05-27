@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import FileUploader from "../components/FileUploader";
 import { useLocation } from "react-router-dom";
+import { useChat } from "../components/ChatContext";
 
 // Error Boundary to prevent crashes
 class ErrorBoundary extends React.Component {
@@ -24,6 +25,7 @@ function Chat() {
   const [chatToolsDisplay, setChatToolsDisplay] = useState(false);
   const [sessionId] = useState(Date.now()); // Single session ID for the app
   const location = useLocation();
+  const { updateChatHistory } = useChat();
 
   // Scroll to bottom when messages change
   useEffect(() => {
@@ -49,12 +51,23 @@ function Chat() {
     });
   };
 
+  // Function to clear chat
+  const clearChat = () => {
+    setMessages([]);
+    setInput("");
+    if (textareaRef.current) {
+      textareaRef.current.value = "";
+      textareaRef.current.style.height = "auto";
+    }
+  };
+
   const sendMessage = async () => {
     if (!input.trim()) return;
 
     try {
       const userMessage = { text: input, sender: "user" };
-      setMessages(prev => [...prev, userMessage]);
+      const newMessages = [...messages, userMessage];
+      setMessages(newMessages);
       setInput("");
       if (textareaRef.current) {
         textareaRef.current.value = "";
@@ -83,7 +96,15 @@ function Chat() {
 
       const botResponseText = data.map(item => item.text).join('\n');
       const botMessage = { text: botResponseText, sender: "Bot" };
-      setMessages(prev => [...prev, botMessage]);
+      const finalMessages = [...newMessages, botMessage];
+      setMessages(finalMessages);
+
+      // Save chat to history
+      updateChatHistory({
+        id: sessionId,
+        messages: finalMessages,
+        date: new Date().toISOString()
+      });
 
     } catch (error) {
       console.error("Error communicating with Rasa:", error);

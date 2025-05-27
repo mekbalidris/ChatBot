@@ -9,9 +9,16 @@ const SideBar = ({ displaySideBar, setDisplaySideBar }) => {
   const navigate = useNavigate();
   const { theme, changeTheme, availableThemes } = useTheme();
   const [showThemes, setShowThemes] = useState(false);
-  const { chatHistory } = useChat();
+  const { chatHistory, updateChatHistory } = useChat();
 
   const handleNewChat = () => {
+    // Create a new chat with empty messages
+    const newChat = {
+      id: Date.now(),
+      messages: [],
+      date: new Date().toISOString()
+    };
+    updateChatHistory(newChat);
     navigate('/chatPage', { replace: true });
     setDisplaySideBar(false);
   };
