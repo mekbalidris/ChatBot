@@ -6,6 +6,7 @@ import client from "../mailtrap/mailtrap.config.js";
 export const registerController = async (request, response) => {
   const { username, password, email, confirmPassword } = request.body;
   try {
+    console.log("reaching")
     if (!username || !password || !email || !confirmPassword)
       return response
         .status(400)
@@ -28,7 +29,6 @@ export const registerController = async (request, response) => {
       email,
       password: await bcrypt.hash(password, 10),
     }).save();
-
     await client.send({
       from: {
         email: process.env.MAIL_TRAP_EMAIL_SENDER,
@@ -53,6 +53,7 @@ export const registerController = async (request, response) => {
 export const loginController = async (request, response) => {
   const { email, password, username } = request.body;
   try {
+    console.log("reaching")
     if (!(email || username) || !password)
       return response
         .status(400)

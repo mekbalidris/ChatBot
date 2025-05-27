@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import authRouter from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
 import roomsRouter from "./routes/rooms.route.js";
-import cors from "cors";
+import path from "path"
 
 dotenv.config();
 
@@ -14,14 +14,7 @@ const PORT = process.env.PORT || 3000;
 
 
 
-// CORS configuration
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL || "http://localhost:3000",
-    credentials: true,
-  })
-);
-
+const __dirname = process.cwd();
 
 // Body parsing middleware
 app.use(cookieParser());
@@ -31,11 +24,14 @@ app.use(express.json());
 app.use("/auth", authRouter);
 app.use("/room", roomsRouter);
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ msg: "Something went wrong!" });
-});
+if (process.env.NODE_ENV === "prodcution") {
+  console.log("we are here")
+  app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+  app.get("/{*any}", (request,response) => {
+    response.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+  })
+}
 
 // Start server
 const server = app.listen(PORT, async () => {
@@ -48,14 +44,6 @@ const server = app.listen(PORT, async () => {
   }
 });
 
-// Graceful shutdown
-process.on("SIGTERM", async () => {
-  console.log("SIGTERM received. Shutting down gracefully...");
-  await disconnectDB();
-  server.close(() => {
-    console.log("Process terminated");
-  });
-});
 
 server.on("close", async () => {
     await disconnectDB()
