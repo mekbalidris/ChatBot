@@ -58,7 +58,7 @@ function Log_in() {
 
       if (response.status === 200) {
         const userData = {
-          username: username,
+          username: response.data.username,
           token: response.data.token,
           isAuthenticated: true
         };
