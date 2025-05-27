@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import FileUploader from "../components/FileUploader";
-import React from 'react';
+import { useParams, useLocation, useNavigate } from "react-router-dom";
+import { useChat } from "../components/ChatContext";
 
 function Chat() {
   const textareaRef = useRef(null);
@@ -8,9 +9,57 @@ function Chat() {
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
   const [chatToolsDisplay, setChatToolsDisplay] = useState(false);
-  const [sessionId, setSessionId] = useState(Date.now());
+  const [sessionId, setSessionId] = useState(null);
+  const { chatId } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { updateChatHistory, chatHistory } = useChat();
 
-  // Helper function to parse text with bold formatting and newlines
+  // Handle chat loading and new chat creation
+  useEffect(() => {
+    const hist = chatHistory; // Use chatHistory from context
+    
+    if (chatId) {
+      // Load existing chat
+      const previousChat = hist.find((chat) => chat.id === parseInt(chatId));
+      if (previousChat) {
+        setMessages(previousChat.messages);
+        setSessionId(previousChat.id);
+      } else {
+        // If chat not found, redirect to new chat
+        navigate('/chatPage', { replace: true });
+      }
+    } else if (location.pathname === "/chatPage") {
+      // Create new chat
+      const newId = Date.now();
+      setMessages([]);
+      setSessionId(newId);
+      setInput("");
+      if (textareaRef.current) {
+        textareaRef.current.value = "";
+        textareaRef.current.style.height = "auto";
+      }
+    }
+  }, [chatId, location.pathname, navigate, chatHistory]); // Add chatHistory as dependency
+
+  // Save chat history whenever messages change and session ID is set
+  useEffect(() => {
+    if (messages.length > 0 && sessionId !== null) {
+      const chatData = {
+        id: sessionId,
+        date: new Date().toLocaleString(),
+        messages: messages
+      };
+      updateChatHistory(chatData);
+    }
+  }, [messages, sessionId, updateChatHistory]);
+
+  // Scroll to bottom when messages change
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
+  // Helper function to parse text with bold formatting
   const parseBoldText = (text) => {
     const boldParts = text.split(/(\*\*.*?\*\*)/g); // Split by bold markers
     return boldParts.map((boldPart, boldIndex) => {
@@ -30,20 +79,6 @@ function Chat() {
       }
     });
   };
-
-  // À ajouter en bas du composant Chat, avant le return
-  useEffect(() => {
-    // Sauvegarde de l'historique à chaque changement de session
-    const hist = JSON.parse(localStorage.getItem("historique")) || [];
-    // On retire l'ancien enregistrement de cette session (si déjà existant)
-    const filtered = hist.filter((c) => c.id !== sessionId);
-    // On ajoute la nouvelle version avec la date et les messages complets
-    const updated = [
-      ...filtered,
-      { id: sessionId, date: new Date().toLocaleString(), messages },
-    ];
-    localStorage.setItem("historique", JSON.stringify(updated));
-  }, [sessionId, messages]);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -67,7 +102,7 @@ function Chat() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            sender: "user", // Unique sender ID (could be dynamic)
+            sender: "user",
             message: input,
           }),
         }
@@ -238,6 +273,7 @@ function Chat() {
             className="mb-2 w-full border-none px-4 py-2 flex-grow resize-none outline-none bg-transparent h-auto min-h-[40px] custom-scrollbar"
             rows="1"
             onChange={handleInput}
+            value={input}
           />
           <div className="flex flex-row relative">
             <div className="flex flex-row flex-[4]">
