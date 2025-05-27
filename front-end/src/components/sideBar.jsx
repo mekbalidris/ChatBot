@@ -34,8 +34,8 @@ const SideBar = ({ displaySideBar, setDisplaySideBar }) => {
             initial={{ x: "-100%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "-100%", opacity: 0 }}
-            transition={{ duration: 0.1, ease: "easeIn" }}
-            className="z-10 fixed bg-[var(--color-1)] top-2 left-2 w-3xs text-[var(--color-3)] pb-3 transition-transform duration-800 transform translate-x-0 rounded-lg shadow-lg"
+            transition={{ duration: 0.3, ease: "easeIn" }}
+            className="z-10 fixed bg-[var(--color-1)] top-2 left-2 w-3xs text-[var(--color-3)] pb-3 transition-transform transform translate-x-0 rounded-lg shadow-lg"
           >
             <div className="flex justify-end p-3">
               <button
