@@ -27,7 +27,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/" element={<Home />} />
             <Route path="/chatPage" element={<ChatPage />} />
-            <Route path="/chatPage/:chatId" element={<ChatPage />} />
+            <Route path="/chat/:chatId" element={<ChatPage />} />
           </Routes>
         </ChatProvider>
       </ThemeProvider>

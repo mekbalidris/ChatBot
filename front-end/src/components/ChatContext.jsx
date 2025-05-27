@@ -7,17 +7,49 @@ export function ChatProvider({ children }) {
 
   // Load chat history from localStorage on initial render
   useEffect(() => {
-    const hist = JSON.parse(localStorage.getItem("historique")) || [];
-    setChatHistory(hist);
+    try {
+      const savedHistory = localStorage.getItem("historique");
+      if (savedHistory) {
+        const parsedHistory = JSON.parse(savedHistory);
+        // Validate and clean the data
+        const validHistory = parsedHistory.filter(chat => 
+          chat && 
+          typeof chat.id === 'number' && 
+          Array.isArray(chat.messages) &&
+          typeof chat.date === 'string'
+        );
+        // Sort by date, most recent first
+        validHistory.sort((a, b) => new Date(b.date) - new Date(a.date));
+        setChatHistory(validHistory);
+      }
+    } catch (error) {
+      console.error("Error loading chat history:", error);
+      setChatHistory([]);
+    }
   }, []);
 
   // Function to update chat history
   const updateChatHistory = (newChat) => {
-    const hist = JSON.parse(localStorage.getItem("historique")) || [];
-    const filtered = hist.filter((c) => c.id !== newChat.id);
-    const updated = [...filtered, newChat];
-    localStorage.setItem("historique", JSON.stringify(updated));
-    setChatHistory(updated);
+    try {
+      // Validate new chat data
+      if (!newChat || !newChat.id || !Array.isArray(newChat.messages) || !newChat.date) {
+        console.error("Invalid chat data:", newChat);
+        return;
+      }
+
+      const currentHistory = JSON.parse(localStorage.getItem("historique")) || [];
+      const filtered = currentHistory.filter((c) => c.id !== newChat.id);
+      const updated = [...filtered, newChat];
+      
+      // Sort by date, most recent first
+      updated.sort((a, b) => new Date(b.date) - new Date(a.date));
+      
+      // Save to localStorage
+      localStorage.setItem("historique", JSON.stringify(updated));
+      setChatHistory(updated);
+    } catch (error) {
+      console.error("Error updating chat history:", error);
+    }
   };
 
   return (

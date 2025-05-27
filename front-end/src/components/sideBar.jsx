@@ -17,7 +17,7 @@ const SideBar = ({ displaySideBar, setDisplaySideBar }) => {
   };
 
   const handleChatClick = (chatId) => {
-    navigate(`/chatPage/${chatId}`, { replace: true });
+    navigate(`/chat/${chatId}`, { replace: true }); // Fixed navigation
     setDisplaySideBar(false);
   };
 
@@ -64,7 +64,6 @@ const SideBar = ({ displaySideBar, setDisplaySideBar }) => {
                 New Chat
               </li>
 
-              {/* Chat History Section */}
               <div className="px-4 mb-2">
                 <h3 className="font-bold mb-2">Chat History</h3>
                 <div className="max-h-[200px] overflow-y-auto custom-scrollbar">
